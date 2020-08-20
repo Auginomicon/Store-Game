@@ -1,6 +1,7 @@
 /// @description
 //Variables for moving the player to the corrent room, loccation, and direction
-targetRoom = -1;
-targetX = 0;
-targetY = 0;
+transportX = 0;
+transportY = 0;
+newLocation = -1;
 playerFacingBefore = -1;
+playerFacingAfter = -1;

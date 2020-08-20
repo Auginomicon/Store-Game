@@ -1,6 +1,6 @@
 ///@description GiveItem
 ///@arg itemName
-function VendItem(argument0) {
+function VendItem(argument0, argument1) {
 
 	var i = 0;
 	repeat(4) {
@@ -8,7 +8,7 @@ function VendItem(argument0) {
 			if (objPlayer.money >= 2.5) {
 				//TODO: Play sound effect here
 				objPlayer.inventory[i] = argument0;
-				objPlayer.money -= 2.5;
+				objPlayer.money -= argument1;
 				break;
 			}
 			else {

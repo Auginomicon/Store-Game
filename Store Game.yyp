@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"sprStrangeCustomer","path":"sprites/sprStrangeCustomer/sprStrangeCustomer.yy",},"order":0,},
     {"id":{"name":"sprBlackFigure","path":"sprites/sprBlackFigure/sprBlackFigure.yy",},"order":1,},
+    {"id":{"name":"GoToLocation","path":"scripts/GoToLocation/GoToLocation.yy",},"order":7,},
     {"id":{"name":"sprLittleGirl","path":"sprites/sprLittleGirl/sprLittleGirl.yy",},"order":2,},
     {"id":{"name":"sprGownGal","path":"sprites/sprGownGal/sprGownGal.yy",},"order":0,},
     {"id":{"name":"sprGownGalWalkUp","path":"sprites/sprGownGalWalkUp/sprGownGalWalkUp.yy",},"order":1,},

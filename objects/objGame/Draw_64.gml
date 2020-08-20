@@ -1,9 +1,9 @@
 /// @description
 if (doTransition) {
-	if (room != spawnRoom) {
+	if (location != newLocation) {
 		blackAlpha += 0.05;
 		if (blackAlpha >= 1) {
-			room_goto(spawnRoom);	
+			GoToLocation(newLocation, transportX, transportY, playerFacingAfter);	
 		}
 	}
 	else {

@@ -70,9 +70,10 @@ switch(state) {
 			//Passes the collided object's id to the objGame to properly transition rooms.
 			with(objGame) {
 				if (!doTransition) {
-					spawnRoom = inst.targetRoom;
-					spawnX = inst.targetX;
-					spawnY = inst.targetY;
+					transportX = inst.transportX;
+					transportY = inst.transportY;
+					newLocation = inst.newLocation;
+					playerFacingAfter = inst.playerFacingAfter;
 					doTransition = true;
 				}
 			}

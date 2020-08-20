@@ -20,14 +20,32 @@ blackAlpha = 0;
 doTransition = false;
 
 //Variables for placing the player
-spawnRoom = -1;
-spawnX = 0;
-spawnY = 0;
-spawnPlayerFacing = -1; //TODO: Check if I can remove this variable once all animations are in. Remove in Room Start event too.
+location = 1;
+newLocation = -1;
+transportX = 0;
+transportY = 0;
+playerFacingAfter = -1;
 
+/*
+	Locations
+	1 - Inside the Store
+	2 - Outside in the front of the store
+	3 - Outside in the back of the store
+	4 - Bathrooms
+*/
+
+//Enum for direction
 enum dir {
 	right = 0,
 	up = 90,
 	left = 180,
 	down = 270,
+}
+
+//enum for machine states
+//Machine enum
+enum MachineState {
+	On,
+	Off,
+	Broken
 }

@@ -6,6 +6,7 @@ event_inherited();
 
 //Machine Variables
 myItem = "Energy Bar";
+myCost = 2.50;
 state = MachineState.On;
 
 //Communication Variables
