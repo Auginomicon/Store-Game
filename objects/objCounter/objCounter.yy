@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprSodaFountain",
-    "path": "sprites/sprSodaFountain/sprSodaFountain.yy",
+    "name": "sprCounter",
+    "path": "sprites/sprCounter/sprCounter.yy",
   },
   "solid": false,
   "visible": false,
@@ -14,7 +14,7 @@
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
-  "physicsGroup": 0,
+  "physicsGroup": 1,
   "physicsDensity": 0.5,
   "physicsRestitution": 0.1,
   "physicsLinearDamping": 0.1,
@@ -24,7 +24,8 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"objSodaFountain","path":"objects/objSodaFountain/objSodaFountain.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"objCounter","path":"objects/objCounter/objCounter.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"objCounter","path":"objects/objCounter/objCounter.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -33,7 +34,7 @@
     "path": "folders/Objects/Entities.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objSodaFountain",
+  "name": "objCounter",
   "tags": [],
   "resourceType": "GMObject",
 }
