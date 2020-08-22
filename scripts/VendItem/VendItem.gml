@@ -5,7 +5,7 @@ function VendItem(argument0, argument1) {
 	var i = 0;
 	repeat(4) {
 		if (objPlayer.inventory[i] == "Empty") {
-			if (objPlayer.money >= 2.5) {
+			if (objPlayer.money >= argument1) {
 				//TODO: Play sound effect here
 				objPlayer.inventory[i] = argument0;
 				objPlayer.money -= argument1;

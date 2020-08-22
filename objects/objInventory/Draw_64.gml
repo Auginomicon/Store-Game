@@ -28,6 +28,7 @@ if (showInventory) {
 		case 1: //Inventory
 			draw_set_font(fntInventory);
 			draw_set_halign(fa_center);
+			draw_set_color(c_black);
 			//TODO: Draw a box next to the name with a picture of the item.
 			var i = 0;
 				repeat(4) {
@@ -49,6 +50,7 @@ if (showInventory) {
 			var displayMoneyY = invUIY + (inventoryHeight * 0.35);
 			draw_set_font(fntFont);
 			draw_set_halign(fa_center);
+			draw_set_color(c_black);
 			draw_text(displayMoneyX, displayMoneyY, "$ " + string(objPlayer.money));
 			draw_set_halign(fa_left);
 		break;
@@ -60,6 +62,7 @@ if (showInventory) {
 		case 4: //Phone game
 			draw_set_font(fntInventory);
 			draw_set_halign(fa_center);
+			draw_set_color(c_black);
 			var gameTextX = invUIX + (inventoryWidth * 0.5);
 			var gameTextY = invUIY + (inventoryHeight * 0.3);
 			draw_text(gameTextX, gameTextY, "Sorry! \ngame servers \nare down! :(");
@@ -69,6 +72,7 @@ if (showInventory) {
 		case 5: //Web Search App
 			draw_set_font(fntInventory);
 			draw_set_halign(fa_center);
+			draw_set_color(c_black);
 			var gameTextX = invUIX + (inventoryWidth * 0.5);
 			var gameTextY = invUIY + (inventoryHeight * 0.35);
 			draw_text(gameTextX, gameTextY, "No connection");

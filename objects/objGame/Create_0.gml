@@ -20,7 +20,7 @@ blackAlpha = 0;
 doTransition = false;
 
 //Variables for placing the player
-location = 1;
+location = 2;
 newLocation = -1;
 transportX = 0;
 transportY = 0;

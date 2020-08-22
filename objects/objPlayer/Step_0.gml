@@ -6,7 +6,6 @@ input_down =	 keyboard_check(ord("S"));
 input_run =		 keyboard_check(vk_shift);
 input_interact = keyboard_check_pressed(ord("E"));
 input_open_inv = keyboard_check_pressed(vk_tab);
-if(keyboard_check_pressed(ord("G"))) {game_restart()}
 
 switch(state) {
 	case pStates.Free:
