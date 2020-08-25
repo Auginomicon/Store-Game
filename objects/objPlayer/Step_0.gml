@@ -6,6 +6,7 @@ input_down =	 keyboard_check(ord("S"));
 input_run =		 keyboard_check(vk_shift);
 input_interact = keyboard_check_pressed(ord("E"));
 input_open_inv = keyboard_check_pressed(vk_tab);
+input_use_item = keyboard_check_pressed(ord("1"));
 
 switch(state) {
 	case pStates.Free:
@@ -61,7 +62,6 @@ switch(state) {
 
 		//Collide with objects
 		var inst = instance_place(x, y, objTransition);
-
 		//TODO: To transiton into houses you will have to press the interact_key to go into them but not do this if going to another outdoors map.
 		//	^perhaps set up a variable to in the transition and set it up in the creation code and add another condiotn to the first if below this commet.
 		//Finds a collision id
@@ -100,6 +100,20 @@ switch(state) {
 							var tbox = script_execute(func, message, display);
 						}
 						activeTextbox = tbox;
+					}
+					else if (inst.isItem) {
+						// Will execute if this item is able to be picked up.
+						// Check for an empty inventory slot
+						var i = 0;
+						repeat(4) {
+							if (inventory[i] == "Empty") {
+								inventory[i] = inst.name; 
+								//Removes the item from the game world
+								instance_destroy(inst);
+								break;
+							}
+							i++;
+						}
 					}
 					else {
 						//Run if it is something else

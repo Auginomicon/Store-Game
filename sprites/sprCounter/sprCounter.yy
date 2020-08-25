@@ -88,8 +88,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"426c83e0-138c-4210-9c4d-161b10208aec","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Entities",
-    "path": "folders/Sprites/Entities.yy",
+    "name": "Store",
+    "path": "folders/Sprites/Entities/Store.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprCounter",

@@ -30,8 +30,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Entities",
-    "path": "folders/Objects/Entities.yy",
+    "name": "Store",
+    "path": "folders/Objects/Entities/Store.yy",
   },
   "resourceVersion": "1.0",
   "name": "objStore",

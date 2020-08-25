@@ -88,8 +88,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"ac9d2633-c78b-4f2b-99d1-80a2e0b1470c","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Entities",
-    "path": "folders/Sprites/Entities.yy",
+    "name": "Doors",
+    "path": "folders/Sprites/Entities/Store/Doors.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprGlassDoor2",

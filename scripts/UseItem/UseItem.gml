@@ -7,7 +7,7 @@ function UseItem() {
 
 	//Use the item
 	if (mouse_check_button_pressed(mb_left)) {
-		show_debug_message("Slot "+ string(slot) +" left clicked");
+		show_debug_message("Slot "+ string(slot) +" use clicked");
 		switch(item) {
 			case "Energy Bar":
 				with(objPlayer) {
@@ -27,7 +27,14 @@ function UseItem() {
 
 	//Equip the item to your quick use slot
 	if (mouse_check_button_pressed(mb_right)) {
-		show_debug_message("Slot "+ string(slot) +" right clicked");
+		show_debug_message("Slot "+ string(slot) +" equipped clicked");
+		with (objPlayer) {
+			if (item != "Empty") {
+				equipped[0] = item;
+				equipped[1] = slot;
+				show_debug_message(item +" equipped");
+			}
+		}
 	}
 
 	//Drop the item

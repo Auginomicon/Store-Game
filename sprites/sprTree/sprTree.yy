@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"be09a6af-8772-49af-b208-b64a1f632662","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Entities",
-    "path": "folders/Sprites/Entities.yy",
+    "name": "Outside Elements",
+    "path": "folders/Sprites/Entities/Outside Elements.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprTree",

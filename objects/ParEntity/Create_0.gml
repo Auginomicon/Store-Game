@@ -2,3 +2,4 @@
 event_inherited();
 isNPC = false;
 isSign = false;
+isItem = false;

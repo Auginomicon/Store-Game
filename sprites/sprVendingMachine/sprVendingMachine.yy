@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"727d4c84-22de-4deb-8bc1-3f508580e978","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Entities",
-    "path": "folders/Sprites/Entities.yy",
+    "name": "Store",
+    "path": "folders/Sprites/Entities/Store.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprVendingMachine",

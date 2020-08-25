@@ -24,6 +24,11 @@ inventory[3] = "Empty";
 
 money = 5;
 
+// Cell 1 - Item name
+// Cell 2 - Slot it came from
+equipped[0] = -1;
+equipped[1] = -1;
+
 //Other Variables
 canMove = true;
 state = pStates.Free;

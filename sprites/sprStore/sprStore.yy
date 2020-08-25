@@ -72,8 +72,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"b9ae4861-cde4-4062-9f5f-fdd180fa85bb","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Entities",
-    "path": "folders/Sprites/Entities.yy",
+    "name": "Store",
+    "path": "folders/Sprites/Entities/Store.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprStore",
