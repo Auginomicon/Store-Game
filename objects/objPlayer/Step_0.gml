@@ -6,7 +6,7 @@ input_down =	 keyboard_check(ord("S"));
 input_run =		 keyboard_check(vk_shift);
 input_interact = keyboard_check_pressed(ord("E"));
 input_open_inv = keyboard_check_pressed(vk_tab);
-input_use_item = keyboard_check_pressed(ord("1"));
+input_use_item = mouse_check_button_pressed(mb_left);
 
 switch(state) {
 	case pStates.Free:
@@ -62,8 +62,6 @@ switch(state) {
 
 		//Collide with objects
 		var inst = instance_place(x, y, objTransition);
-		//TODO: To transiton into houses you will have to press the interact_key to go into them but not do this if going to another outdoors map.
-		//	^perhaps set up a variable to in the transition and set it up in the creation code and add another condiotn to the first if below this commet.
 		//Finds a collision id
 		if (inst != noone && facing == inst.playerFacingBefore) {
 			//Passes the collided object's id to the objGame to properly transition rooms.
@@ -113,6 +111,17 @@ switch(state) {
 								break;
 							}
 							i++;
+						}
+					}
+					else if (inst.isDoor) {
+						with(objGame) {
+							if (!doTransition) {
+								transportX = inst.transportX;
+								transportY = inst.transportY;
+								newLocation = inst.newLocation;
+								playerFacingAfter = inst.playerFacingAfter;
+								doTransition = true;
+							}
 						}
 					}
 					else {

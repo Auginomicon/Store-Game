@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprMop",
-    "path": "sprites/sprMop/sprMop.yy",
+    "name": "sprSink",
+    "path": "sprites/sprSink/sprSink.yy",
   },
   "solid": false,
   "visible": false,
@@ -24,17 +24,16 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"objMop","path":"objects/objMop/objMop.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"objMop","path":"objects/objMop/objMop.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"objSink","path":"objects/objSink/objSink.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Inside",
-    "path": "folders/Objects/Entities/Store/Inside.yy",
+    "name": "Bathroom",
+    "path": "folders/Objects/Entities/Store/Bathroom.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objMop",
+  "name": "objSink",
   "tags": [],
   "resourceType": "GMObject",
 }

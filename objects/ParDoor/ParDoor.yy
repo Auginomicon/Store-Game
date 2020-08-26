@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "sprMop",
-    "path": "sprites/sprMop/sprMop.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": false,
   "spriteMaskId": null,
@@ -24,17 +21,17 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"objMop","path":"objects/objMop/objMop.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"objMop","path":"objects/objMop/objMop.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"ParDoor","path":"objects/ParDoor/ParDoor.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"ParDoor","path":"objects/ParDoor/ParDoor.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Inside",
-    "path": "folders/Objects/Entities/Store/Inside.yy",
+    "name": "Doors",
+    "path": "folders/Objects/Entities/Store/Doors.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objMop",
+  "name": "ParDoor",
   "tags": [],
   "resourceType": "GMObject",
 }
