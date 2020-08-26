@@ -83,6 +83,7 @@
     {"id":{"name":"objDepthSorter","path":"objects/objDepthSorter/objDepthSorter.yy",},"order":1,},
     {"id":{"name":"objCamera","path":"objects/objCamera/objCamera.yy",},"order":0,},
     {"id":{"name":"sprPlayerUI","path":"sprites/sprPlayerUI/sprPlayerUI.yy",},"order":3,},
+    {"id":{"name":"sprHappyMartBack","path":"sprites/sprHappyMartBack/sprHappyMartBack.yy",},"order":12,},
     {"id":{"name":"objPlayer","path":"objects/objPlayer/objPlayer.yy",},"order":1,},
     {"id":{"name":"objInventory","path":"objects/objInventory/objInventory.yy",},"order":2,},
     {"id":{"name":"objWall","path":"objects/objWall/objWall.yy",},"order":0,},
