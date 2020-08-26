@@ -39,5 +39,5 @@ idleNum = 1;
 portraitIndex = 1;
 voice = sndVoice;
 name = "Player";
-radius = 64;
+radius = 32;
 activeTextbox = noone;
