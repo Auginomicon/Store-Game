@@ -26,7 +26,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Player",
-    "path": "folders/Objects/Meta/Player.yy",
+    "path": "folders/Objects/Player.yy",
   },
   "resourceVersion": "1.0",
   "name": "objInventory",

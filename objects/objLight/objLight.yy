@@ -1,13 +1,10 @@
 {
   "spriteId": null,
   "solid": false,
-  "visible": true,
+  "visible": false,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "ParEntity",
-    "path": "objects/ParEntity/ParEntity.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -22,13 +19,13 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"objLight","path":"objects/objLight/objLight.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"objLight","path":"objects/objLight/objLight.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"objLight","path":"objects/objLight/objLight.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Store",
-    "path": "folders/Objects/Entities/Store.yy",
+    "name": "Meta",
+    "path": "folders/Objects/Meta.yy",
   },
   "resourceVersion": "1.0",
   "name": "objLight",

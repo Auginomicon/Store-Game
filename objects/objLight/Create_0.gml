@@ -1,4 +1,7 @@
 /// @description
 event_inherited();
 
-radius = 64;
+radius = 96;
+
+sprite = -1;
+shake = 0;

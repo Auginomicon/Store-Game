@@ -16,7 +16,8 @@ if (surface_exists(surface)) {
 	gpu_set_blendmode(bm_subtract);
 	
 	with(objLight) {
-		draw_circle_color(x - cx, y -cy, radius + random(1), c_white, c_black, 0);
+		//draw_circle_color(x - cx, y -cy, radius + random(1), c_white, c_black, 0);
+		draw_sprite(sprite, 0, x - cx + shake, y - cy + shake);
 	}
 	
 	//Reset blendmode
