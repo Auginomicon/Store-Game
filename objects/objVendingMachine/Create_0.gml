@@ -2,11 +2,12 @@
 //Inherit collisions
 event_inherited();
 
-//Machine enum
-
 //Machine Variables
-myItem = "Energy Bar";
-myCost = 2.50;
+item1 = "Energy Bar";
+cost1 = 2.50;
+item2 = "Candy Bar";
+cost2 = 5.00;
+
 state = MachineState.On;
 
 //Communication Variables

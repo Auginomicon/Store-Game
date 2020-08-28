@@ -1,5 +1,7 @@
 ///@description GiveItem
 ///@arg itemName
+///@arg cost
+
 function VendItem(argument0, argument1) {
 
 	var i = 0;

@@ -53,18 +53,8 @@ if (!choiceDialog) {
 	var substr = string_copy(textWrapped, 1, counter);
 
 	draw_text_color(textX, textY, substr, c_white, c_white, c_white, c_white, 1);
-	//draw_text_color(textX + 1, textY + 1, substr, c_white, c_white, c_white, c_white, 1);
 }
 else {
-	/*
-	var j = 0;
-	var choiceHeight = 0;
-	repeat(msgArrayLength) {
-		choiceHeight -= string_height_ext(msgArray[j], textHeight, textMaxWidth);
-		j++;
-	}
-	*/
-	//TODO: Check if you can make the box dimensions dynamic depending on the dialog choice sizes.
 	//Draw a box that will be the size of the text options.
 	NineSliceBoxStretched(sprTextBox2, diagX1,  portY, diagX1 + diagX2, portY, 0)
 	//Set the alignment and font
@@ -79,11 +69,12 @@ else {
 		if (choice == i) {
 			c = choiceCol;
 			draw_text_color(diagX2 + 15, textY + yAdd, "<", c, c, c, c, 1);
-			draw_rectangle(diagX1 + 15, textY + yAdd, (diagX1 + 15) + (diagX2 - 30), textY + string_height_ext(msgArray[i], textHeight, textMaxWidth) + yAdd, true);
+			//draw_rectangle(diagX1 + 15, textY + yAdd, (diagX1 + 15) + (diagX2 - 30), textY + string_height_ext(msgArray[i], textHeight, textMaxWidth) + yAdd, true);
 		}
 		else {
 			c = messageCol;
 		}
+		
 		draw_text_ext_color(diagX1 + 25, textY + yAdd, msgArray[i], textHeight, textMaxWidth, c, c, c, c, 1);
 		yAdd += string_height_ext(msgArray[i], textHeight, textMaxWidth);
 		i++;

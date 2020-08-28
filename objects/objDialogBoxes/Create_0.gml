@@ -31,7 +31,7 @@ nameTextY = nameboxY + (nameboxHeight * 0.5);
 textMaxWidth = boxWidth - (2 * xBuffer);
 
 draw_set_font(fntFont);
-textHeight = string_height("M");
+textHeight = string_height("M") + .5;
 
 //	TODO: look into this so that we can use different sprites for each character to have unique emotions.
 portraitIndex = 0;

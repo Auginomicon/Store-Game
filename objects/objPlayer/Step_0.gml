@@ -34,9 +34,6 @@ switch(state) {
 		}
 		else {
 			walkSpeed = 3;
-			if (energy <= maxEnergy) {
-				energy += 0.01;
-			}
 		}
 
 		//Set the correct facing variable to the player for transition 
@@ -151,4 +148,8 @@ switch(state) {
 		//Checks when the pause is stopped to resume play.
 		if(!global.gamePaused) { state = pStates.Free; }
 	break;
+}
+
+if (energy <= maxEnergy) {
+	energy += 0.01;
 }
