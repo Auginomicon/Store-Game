@@ -1,1 +1,1 @@
-sprite = sprGlassDoorLight;
+subimg = 7;

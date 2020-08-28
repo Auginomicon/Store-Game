@@ -29,20 +29,33 @@ if (showInventory) {
 			draw_set_font(fntInventory);
 			draw_set_halign(fa_center);
 			draw_set_color(c_black);
-			//TODO: Draw a box next to the name with a picture of the item.
+			
 			var i = 0;
+			var slotNum = 0;
+			var sSlotColor = c_white;
 				repeat(4) {
-					draw_text(invSlotX, invSlotY + (invSlotBuffer * i),string(objPlayer.inventory[i]));
+					//draw_text(invSlotX, invSlotY + (invSlotBuffer * i),string(objPlayer.inventory[i]));
+					switch(string(objPlayer.inventory[i])) {
+						case "Empty": slotNum = 1; break;
+						case "Energy Bar": slotNum = 0; break;
+						case "Soda": slotNum = 2; break;
+						case "Mop": slotNum = 3; break;
+						case "Storage Box": slotNum = 5; break;
+						case "Candy Bar": slotNum = 4; break;
+						case "Flashlight": slotNum = 6; break;
+					}
+					if (i == objPlayer.equipped[1] && (string(objPlayer.inventory[i]) != "Empty")) {
+						sSlotColor = c_gray;
+					}
+					else {
+						sSlotColor = c_white;
+					}
+					
+					draw_sprite_ext(sprItemSlots, slotNum, invSlotX, invSlotY + (invSlotBuffer * i), 1, 1, 0, sSlotColor, 1);
 					i++;
 				}
 			draw_set_halign(fa_left);
 			
-			//Repeat is for debugging purposes
-			var i = 0;
-			repeat(4) {
-				draw_rectangle(invSlotPosX, invSlotPosY + (i * invSlotBuffer), invSlotPosX + invSlotWidth, invSlotPosY + invSlotHeight + (i * invSlotBuffer), true);
-				i++;
-			}
 		break;
 		
 		case 2: //Bank Account

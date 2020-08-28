@@ -1,1 +1,1 @@
-sprite = sprBathroomLight;
+subimg = 8;

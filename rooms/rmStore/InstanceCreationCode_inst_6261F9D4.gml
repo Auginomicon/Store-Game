@@ -1,1 +1,1 @@
-sprite = sprHallwayLight2;
+subimg = 4;

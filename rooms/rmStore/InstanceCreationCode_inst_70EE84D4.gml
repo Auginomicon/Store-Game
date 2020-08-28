@@ -1,1 +1,1 @@
-sprite = sprOfficeLight;
+subimg = 2;

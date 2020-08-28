@@ -3,5 +3,5 @@ event_inherited();
 
 radius = 96;
 
-sprite = -1;
+subimg = 0;
 shake = 0;

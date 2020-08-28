@@ -1,1 +1,1 @@
-sprite = sprStoreLight;
+subimg = 0;

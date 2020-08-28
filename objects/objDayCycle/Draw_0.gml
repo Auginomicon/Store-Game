@@ -17,7 +17,7 @@ if (surface_exists(surface)) {
 	
 	with(objLight) {
 		//draw_circle_color(x - cx, y -cy, radius + random(1), c_white, c_black, 0);
-		draw_sprite(sprite, 0, x - cx + shake, y - cy + shake);
+		draw_sprite(sprLight, subimg, x - cx + shake, y - cy + shake);
 	}
 	
 	//Reset blendmode

@@ -1,1 +1,1 @@
-sprite = sprGlassLight;
+subimg = 6;
