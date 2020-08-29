@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"efbe1217-bd04-4484-bf62-3492621c75d0","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Store",
-    "path": "folders/Sprites/Entities/Store.yy",
+    "name": "Items",
+    "path": "folders/Sprites/Entities/Store/Items.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprBox",

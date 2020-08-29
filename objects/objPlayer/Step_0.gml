@@ -72,7 +72,14 @@ switch(state) {
 				}
 			}
 		}
-
+		
+		//Use an equipped item
+		if (input_use_item) {
+			if (equipped[0] != "Storage Box" || equipped[0] != -1) {
+				UseItemHelper(equipped[0], equipped[1]);
+			}
+		}
+		
 		//Dialog Boxes for NPCs
 		if (input_interact) {
 			if (activeTextbox == noone) {

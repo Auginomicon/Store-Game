@@ -3,7 +3,7 @@
 event_inherited();
 
 //Machine Variables
-myItem = "Soda";
+myItem = "Sanity Soda";
 myCost = 3.00;
 state = MachineState.On;
 

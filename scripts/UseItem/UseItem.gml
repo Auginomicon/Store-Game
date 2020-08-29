@@ -8,28 +8,19 @@ function UseItem() {
 	//Use the item
 	if (mouse_check_button_pressed(mb_left)) {
 		show_debug_message("Slot "+ string(slot) +" use clicked");
-		switch(item) {
-			case "Energy Bar":
-				with(objPlayer) {
-					var tempEnergy = energy + 20;
-					if (tempEnergy > maxEnergy) {
-						energy = maxEnergy;
-					}
-					else {
-						energy += 20;
-					}
-				}
-				objPlayer.inventory[slot] = "Empty";
-			break;
-		
-		}
+		UseItemHelper(item, slot);
 	}
 
 	//Equip the item to your quick use slot
 	if (mouse_check_button_pressed(mb_right)) {
 		show_debug_message("Slot "+ string(slot) +" equipped clicked");
 		with (objPlayer) {
-			if (item != "Empty") {
+			if (slot == equipped[1]) {
+				equipped[0] = -1;
+				equipped[1] = -1;
+				show_debug_message(item +" unequipped");
+			}
+			else if (item != "Empty") {
 				equipped[0] = item;
 				equipped[1] = slot;
 				show_debug_message(item +" equipped");

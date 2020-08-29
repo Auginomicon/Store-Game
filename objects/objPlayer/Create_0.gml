@@ -22,7 +22,7 @@ inventory[1] = "Empty";
 inventory[2] = "Empty";
 inventory[3] = "Empty";
 
-money = 5;
+money = 50;
 
 // Cell 1 - Item name
 // Cell 2 - Slot it came from

@@ -38,13 +38,13 @@ if (showInventory) {
 					switch(string(objPlayer.inventory[i])) {
 						case "Empty": slotNum = 1; break;
 						case "Energy Bar": slotNum = 0; break;
-						case "Soda": slotNum = 2; break;
+						case "Sanity Soda": slotNum = 2; break;
 						case "Mop": slotNum = 3; break;
 						case "Storage Box": slotNum = 5; break;
 						case "Candy Bar": slotNum = 4; break;
 						case "Flashlight": slotNum = 6; break;
 					}
-					if (i == objPlayer.equipped[1] && (string(objPlayer.inventory[i]) != "Empty")) {
+					if (i == objPlayer.equipped[1] && (string(objPlayer.inventory[i]) != "Empty") && objPlayer.equipped[0] != -1) {
 						sSlotColor = c_gray;
 					}
 					else {
