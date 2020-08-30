@@ -1,6 +1,18 @@
-/// @description Insert description here
-// You can write your code in this editor
 /// @description 
+
+if(flashlight == noone) {
+	if(global.isOn) {
+		flashlight = instance_create_layer(mouse_x, mouse_y, "Lights", objLight);
+		flashlight.worldLight = false;
+	}
+}
+else {
+	if(!global.isOn) { 
+		instance_destroy(flashlight);
+		flashlight = noone;
+	}
+}
+
 if (keyboard_check_pressed(ord("T"))) { timePaused = ! timePaused; }
 //Increment time when game is not paused
 if (global.gamePaused or timePaused) { exit; }

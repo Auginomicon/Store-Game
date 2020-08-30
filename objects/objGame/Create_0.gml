@@ -26,6 +26,9 @@ transportX = 0;
 transportY = 0;
 playerFacingAfter = -1;
 
+//Flashlight variables
+global.isOn = false;
+
 /*
 	Locations
 	1 - Inside the Store

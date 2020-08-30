@@ -16,8 +16,13 @@ if (surface_exists(surface)) {
 	gpu_set_blendmode(bm_subtract);
 	
 	with(objLight) {
-		//draw_circle_color(x - cx, y -cy, radius + random(1), c_white, c_black, 0);
-		draw_sprite(sprLight, subimg, x - cx + shake, y - cy + shake);
+		if (worldLight) {
+			draw_sprite(sprLight, subimg, x - cx + shake, y - cy + shake);
+		}
+		else {
+			draw_circle_color(mouse_x - cx, mouse_y - cy, 42, c_white, c_white, false);
+			//draw_triangle_color(mouse_x - cx - 21, mouse_y - cy - 21, mouse_x - cx + 21, mouse_y - cy + 21, objPlayer.x - cx, objPlayer.y - cy, c_white, c_white, c_white, false);
+		}
 	}
 	
 	//Reset blendmode

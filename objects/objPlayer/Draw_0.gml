@@ -14,6 +14,9 @@ switch(facing) {
 		idleNum = 1;
 		if (equipped[0] == "Flashlight") { 
 			draw_sprite_ext(sprFlashlight, 0, x + 17, y - 41, 1, 1, 0, c_white, 1);
+			
+			//Flashlight check
+			//UseFlashlight(x+17, y-41);
 		}
 		draw_self();
 	break;
@@ -23,6 +26,9 @@ switch(facing) {
 		idleNum = 0;
 		if (equipped[0] == "Flashlight") { 
 			draw_sprite_ext(sprFlashlight, 0, x - 17, y - 41, -1, 1, 0, c_white, 1);
+			
+			//Flashlight check
+			//UseFlashlight(x - 17, y-41);
 		}
 		draw_self();
 	break;
@@ -30,6 +36,10 @@ switch(facing) {
 	case dir.up:
 		sprite_index = sprite[2];
 		idleNum = 2;
+		
+		//Flashlight check
+		//UseFlashlight(x - 8, y-41);
+		
 		draw_self();
 	break;
 	
@@ -39,6 +49,9 @@ switch(facing) {
 		draw_self();
 		if (equipped[0] == "Flashlight") { 
 			draw_sprite_ext(sprFlashlight, 1, x - 8, y - 41, 1, 1, 0, c_white, 1);
+			
+			//Flashlight check
+			//UseFlashlight(x - 8, y - 41);
 		}
 	break;
 	
@@ -49,20 +62,24 @@ switch(facing) {
 			switch(idleNum) {
 				case 0: //Left
 					draw_sprite_ext(sprFlashlight, 0, x - 28, y - 43, -1, 1, 0, c_white, 1);
+					//UseFlashlight(x - 28, y - 43);
 					draw_self();
 				break;
 			
 				case 1: //Right
 					draw_self();
 					draw_sprite_ext(sprFlashlight, 2, x + 9, y - 43, 1, 1, 0, c_white, 1);
+					//UseFlashlight(x + 9, y - 41);
 				break;
 			
 				case 2: //Up
+					//UseFlashlight(x - 8, y - 41);
 					draw_self();
 				break;
 			
 				case 3: //Down
 					draw_sprite_ext(sprFlashlight, 1, x - 11, y - 38, 1, 1, 0, c_white, 1);
+					//UseFlashlight(x - 11, y-38);
 					draw_self();
 				break;
 			}

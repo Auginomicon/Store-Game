@@ -25,3 +25,4 @@ enum phase {
 
 //Other variables
 surface = -1;
+flashlight = noone;

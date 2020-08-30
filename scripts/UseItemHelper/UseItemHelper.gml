@@ -37,6 +37,7 @@ function UseItemHelper() {
 				}
 			}
 			
+			//Checks if the equipped was used. If it has been then resets the equipped array
 			if (objPlayer.inventory[slot] == objPlayer.equipped[0] and objPlayer.equipped[1] != -1) {
 				objPlayer.equipped[0] = -1;
 				objPlayer.equipped[1] = -1;
@@ -70,6 +71,10 @@ function UseItemHelper() {
 			}
 			
 			objPlayer.inventory[slot] = "Empty";
+		break;
+		
+		case "Flashlight": // Toggles the flashlight
+			global.isOn = !global.isOn;
 		break;
 	}
 }

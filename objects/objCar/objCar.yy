@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprCorkboard",
-    "path": "sprites/sprCorkboard/sprCorkboard.yy",
+    "name": "sprCar",
+    "path": "sprites/sprCar/sprCar.yy",
   },
   "solid": false,
   "visible": false,
@@ -24,8 +24,8 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"objSign","path":"objects/objSign/objSign.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"objSign","path":"objects/objSign/objSign.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"objCar","path":"objects/objCar/objCar.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"objCar","path":"objects/objCar/objCar.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -34,7 +34,7 @@
     "path": "folders/Objects/NPCs.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objSign",
+  "name": "objCar",
   "tags": [],
   "resourceType": "GMObject",
 }

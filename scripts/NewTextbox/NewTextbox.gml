@@ -27,11 +27,7 @@ function NewTextbox() {
 	}
 
 	with(objPlayer) {
-		if (state != pStates.Paused) {
-			lastState = state;
-			state = pStates.Paused;
-		}
+		lastState = state;
+		state = pStates.Paused;
 	}
-
-
 }
