@@ -14,14 +14,16 @@ function VendItem(argument0, argument1) {
 				break;
 			}
 			else {
-				script_execute(NewTextbox, "I don't have enough Money", 1);
+				script_execute(NewTextbox, "I don't have enough Money.", 1);
+				break;
+			}
+		} 
+		else {
+			if (i == 3) {
+				script_execute(NewTextbox, "I don't have enough space.", 1);
 				break;
 			}
 		}
 		i++
 	}
-
-
-
-
 }

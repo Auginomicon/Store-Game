@@ -1,6 +1,6 @@
 /// @description Initialize variables
-// Inherit the parent event
 event_inherited();
 
+name = -1;
 isItem = true;
-name = "Storage Box";
+collideable = false;

@@ -1,6 +1,18 @@
 /// @description Update camera
 
-//Follw the character
+if (!global.cameraSystem) {
+	following = objPlayer;
+	viewWidthHalf = camera_get_view_width(cam) * 0.5;
+	viewHeightHalf = camera_get_view_height(cam) * 0.5;
+}
+else {
+	with(objPlayer) {
+		state = pStates.Paused;
+	}
+	following = objCCTV;
+}
+
+//Follw the target
 x = clamp(x, following.x - hBorder, following.x + hBorder);
 y = clamp(y, following.y - vBorder, following.y + vBorder);
 

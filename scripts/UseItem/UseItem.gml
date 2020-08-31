@@ -31,9 +31,47 @@ function UseItem() {
 	//Drop the item
 	if (keyboard_check_pressed(ord("R"))) {
 		if(item != "Empty") {
+			
+			// If the equipped item was the one dropped it will be removed from the equipped array
+			if (objPlayer.inventory[slot] == objPlayer.equipped[0] and objPlayer.equipped[1] != -1) {
+				objPlayer.equipped[0] = -1;
+				objPlayer.equipped[1] = -1;
+			}
+			
 			show_debug_message(string(item) +" dropped.");
 			objPlayer.inventory[slot] = "Empty";
 			//TODO: Create an instance on the ground of that item. (MAYBE DO THIS. IDK YET)
+			var dItem = -1;
+			switch(item) {
+				case "Energy Bar":
+					dItem = sprEnergyBar;
+				break;
+				
+				case "Storage Box":
+					dItem = sprBox;
+				break;
+				
+				case "Candy Bar":
+					dItem = sprCandyBar;
+				break;
+				
+				case "Flashlight":
+					dItem = sprFlashlight;
+				break;
+				
+				case "Mop":
+					dItem = sprMop;
+				break;
+				
+				case "Sanity Soda":
+					dItem = sprSanitySoda;
+				break;
+			}
+			
+			//Drops the item at your feet
+			var inst = instance_create_layer(objPlayer.x, objPlayer.y, "Instances", objItem);
+			inst.name = item;
+			inst.sprite_index = dItem;
 		}
 	}
 

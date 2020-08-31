@@ -26,8 +26,9 @@ transportX = 0;
 transportY = 0;
 playerFacingAfter = -1;
 
-//Flashlight variables
+//Other variables
 global.isOn = false;
+global.cameraSystem = false;
 
 /*
 	Locations
