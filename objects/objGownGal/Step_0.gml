@@ -1,4 +1,5 @@
 /// @description
+if (global.gamePaused) { exit; }
 switch (state) {
 	case enemyState.Free:
 		//Chase player if they are in range

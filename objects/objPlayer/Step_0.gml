@@ -96,13 +96,6 @@ switch(state) {
 						}
 						activeTextbox = tbox;
 					}
-					else if (inst.isSign) {
-						//Will execute if it was a signpost
-						with(inst) {
-							var tbox = script_execute(func, message, display);
-						}
-						activeTextbox = tbox;
-					}
 					else if (inst.isItem) {
 						// Will execute if this item is able to be picked up.
 						// Check for an empty inventory slot
