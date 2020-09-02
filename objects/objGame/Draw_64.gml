@@ -1,5 +1,5 @@
 /// @description
-if (room == rmStore) {
+if (room == rmStore and !global.cameraSystem) {
 	draw_sprite(sprPlayerUI, 0, guiWidth * 0.02, guiHeight * 0.02);
 	draw_sprite_ext(sprPlayerUI, 2, guiWidth * 0.02, guiHeight * 0.02, objPlayer.energy / objPlayer.maxEnergy, 1, 0, c_white, 1);
 	draw_sprite(sprPlayerUI, 1, guiWidth * 0.02, guiHeight * 0.055);
@@ -20,6 +20,8 @@ if (doTransition) {
 		if (blackAlpha <= 0) {
 			doTransition = false;
 			objPlayer.state = pStates.Free;
+			location = newLocation;
+			if (instance_exists(ParEnemy)) { ParEnemy.spd = ParEnemy.walkspd; }
 		}
 	}
 	

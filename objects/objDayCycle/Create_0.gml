@@ -10,7 +10,7 @@ timeIncrement = 50;
 timePaused = true;
 
 //Color Variables
-maxDarkness = 0.7;
+maxDarkness = 0.85;
 darkness = 0;
 lightColor = c_black;
 drawDayLight = false;

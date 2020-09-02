@@ -1,5 +1,6 @@
 /// @description
 if (global.gamePaused) { exit; }
+if (objGame.doTransition) { spd = 0; }
 switch (state) {
 	case enemyState.Free:
 		//Chase player if they are in range
@@ -27,20 +28,23 @@ switch (state) {
 
 		if (mp_grid_path(global.grid, path, x, y, cx, cy, 1)) {
 			path_start(path, spd, path_action_stop, false);
-			
-			if(direction >= 306 or direction <= 45) {
-				sprite_index = sprGownGalWalkRight; //right
-			}
-			if (direction >= 46 and direction <= 135) {
-				sprite_index = sprGownGalWalkUp; //up
-			}
-			if (direction >= 136 and direction <=225) {
-				sprite_index = sprGownGalWalkLeft; //left
-			}
-			if (direction >= 226 and direction <= 305) {
-				sprite_index = sprGownGalWalkDown; //down
+			if(currentLocation != objGame.location) {
+				mp_grid_path(global.grid, path, x, y, 2342, 1379, 1)
 			}
 		}
-		
 	break;
+}
+
+// Get the correct sprite for movement
+if(direction >= 306 or direction <= 45) {
+	sprite_index = sprGownGalWalkRight; //right
+}
+if (direction >= 46 and direction <= 135) {
+	sprite_index = sprGownGalWalkUp; //up
+}
+if (direction >= 136 and direction <=225) {
+	sprite_index = sprGownGalWalkLeft; //left
+}
+if (direction >= 226 and direction <= 305) {
+	sprite_index = sprGownGalWalkDown; //down
 }

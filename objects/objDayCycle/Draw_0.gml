@@ -1,6 +1,4 @@
 /// @description
-var cw = camera_get_view_width(view_camera[0]);
-var ch = camera_get_view_height(view_camera[0]);
 var cx = camera_get_view_x(view_camera[0]);
 var cy = camera_get_view_y(view_camera[0]);
 
@@ -11,22 +9,24 @@ if (surface_exists(surface)) {
 	//Drawing the time of day
 	draw_set_color(lightColor);
 	draw_set_alpha(darkness);
-	draw_rectangle(0, 0, cw, ch, false);
+	draw_rectangle(0, 0, guiWidth, guiHeight, false);
 	
-	gpu_set_blendmode(bm_subtract);
+	if (hours >= 1.5) {
+		gpu_set_blendmode(bm_subtract);
+		
+		with(objLight) {
+			if (worldLight) {
+				draw_sprite(sprLight, subimg, x - cx + shake, y - cy + shake);
+			}
+			else {
+				draw_circle_color(mouse_x - cx, mouse_y - cy, 42, c_white, c_white, false);
+				//draw_triangle_color(mouse_x - cx - 21, mouse_y - cy - 21, mouse_x - cx + 21, mouse_y - cy + 21, objPlayer.x - cx, objPlayer.y - cy, c_white, c_white, c_white, false);
+			}
+		}
 	
-	with(objLight) {
-		if (worldLight) {
-			draw_sprite(sprLight, subimg, x - cx + shake, y - cy + shake);
-		}
-		else {
-			draw_circle_color(mouse_x - cx, mouse_y - cy, 42, c_white, c_white, false);
-			//draw_triangle_color(mouse_x - cx - 21, mouse_y - cy - 21, mouse_x - cx + 21, mouse_y - cy + 21, objPlayer.x - cx, objPlayer.y - cy, c_white, c_white, c_white, false);
-		}
+		//Reset blendmode
+		gpu_set_blendmode(bm_normal);
 	}
-	
-	//Reset blendmode
-	gpu_set_blendmode(bm_normal);
 	
 	//Reset values
 	draw_set_alpha(1);
@@ -35,7 +35,7 @@ if (surface_exists(surface)) {
 }
 else {
 	//Setting the target surface
-	surface = surface_create(cw, ch);
+	surface = surface_create(guiWidth, guiHeight);
 	
 	//Setting the target surface
 	surface_set_target(surface);
@@ -43,7 +43,7 @@ else {
 	//Drawing the time of dat
 	draw_set_color(lightColor);
 	draw_set_alpha(darkness);
-	draw_rectangle(0, 0, cw, ch, false);
+	draw_rectangle(0, 0, guiWidth, guiHeight, false);
 	
 	//Rest values
 	surface_reset_target();

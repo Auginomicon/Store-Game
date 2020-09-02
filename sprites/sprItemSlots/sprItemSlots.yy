@@ -92,8 +92,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"9e39e4b1-b748-4d1c-b2eb-d457a914b46e","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Player",
-    "path": "folders/Sprites/Player.yy",
+    "name": "Inventory",
+    "path": "folders/Sprites/Player/Inventory.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprItemSlots",

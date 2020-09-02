@@ -151,5 +151,5 @@ switch(state) {
 }
 
 if (energy <= maxEnergy) {
-	energy += 0.01;
+	energy += 0.03;
 }

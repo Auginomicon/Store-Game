@@ -92,8 +92,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"7325555e-73f2-4daa-9dd8-ce4cbda8c094","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Player",
-    "path": "folders/Sprites/Player.yy",
+    "name": "Inventory",
+    "path": "folders/Sprites/Player/Inventory.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprInventory",

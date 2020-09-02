@@ -29,6 +29,7 @@ playerFacingAfter = -1;
 //Other variables
 global.isOn = false;
 global.cameraSystem = false;
+playerName = "Player";
 
 /*
 	Locations

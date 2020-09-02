@@ -8,7 +8,7 @@ energy = 100;
 maxEnergy = 100;
 
 walkSpeed = 3;
-name = "Player";
+name = objGame.playerName;
 
 enum pStates {
 	Free,
