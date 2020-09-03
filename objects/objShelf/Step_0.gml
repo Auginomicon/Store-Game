@@ -1,4 +1,7 @@
 /// @description
+
+if (objGame.location != 1) exit;
+
 // Check in front of the shelf if the player is there
 if (point_in_rectangle(objPlayer.x, objPlayer.y, x - (sprite_width * 0.5), y, x + (sprite_width * 0.5), y + 32)) {
 	// Checks player input and that nothing else is active.
