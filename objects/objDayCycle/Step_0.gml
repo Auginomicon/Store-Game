@@ -2,7 +2,7 @@
 
 if(flashlight == noone) {
 	if(global.isOn) {
-		flashlight = instance_create_layer(mouse_x, mouse_y, "Lights", objLight);
+		flashlight = instance_create_layer(mouse_x, mouse_y, "Instances", objLight);
 		flashlight.worldLight = false;
 	}
 }

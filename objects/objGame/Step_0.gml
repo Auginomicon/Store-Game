@@ -9,3 +9,5 @@ if (keyboard_check_pressed(vk_escape)) {
 		}
 	}
 }
+
+if(keyboard_check_pressed(ord("F"))) { objFusebox.image_index = 2; }

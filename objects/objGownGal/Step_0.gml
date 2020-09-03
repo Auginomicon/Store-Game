@@ -31,6 +31,9 @@ switch (state) {
 			if(currentLocation != objGame.location) {
 				mp_grid_path(global.grid, path, x, y, 2342, 1379, 1)
 			}
+			if (objPlayer.isSafe) {
+				instance_destroy();
+			}
 		}
 	break;
 }

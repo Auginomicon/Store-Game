@@ -40,7 +40,6 @@ function UseItem() {
 			
 			show_debug_message(string(item) +" dropped.");
 			objPlayer.inventory[slot] = "Empty";
-			//TODO: Create an instance on the ground of that item. (MAYBE DO THIS. IDK YET)
 			var dItem = -1;
 			switch(item) {
 				case "Energy Bar":
@@ -66,6 +65,18 @@ function UseItem() {
 				case "Sanity Soda":
 					dItem = sprSanitySoda;
 				break;
+				
+				case "Key":
+					dItem = sprKey;
+				break;
+				
+				case "Garbage":
+					dItem = sprGarbage;
+				break;
+				
+				case "Lock":
+					dItem = sprLock;
+				break;
 			}
 			
 			//Drops the item at your feet
@@ -74,6 +85,4 @@ function UseItem() {
 			inst.sprite_index = dItem;
 		}
 	}
-
-
 }

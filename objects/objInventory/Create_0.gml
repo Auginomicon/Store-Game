@@ -4,10 +4,6 @@
 showInventory = false;
 scale = 1;
 
-//Gui Variables
-guiWidth = display_get_gui_width();
-guiHeight = display_get_gui_height();
-
 //Inventory Variables
 inventoryWidth = 174;
 inventoryHeight = 300;
@@ -16,8 +12,8 @@ inventorySprite = sprInventory;
 index = 0;
 
 //UI Variables
-invUIX = (guiWidth * 0.30) - (inventoryWidth * scale);
-invUIY = (guiHeight * 0.45) - (inventoryHeight * scale);
+invUIX = (global.guiWidth * 0.30) - (inventoryWidth * scale);
+invUIY = (global.guiHeight * 0.45) - (inventoryHeight * scale);
 
 //Application Varibales
 invAppX = invUIX + (inventoryWidth * 0.14);

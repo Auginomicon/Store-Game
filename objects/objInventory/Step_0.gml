@@ -105,9 +105,3 @@ if (showInventory) {
 		break
 	}
 }
-else {
-	with (objPlayer) {
-		state = pStates.Free;
-	}
-	index = 0;
-}

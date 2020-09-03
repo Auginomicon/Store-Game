@@ -14,8 +14,8 @@ window_mouse_set(window_get_width() / 2, window_get_height() / 2);
 debug = false;
 
 //Variables for room transition fade
-guiWidth = display_get_gui_width();
-guiHeight = display_get_gui_height();
+global.guiWidth = display_get_gui_width();
+global.guiHeight = display_get_gui_height();
 blackAlpha = 0;
 doTransition = false;
 

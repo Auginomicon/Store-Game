@@ -10,6 +10,9 @@ maxEnergy = 100;
 walkSpeed = 3;
 name = objGame.playerName;
 
+jobProgression = 0;
+maxJobProgression = 100;
+
 enum pStates {
 	Free,
 	Idle,
@@ -34,6 +37,7 @@ canMove = true;
 state = pStates.Free;
 lastState = state;
 idleNum = 1;
+isSafe = false;
 
 //Variables for speach
 portraitIndex = 1;

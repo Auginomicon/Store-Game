@@ -1,9 +1,9 @@
 /// @description
 if (room == rmStore and !global.cameraSystem) {
-	draw_sprite(sprPlayerUI, 0, guiWidth * 0.02, guiHeight * 0.02);
-	draw_sprite_ext(sprPlayerUI, 2, guiWidth * 0.02, guiHeight * 0.02, objPlayer.energy / objPlayer.maxEnergy, 1, 0, c_white, 1);
-	draw_sprite(sprPlayerUI, 1, guiWidth * 0.02, guiHeight * 0.055);
-	draw_sprite_ext(sprPlayerUI, 3, guiWidth * 0.02, guiHeight * 0.055, objPlayer.sanity / objPlayer.maxSanity, 1, 0, c_white, 1);
+	draw_sprite(sprPlayerUI, 0, global.guiWidth * 0.02, global.guiHeight * 0.02);
+	draw_sprite_ext(sprPlayerUI, 2, global.guiWidth * 0.02, global.guiHeight * 0.02, objPlayer.energy / objPlayer.maxEnergy, 1, 0, c_white, 1);
+	draw_sprite(sprPlayerUI, 1, global.guiWidth * 0.02, global.guiHeight * 0.055);
+	draw_sprite_ext(sprPlayerUI, 3, global.guiWidth * 0.02, global.guiHeight * 0.055, objPlayer.sanity / objPlayer.maxSanity, 1, 0, c_white, 1);
 }
 
 if (doTransition) {
@@ -27,7 +27,7 @@ if (doTransition) {
 	
 	//Draw the fade
 	draw_set_alpha(blackAlpha);
-	draw_rectangle_color(0, 0, guiWidth, guiHeight, c_black, c_black, c_black, c_black, false);
+	draw_rectangle_color(0, 0, global.guiWidth, global.guiHeight, c_black, c_black, c_black, c_black, false);
 
 	draw_set_alpha(1);
 }

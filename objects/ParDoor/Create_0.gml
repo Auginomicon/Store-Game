@@ -1,4 +1,6 @@
 /// @description Initialize Variables
+
+// For transition doors only
 event_inherited();
 
 isDoor = true;

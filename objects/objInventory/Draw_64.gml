@@ -2,7 +2,7 @@
 
 if (showInventory) {
 	draw_set_alpha(0.6);
-	draw_rectangle_color(0, 0, guiWidth, guiHeight, c_black, c_black, c_black, c_black, false);
+	draw_rectangle_color(0, 0, global.guiWidth, global.guiHeight, c_black, c_black, c_black, c_black, false);
 	draw_set_alpha(1);
 	
 	draw_sprite(inventorySprite, index, invUIX, invUIY);
@@ -43,6 +43,9 @@ if (showInventory) {
 						case "Storage Box": slotNum = 5; break;
 						case "Candy Bar": slotNum = 4; break;
 						case "Flashlight": slotNum = 6; break;
+						case "Key": slotNum = 7; break;
+						case "Garbage": slotNum = 8; break;
+						case "Lock": slotNum = 9; break;
 					}
 					if (i == objPlayer.equipped[1] && (string(objPlayer.inventory[i]) != "Empty") && objPlayer.equipped[0] != -1) {
 						sSlotColor = c_gray;

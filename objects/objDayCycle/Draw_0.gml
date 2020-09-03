@@ -9,14 +9,16 @@ if (surface_exists(surface)) {
 	//Drawing the time of day
 	draw_set_color(lightColor);
 	draw_set_alpha(darkness);
-	draw_rectangle(0, 0, guiWidth, guiHeight, false);
+	draw_rectangle(0, 0, global.guiWidth, global.guiHeight, false);
 	
 	if (hours >= 1.5) {
 		gpu_set_blendmode(bm_subtract);
 		
 		with(objLight) {
 			if (worldLight) {
-				draw_sprite(sprLight, subimg, x - cx + shake, y - cy + shake);
+				if (working) {
+					draw_sprite(sprLight, subimg, x - cx + shake, y - cy + shake);
+				}
 			}
 			else {
 				draw_circle_color(mouse_x - cx, mouse_y - cy, 42, c_white, c_white, false);
@@ -35,7 +37,7 @@ if (surface_exists(surface)) {
 }
 else {
 	//Setting the target surface
-	surface = surface_create(guiWidth, guiHeight);
+	surface = surface_create(global.guiWidth, global.guiHeight);
 	
 	//Setting the target surface
 	surface_set_target(surface);
@@ -43,7 +45,7 @@ else {
 	//Drawing the time of dat
 	draw_set_color(lightColor);
 	draw_set_alpha(darkness);
-	draw_rectangle(0, 0, guiWidth, guiHeight, false);
+	draw_rectangle(0, 0, global.guiWidth, global.guiHeight, false);
 	
 	//Rest values
 	surface_reset_target();

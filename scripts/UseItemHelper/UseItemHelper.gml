@@ -18,6 +18,7 @@ function UseItemHelper() {
 				}
 			}
 			
+			//Checks if the equipped was used. If it has been then resets the equipped array
 			if (objPlayer.inventory[slot] == objPlayer.equipped[0] and objPlayer.equipped[1] != -1) {
 				objPlayer.equipped[0] = -1;
 				objPlayer.equipped[1] = -1;
@@ -65,6 +66,7 @@ function UseItemHelper() {
 				}
 			}
 			
+			//Checks if the equipped was used. If it has been then resets the equipped array
 			if (objPlayer.inventory[slot] == objPlayer.equipped[0] and objPlayer.equipped[1] != -1) {
 				objPlayer.equipped[0] = -1;
 				objPlayer.equipped[1] = -1;
@@ -75,6 +77,45 @@ function UseItemHelper() {
 		
 		case "Flashlight": // Toggles the flashlight
 			global.isOn = !global.isOn;
+		break;
+		
+		case "Garbage": // Trash
+			if (collision_circle(objPlayer.x, objPlayer.y, objPlayer.radius, objDumpster, false, true)) {
+				//Checks if the equipped was used. If it has been then resets the equipped array
+				if (objPlayer.inventory[slot] == objPlayer.equipped[0] and objPlayer.equipped[1] != -1) {
+					objPlayer.equipped[0] = -1;
+					objPlayer.equipped[1] = -1;
+				}
+			
+				objPlayer.inventory[slot] = "Empty";
+				show_debug_message("Garbage thrown away");
+				with(objPlayer) {
+					jobProgression += 7;
+					sanity -= 5;
+				}
+			}
+			// TODO: Should this be needed?
+			//else {
+			//	// Toggle the inventory if needed
+			//	if (objInventory.showInventory) {
+			//		objInventory.showInventory = false;
+			//	}
+			//	script_execute(NewTextbox, "I need to throw this out in the dumpster.", 1);
+			//}
+		break;
+		
+		case "Lock":
+			if (point_in_rectangle(objPlayer.x, objPlayer.y, objFusebox.x - 16, objFusebox.y, objFusebox.x + 16, objFusebox.y + 32)) {
+				objFusebox.image_index = 1;
+				
+				//Checks if the equipped was used. If it has been then resets the equipped array
+				if (objPlayer.inventory[slot] == objPlayer.equipped[0] and objPlayer.equipped[1] != -1) {
+					objPlayer.equipped[0] = -1;
+					objPlayer.equipped[1] = -1;
+				}
+			
+				objPlayer.inventory[slot] = "Empty";
+				}
 		break;
 	}
 }
