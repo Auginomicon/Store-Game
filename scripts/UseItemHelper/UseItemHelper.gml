@@ -117,5 +117,12 @@ function UseItemHelper() {
 				objPlayer.inventory[slot] = "Empty";
 				}
 		break;
+		
+		case "Mop": //Clean up liquid messes
+			show_debug_message("Mopping Toggled");
+			with(objPlayer) {
+				isMopping = !isMopping;
+			}
+		break;
 	}
 }

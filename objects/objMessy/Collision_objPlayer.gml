@@ -23,3 +23,12 @@ if (objPlayer.input_interact and (image_index == 0 or image_index == 1)) {
 	objPlayer.sanity -= 5;
 	objPlayer.jobProgression += 5;
 }
+else if (objPlayer.isMopping and objPlayer.sprite_index = objPlayer.sprite[5] and (image_index == 2 or image_index == 3)) {
+	image_alpha -= 0.01;
+	if (image_alpha <= 0) {
+		with(objPlayer) {
+			jobProgression += 5;
+		}
+		instance_destroy();
+	}
+}

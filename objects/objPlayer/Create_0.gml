@@ -38,6 +38,7 @@ state = pStates.Free;
 lastState = state;
 idleNum = 1;
 isSafe = false;
+isMopping = false;
 
 //Variables for speach
 portraitIndex = 1;

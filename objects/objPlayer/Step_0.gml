@@ -80,6 +80,7 @@ switch(state) {
 			}
 		}
 		
+		
 		//Dialog Boxes for NPCs
 		if (input_interact) {
 			if (activeTextbox == noone) {

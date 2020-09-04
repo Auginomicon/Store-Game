@@ -1,17 +1,16 @@
 /// @description
 event_inherited();
 
+//Variables
 walkspd = 1;
 spd = walkspd
 runSpd = 8;
+
+//Path variables
 path = path_add();
+secondClosestTransition = instance_nth_nearest(x, y, objTransition, 2);
 
-enum enemyState {
-	Free,
-	Chase,
-	Run
-}
-
+//State
 state = enemyState.Free;
 
 //Other Variables
