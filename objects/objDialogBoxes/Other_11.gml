@@ -5,7 +5,7 @@ if (is_array(scripts)) {
 	var pageScript = scripts[page];
 	if (choiceDialog) { pageScript = pageScript[choice]; }
 	if (pageScript != -1) {
-		var len = array_length_1d(pageScript);
+		var len = array_length(pageScript);
 		if (len == 1) { script_execute(pageScript[0]); }
 		else {
 			var args = array_create(len - 1, 0);

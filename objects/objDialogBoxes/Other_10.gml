@@ -14,3 +14,4 @@ else {
 	choiceDialog = true;
 }
 counter = 0;
+choice = 0;

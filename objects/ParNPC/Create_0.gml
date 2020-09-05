@@ -12,6 +12,8 @@ moveY = 0;
 //Other Variables
 canMove = true;
 isNPC = true;
+currentLocation = 1;
+path = path_add();
 
 //Variables for speach
 portraitIndex = 0;
@@ -21,6 +23,7 @@ message[0] = "Hello, stranger!";
 speakers = [id];
 nextLine = [0];
 scripts = -1;
+
 /* ~~~~~~~IMPORTANT~~~~~~~
 	The format for dialog choices is as follws.
 	The choices will be in an array inside the message array.

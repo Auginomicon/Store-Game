@@ -20,6 +20,7 @@ if ((keyboard_check_pressed(ord("E")) or selected) and !global.gamePaused) {
 		else page = line;
 		
 		selected = false;
+		
 		event_perform(ev_other, ev_user0);
 	}
 	else {

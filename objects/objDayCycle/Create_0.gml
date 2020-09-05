@@ -7,7 +7,7 @@ day = 1;
 
 //Seconds per step
 timeIncrement = 50;
-timePaused = true;
+timePaused = false;
 
 //Color Variables
 maxDarkness = 0.85;
@@ -23,3 +23,5 @@ enum phase {
 //Other variables
 surface = -1;
 flashlight = noone;
+
+alarm[0] = 1 * room_speed;

@@ -6,7 +6,7 @@
     "path": "folders/Scripts/Dialog and Text boxes.yy",
   },
   "resourceVersion": "1.0",
-  "name": "CreateDialogbox",
+  "name": "CreateDialogBox",
   "tags": [],
   "resourceType": "GMScript",
 }

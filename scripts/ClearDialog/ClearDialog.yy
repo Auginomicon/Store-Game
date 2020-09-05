@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Meta",
-    "path": "folders/Scripts/Meta.yy",
+    "name": "Dialog and Text boxes",
+    "path": "folders/Scripts/Dialog and Text boxes.yy",
   },
   "resourceVersion": "1.0",
-  "name": "instance_nth_nearest",
+  "name": "ClearDialog",
   "tags": [],
   "resourceType": "GMScript",
 }

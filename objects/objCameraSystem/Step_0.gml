@@ -6,5 +6,8 @@ if (point_in_rectangle(objPlayer.x, objPlayer.y, x - (sprite_width * 0.5), y, x 
 	if (objPlayer.input_interact) {
 		show_debug_message("Toggle Camera Systems");
 		global.cameraSystem = !global.cameraSystem;
+		with(objPlayer) {
+			facing = -1;
+		}
 	}
 }

@@ -19,7 +19,13 @@ if(keyboard_check_pressed(ord("F"))) {
 
 if(keyboard_check_pressed(ord("V"))) { 
 	with(objFusebox) {
-		image_index = 0;
+		image_index = 2;
 		event_perform(ev_other, ev_user1);
+	}	
+}
+
+if(keyboard_check_pressed(ord("L"))) { 
+	with(objManager) {
+		event_perform(ev_other, ev_user0);
 	}	
 }
