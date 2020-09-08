@@ -90,7 +90,7 @@ switch(state) {
 					if (inst.isNPC) {
 						canMove = false;
 						with(inst) {
-							var tbox = CreateDialogbox(message, speakers, nextLine, scripts);
+							var tbox = CreateDialogbox(message, speakers, nextLine, scripts, portraitNums);
 							canMove = false;
 							moveX = 0;
 							moveY = 0;

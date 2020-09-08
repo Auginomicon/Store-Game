@@ -46,6 +46,6 @@ message[28] = "";
 speakers = [id, id, objPlayer, id, id, id, objPlayer, id, id, id, id, objPlayer, id, id, id, id, id, id, id, id, id, objPlayer, id, id, id, id, id, id, id];
 nextLine = [1, 2, [3, 4, 5], 8, 8, 6, 7, 8, 9, 10, 11, [12, 13, 14], 15, 15, 15, 16, 17, 18, 19, 20, 21, [22, 24, 25, 26], 23, 27, 27, 27, -1, 21, 21];
 scripts = [-1, -1, [-1, -1, -1], -1, -1, -1, -1, -1, -1, -1, -1, [-1, -1, -1], -1, -1, -1, -1, -1, -1, [VendItem, "Sanity Soda", 0], -1,-1, [-1, -1, -1, -1], -1, -1, [ChangeVariable, id, "name", "Abby"], -1 ,[ClearDialog, 1, objManager], -1];
-
+portraitNums = [4, 6, 0, 8, 9, 7, 1, 6, 4, 9, 10, 0, 6, 8, 10, 6, 4, 4/*Think face*/, 4, 4, 6, 4, 9, 5, 4, 6, 9, 4, 0];
 //Other Variables
 startPathing = false;

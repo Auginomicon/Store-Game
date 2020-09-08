@@ -12,6 +12,7 @@ switch (state) {
 		nextLine = [0, [-1, -1], -1];
 		//scripts = [-1,[[ChangeVariable, objPlayer.id, "inventory", 1],-1], -1];
 		scripts = [-1,[[VendItem, myItem, myCost],-1], -1];
+		portraitNums = [0, 0, 0];
 		
 	break;
 	
@@ -30,5 +31,6 @@ switch (state) {
 		}
 		nextLine = [-1];
 		scripts = -1;
+		portraitNums[0] = 1;
 	break;
 }

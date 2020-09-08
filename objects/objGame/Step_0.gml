@@ -12,14 +12,14 @@ if (keyboard_check_pressed(vk_escape)) {
 
 if(keyboard_check_pressed(ord("F"))) { 
 	with(objFusebox) {
-		image_index = 1;
+		image_index = 2;
 		event_perform(ev_other, ev_user0);
 	}	
 }
 
 if(keyboard_check_pressed(ord("V"))) { 
 	with(objFusebox) {
-		image_index = 2;
+		image_index = 1;
 		event_perform(ev_other, ev_user1);
 	}	
 }

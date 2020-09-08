@@ -11,6 +11,7 @@ switch (state) {
 		speakers = [objPlayer, objPlayer, objPlayer];
 		nextLine = [0, [-1, -1, -1], -1];
 		scripts = [-1, [[VendItem, item1, cost1], [VendItem, item2, cost2], -1], -1];
+		portraitNums = [0, 0, 0];
 		
 	break;
 	
@@ -29,5 +30,6 @@ switch (state) {
 		}
 		nextLine = [-1];
 		scripts = -1;
+		portraitNums[0] = 1;
 	break;
 }

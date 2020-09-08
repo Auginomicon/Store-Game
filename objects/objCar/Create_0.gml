@@ -5,4 +5,4 @@ isNPC = true;
 //Communication Variables
 portraitIndex = -1;
 voice = sndVoice;
-name = "Corkboard";
+name = "Car";

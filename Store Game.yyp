@@ -9,6 +9,7 @@
     {"id":{"name":"sprGownGal","path":"sprites/sprGownGal/sprGownGal.yy",},"order":0,},
     {"id":{"name":"sprCashRegister","path":"sprites/sprCashRegister/sprCashRegister.yy",},"order":14,},
     {"id":{"name":"objMessy","path":"objects/objMessy/objMessy.yy",},"order":4,},
+    {"id":{"name":"sprJanitorScene01","path":"sprites/sprJanitorScene01/sprJanitorScene01.yy",},"order":1,},
     {"id":{"name":"sprGownGalWalkUp","path":"sprites/sprGownGalWalkUp/sprGownGalWalkUp.yy",},"order":1,},
     {"id":{"name":"sprFlashlight","path":"sprites/sprFlashlight/sprFlashlight.yy",},"order":2,},
     {"id":{"name":"sprGownGalWalkLeft","path":"sprites/sprGownGalWalkLeft/sprGownGalWalkLeft.yy",},"order":2,},
@@ -62,6 +63,7 @@
     {"id":{"name":"sprCandyBar","path":"sprites/sprCandyBar/sprCandyBar.yy",},"order":5,},
     {"id":{"name":"sprEnergyBar","path":"sprites/sprEnergyBar/sprEnergyBar.yy",},"order":3,},
     {"id":{"name":"sprCCTVOverlay","path":"sprites/sprCCTVOverlay/sprCCTVOverlay.yy",},"order":0,},
+    {"id":{"name":"sprJanitorScene1","path":"sprites/sprJanitorScene1/sprJanitorScene1.yy",},"order":0,},
     {"id":{"name":"sprMalePlayerWalkLeftFlashlight","path":"sprites/sprMalePlayerWalkLeftFlashlight/sprMalePlayerWalkLeftFlashlight.yy",},"order":1,},
     {"id":{"name":"sprDecor","path":"sprites/sprDecor/sprDecor.yy",},"order":2,},
     {"id":{"name":"sprVendingMachine","path":"sprites/sprVendingMachine/sprVendingMachine.yy",},"order":6,},
@@ -221,6 +223,7 @@
     {"folderPath":"folders/Sprites/Player/CCTV.yy","order":6,"resourceVersion":"1.0","name":"CCTV","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/Meta.yy","order":10,"resourceVersion":"1.0","name":"Meta","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/Inventory.yy","order":11,"resourceVersion":"1.0","name":"Inventory","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/Entities/Store/Janitor Closet Scenes.yy","order":16,"resourceVersion":"1.0","name":"Janitor Closet Scenes","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":461609314234257646,"resourceVersion":"1.0","name":"audiogroup_default","resourceType":"GMAudioGroup",},

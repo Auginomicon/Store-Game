@@ -58,7 +58,8 @@ switch (state) {
 			
 			// When the player is safe in the janitors
 			if (objPlayer.isSafe) {
-				instance_destroy();
+				//instance_destroy();
+				path_speed = 0
 			}
 		}
 	break;
