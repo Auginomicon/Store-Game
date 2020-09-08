@@ -23,8 +23,6 @@ if (!choiceDialog) {
 
 	//Draw the name 
 	draw_text(nameTextX, nameTextY, name);
-	draw_set_color(c_white);
-	draw_text(nameTextX + 1, nameTextY + 1, name);
 
 	//Draw the text
 	draw_set_halign(fa_left);
@@ -52,7 +50,7 @@ if (!choiceDialog) {
 	}
 	var substr = string_copy(textWrapped, 1, counter);
 
-	draw_text_color(textX, textY, substr, c_white, c_white, c_white, c_white, 1);
+	draw_text_color(textX, textY, substr, c_black, c_black, c_black, c_black, 1);
 }
 else {
 	//Draw a box that will be the size of the text options.
@@ -62,7 +60,7 @@ else {
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
 	
-	var c = c_white;
+	var c = c_black;
 	var i = 0;
 	var yAdd = 0;
 	repeat(msgArrayLength) {

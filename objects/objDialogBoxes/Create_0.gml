@@ -43,7 +43,7 @@ voice = sndVoice;
 name = "";
 
 choice = 0;
-choiceCol = c_white;
+choiceCol = c_black;
 messageCol = c_gray;
 diagX1 = global.ResolutionW * 0.05;
 diagX2 = global.ResolutionW * 0.90;

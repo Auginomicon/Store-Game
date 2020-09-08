@@ -8,10 +8,14 @@ portraitIndex = -1;
 voice = sndVoice;
 name = "Corkboard";
 
-message[0] = "This must be the To-Do List.";
-message[1] = "Hey, this is Abby! These will be the things you will have to do during your shift!";
-message[2] = "You gotta... Clean up the trash in the store, restock the shelves and stay happy! :)";
-message[3] = "Oh and I'll give you some extra money if you clean up the trash in the back.. I think a dog ripped open a bag or something."
-speakers = [objPlayer, objPlayer, objPlayer, objPlayer];
-nextLine = [0, 2, 3, -1];
+message[0] = "Here's the corkboard.";
+message[1] = ["Bonus Jobs!","Contacts","Add something later", "Leave"]; //TODO: Add something here
+message[2] = "Hey! The bonus job tonight is putting away trash bags in the back! -Abby";
+message[3] = "Here's the " +objManager.name +"'s phone number.";
+message[4] = "Something here"; //TODO: Add something here
+message[5] = "hhh";
+
+speakers = [objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer];
+nextLine = [0, [2, 3, 4,- 1], 1, 1, 1, -1];
+portraitNums = [0, 0, 0, 3, 0, 0];
 scripts = -1;
