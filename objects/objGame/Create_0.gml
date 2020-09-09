@@ -26,17 +26,27 @@ transportX = 0;
 transportY = 0;
 playerFacingAfter = -1;
 
-//Other variables
-global.isOn = false;
-global.cameraSystem = false;
-playerName = "Player";
-
 /*
 	Locations
 	1 - Inside the Store
 	2 - Outside in the front of the store
 	3 - Outside in the back of the store
 	4 - Bathrooms
+*/
+
+//Other variables
+global.isOn = false;
+global.cameraSystem = false;
+playerName = "Player";
+global.nightStarted = false;
+global.bonusTask = 1;
+
+/*
+	Bonus Tasks
+	1 - Throw out garbage
+	2 - Restock Shelves
+	3 - Mopping
+	4 - Clean up trash on the ground
 */
 
 //Enum for direction

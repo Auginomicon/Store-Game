@@ -14,7 +14,6 @@ currentLocation = 2;
 portraitIndex = 0;
 voice = sndVoice;
 name = "Larry";
-spd = 20;
 
 message[0] = "Hiya, stranger!";
 message[1] = "I'm your co-worker for the night! You can call me Larry!";

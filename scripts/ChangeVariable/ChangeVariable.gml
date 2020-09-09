@@ -8,6 +8,4 @@ function ChangeVariable(argument0, argument1, argument2) {
 	with (argument0) {
 		variable_instance_set(argument0, argument1, argument2);
 	}
-
-
 }

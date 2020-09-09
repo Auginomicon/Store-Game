@@ -29,3 +29,7 @@ if(keyboard_check_pressed(ord("L"))) {
 		event_perform(ev_other, ev_user0);
 	}	
 }
+
+if(keyboard_check_pressed(ord("I"))) { 
+	event_perform(ev_alarm, 0)
+}

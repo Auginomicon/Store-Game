@@ -10,7 +10,7 @@ input_use_item = mouse_check_button_pressed(mb_left);
 
 switch(state) {
 	case pStates.Free:
-		if (global.gamePaused or isSafe or objInventory.showInventory) {state = pStates.Paused; }
+		if (global.gamePaused or isSafe or objInventory.showInventory or instance_exists(objTextBoxes)) {state = pStates.Paused; }
 	
 		//Reset the variables once there is no more input.
 		moveX = 0;
@@ -153,4 +153,8 @@ switch(state) {
 
 if (energy <= maxEnergy) {
 	energy += 0.03;
+}
+
+if (jobProgression >= maxJobProgression) {
+	jobProgression = maxJobProgression;
 }

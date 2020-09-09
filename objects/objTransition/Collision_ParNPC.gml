@@ -4,4 +4,5 @@ with (other) {
 	y = other.transportY;
 	path_clear_points(path);
 	currentLocation = other.newLocation;
+	secondClosestTransition = instance_nth_nearest(x, y, objTransition, 2);
 }
