@@ -1,5 +1,5 @@
 /// @description Spawn in enemies
-var rng = irandom(9) +1;
+var rng = 1//irandom(9) +1;
 
 switch(rng) {
 	case 1:
