@@ -31,6 +31,10 @@ if (instance_exists(objGownGal)) {
 			}
 		}
 	}
+	else {
+		// Sprite of looking out into the hallway
+		draw_sprite(sprJanitorScene1, 0, global.guiWidth * 0.05, 0);
+	}
 }
 else {
 	// Sprite of looking out into the hallway

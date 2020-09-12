@@ -52,6 +52,23 @@ if(keyboard_check_pressed(ord(9))) {
 	currentCam = 9;
 }
 
+// Click on the buttons to go through the cameras
+mouseX = device_mouse_x_to_gui(0);
+mouseY = device_mouse_y_to_gui(0);
+// Check if the previous cam button is pressed
+if (point_in_rectangle(mouseX, mouseY, global.guiWidth * 0.328, global.guiHeight * 0.4, global.guiWidth * 0.328 + 64, global.guiHeight * 0.4 + 64)) {
+	if(mouse_check_button_pressed(mb_left)) {
+		currentCam--;
+		if (currentCam < 0) currentCam = 9;
+	}
+}
+if (point_in_rectangle(mouseX, mouseY, global.guiWidth * 0.38, global.guiHeight * 0.4, global.guiWidth * 0.38 + 64, global.guiHeight * 0.4 + 64)) {
+	if(mouse_check_button_pressed(mb_left)) {
+		currentCam++;
+		if (currentCam > 9) currentCam = 0;
+	}
+}
+
 switch(currentCam) {
 	case 0: //Office
 		x = 1093;

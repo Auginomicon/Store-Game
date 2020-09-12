@@ -1,2 +1,2 @@
-/// @description Activate the alarm here
+/// @description Start running
 spd = runSpd;

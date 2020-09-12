@@ -63,7 +63,7 @@ if (showInventory) {
 			//Create a clickable section on the fifth application
 			if (point_in_rectangle(mouseX, mouseY, invAppX + (buffer), invAppY + buffer, invAppX + appSize + (buffer), invAppY + appSize + buffer)) {
 				if (mouse_check_button_pressed(mb_left)) {
-					show_debug_message("Web Search app clicked");
+					show_debug_message("Settings clicked");
 					index = 5;
 				}
 			}
@@ -71,7 +71,7 @@ if (showInventory) {
 			//Create a clickable section on the sixth application
 			if (point_in_rectangle(mouseX, mouseY, invAppX + (buffer * 2), invAppY + buffer, invAppX + appSize + (buffer * 2), invAppY + appSize + buffer)) {
 				if (mouse_check_button_pressed(mb_left)) {
-					show_debug_message("messages app clicked");
+					show_debug_message("Job App");
 					index = 6;
 				}
 			}
@@ -100,8 +100,28 @@ if (showInventory) {
 			
 		break;
 		
-		case 2: //Contatact Book
+		case 2: // Piggy Bank
+			// Do nothing
+		break;
 		
+		case 3: // Contacts
+			// TODO: create a dialog with the contact
+		break;
+		
+		case 4: // Flappy Duck
+			// Do Nothing
 		break
+		
+		case 5: // Settings
+			if (point_in_rectangle(mouseX, mouseY, invUIX + (inventoryWidth * 0.2), invUIY + (inventoryHeight * 0.42), invUIX + (inventoryWidth * 0.2) + 102, invUIY + (inventoryHeight * 0.42) + 30)) {
+				if (mouse_check_button_pressed(mb_left)) {
+					global.silent = !global.silent;
+				}
+			}
+		break;
+		
+		case 6: // Job App
+			// Do nothing
+		break;
 	}
 }

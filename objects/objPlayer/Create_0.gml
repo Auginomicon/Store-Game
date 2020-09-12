@@ -42,7 +42,7 @@ isMopping = false;
 
 //Variables for speach
 portraitIndex = 1;
-voice = sndVoice;
+voice = sndVoice2;
 name = "Player";
 radius = 32;
 activeTextbox = noone;

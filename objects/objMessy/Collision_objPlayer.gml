@@ -5,7 +5,10 @@ with(objPlayer) {
 // Will check if the the player interacts with the trash piles
 if (objPlayer.input_interact and (image_index == 0 or image_index == 1)) {
 	if (!global.nightStarted) {
-		if(!instance_exists(objTextBoxes)) NewTextbox("Hmm maybe I should clock in first", 1);
+		if(!instance_exists(objTextBoxes)) {
+			NewTextbox("Hmm maybe I should clock in first", 1);
+			objPlayer.canMove = false;
+		}
 	}
 	else {
 		// Loop through the inventory array

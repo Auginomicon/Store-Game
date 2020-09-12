@@ -3,25 +3,39 @@ if (global.gamePaused) { exit; }
 if (objGame.doTransition) { spd = 0; }
 switch (state) {
 	case enemyState.Free:
+		
+		// When the player is lower than 50 sanity, the gown gal's head will twitch
+		if (objPlayer.sanity <= 55) {
+			sprite_index = sprGownGalIdle2;
+			if (alarm[1] == -1) {
+				alarm[1] = choose(1, 1*room_speed);
+			}
+		}
+		else if (objPlayer.sanity <= 75){
+			sprite_index = sprGownGalIdle1;
+		}
+		
+		// After spawning, gown gal will move to another location.
+		if (alarm[2] == -1) {
+			alarm[2] = 30 * room_speed;
+		}
+		
 		//Chase player if they are in range
 		if (distance_to_object(objPlayer) < range) {
 			state = enemyState.Chase;
 		}
-		
-		//TODO: Change this to the idle sprite.
-		sprite_index = sprGownGal;
-		
 	break;
 	
 	case enemyState.Run:
 		spd = runSpd;
-		//TODO: Change sprite to running
-		
 	case enemyState.Chase:
-		//Change to running speed if the player doesn't hide in the closet soon enough.
-		//if (alarm[0] == -1) {
-		//	alarm[0] = (room_speed * 12);
-		//}
+		 //Change to running speed if the player doesn't hide in the closet soon enough.
+		if (alarm[0] == -1) {
+			alarm[0] = (room_speed * 12);
+		}
+		
+		//Stops the alarm from going off
+		alarm[2] = -1;
 		
 		// Get the player's location on the grid.
 		var cx = (objPlayer.x / 32) * 32;
@@ -53,28 +67,26 @@ switch (state) {
 					// Will head to the second closest transition from the initial transition
 					mp_grid_path(global.grid, path, x, y, secondClosestTransition.x, secondClosestTransition.y, 1);
 				}
-				
+			}
+			
+			// Get the correct sprite for movement
+			if(direction >= 306 or direction <= 45) {
+				sprite_index = sprGownGalWalkRight; //right
+			}
+			if (direction >= 46 and direction <= 135) {
+				sprite_index = sprGownGalWalkUp; //up
+			}
+			if (direction >= 136 and direction <=225) {
+				sprite_index = sprGownGalWalkLeft; //left
+			}
+			if (direction >= 226 and direction <= 305) {
+				sprite_index = sprGownGalWalkDown; //down
 			}
 			
 			// When the player is safe in the janitors
 			if (objPlayer.isSafe) {
-				//instance_destroy();
 				path_speed = 0
 			}
 		}
 	break;
-}
-
-// Get the correct sprite for movement
-if(direction >= 306 or direction <= 45) {
-	sprite_index = sprGownGalWalkRight; //right
-}
-if (direction >= 46 and direction <= 135) {
-	sprite_index = sprGownGalWalkUp; //up
-}
-if (direction >= 136 and direction <=225) {
-	sprite_index = sprGownGalWalkLeft; //left
-}
-if (direction >= 226 and direction <= 305) {
-	sprite_index = sprGownGalWalkDown; //down
 }

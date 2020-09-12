@@ -1,10 +1,10 @@
 /// @description Spawn in enemies
-var rng = 1//irandom(9) +1;
+var rng = irandom(9) +1;
 
 switch(rng) {
 	case 1:
 		// Spawn the gown gal
-		if(instance_exists(objGownGal)) { 
+		if(!instance_exists(objGownGal)) { 
 			var spawn = GetSpawnLocations();
 			var inst = instance_create_layer(spawn[0], spawn[1], "Instances", objGownGal);
 			inst.currentLocation = spawn[2];
@@ -12,7 +12,13 @@ switch(rng) {
 	break;
 	
 	case 2:
-		
+		// Spawn the tall guy
+		if(!instance_exists(objTallGuy)) { 
+			var spawnX = choose(5799, 3061, 4458);
+			var spawnY = 2372;
+			var inst = instance_create_layer(spawnX, spawnY, "Instances", objTallGuy);
+			inst.currentLocation = 2;
+		}
 	break;
 	
 	case 3:

@@ -9,7 +9,7 @@
     "name": "sprBoundingBox",
     "path": "sprites/sprBoundingBox/sprBoundingBox.yy",
   },
-  "persistent": true,
+  "persistent": false,
   "parentObjectId": {
     "name": "ParDepth",
     "path": "objects/ParDepth/ParDepth.yy",

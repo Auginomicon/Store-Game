@@ -12,7 +12,7 @@ switch(state) {
 	case pStates.Free:
 		if (global.gamePaused or isSafe or objInventory.showInventory or instance_exists(objTextBoxes)) {state = pStates.Paused; }
 	
-		//Reset the variables once there is no more input.
+		// Reset the variables once there is no more input.
 		moveX = 0;
 		moveY = 0;
 		
@@ -22,7 +22,7 @@ switch(state) {
 			moveX = (input_right - input_left) * walkSpeed;
 		}
 		
-		//Will allow the player to 'run'
+		// Will allow the player to 'run'
 		if (input_run) {
 			if (energy >= 0 and (moveX != 0 or moveY != 0)) {
 				energy -= 0.3;
@@ -36,8 +36,7 @@ switch(state) {
 			walkSpeed = 3;
 		}
 
-		//Set the correct facing variable to the player for transition 
-		//	TODO: Check if this can be implemented into the NPC's this can be used for backstabs as a rogue perk.
+		// Set the correct facing variable to the player for transition 
 		if (moveX != 0) {
 			switch(sign(moveX)) {
 				case 1: facing = dir.right; break;
@@ -80,7 +79,6 @@ switch(state) {
 			}
 		}
 		
-		
 		//Dialog Boxes for NPCs
 		if (input_interact) {
 			if (activeTextbox == noone) {
@@ -99,16 +97,26 @@ switch(state) {
 					}
 					else if (inst.isItem) {
 						// Will execute if this item is able to be picked up.
-						// Check for an empty inventory slot
-						var i = 0;
-						repeat(4) {
-							if (inventory[i] == "Empty") {
-								inventory[i] = inst.name; 
-								//Removes the item from the game world
-								instance_destroy(inst);
-								break;
+						
+						// Can't pick stuff up until the night starts
+						if (!global.nightStarted) {
+							if (!instance_exists(objTextBoxes)) {
+								NewTextbox("I should clock in first", 1);
+								canMove = false;
 							}
-							i++;
+						}
+						else {
+							// Check for an empty inventory slot
+							var i = 0;
+							repeat(4) {
+								if (inventory[i] == "Empty") {
+									inventory[i] = inst.name; 
+									// Removes the item from the game world
+									instance_destroy(inst);
+									break;
+								}
+								i++;
+							}
 						}
 					}
 					else if (inst.isDoor) {
@@ -142,12 +150,12 @@ switch(state) {
 		break;
 		
 	case pStates.Paused:
-		//Setting these to 0 will stop the player from running in place.
+		// Setting these to 0 will stop the player from running in place.
 		moveX = 0;
 		moveY = 0;
 		
-		//Checks when the pause is stopped to resume play.
-		if(!global.gamePaused or !isSafe) { state = pStates.Free;}
+		// Checks when the pause is stopped to resume play.
+		if(!global.gamePaused or !isSafe) { state = pStates.Free; }
 	break;
 }
 

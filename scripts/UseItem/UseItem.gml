@@ -77,6 +77,10 @@ function UseItem() {
 				case "Lock":
 					dItem = sprLock;
 				break;
+				
+				case "Notebook":
+					dItem = sprNotebook;
+				break;
 			}
 			
 			//Drops the item at your feet

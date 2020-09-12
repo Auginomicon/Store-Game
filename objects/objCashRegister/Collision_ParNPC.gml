@@ -1,4 +1,4 @@
 /// @description
 with (objPlayer) {
-	jobProgression += 0.03;
+	jobProgression += 0.001;
 }

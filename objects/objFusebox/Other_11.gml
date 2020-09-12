@@ -9,3 +9,8 @@ for (var i = 0; i < array_length(elements); i++) {
 }
 objVendingMachine.state = MachineState.On;
 objSodaMachine.state = MachineState.On;
+objCameraSystem.state = MachineState.On;
+
+with(objPlayer) {
+	canMove = true;
+}

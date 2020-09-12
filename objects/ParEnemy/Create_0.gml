@@ -8,5 +8,6 @@ spd = walkspd
 enum enemyState {
 	Free,
 	Chase,
-	Run
+	Run,
+	Feared
 }

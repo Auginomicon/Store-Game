@@ -94,14 +94,6 @@ function UseItemHelper() {
 					sanity -= 5;
 				}
 			}
-			// TODO: Should this be needed?
-			//else {
-			//	// Toggle the inventory if needed
-			//	if (objInventory.showInventory) {
-			//		objInventory.showInventory = false;
-			//	}
-			//	script_execute(NewTextbox, "I need to throw this out in the dumpster.", 1);
-			//}
 		break;
 		
 		case "Lock":
@@ -122,6 +114,39 @@ function UseItemHelper() {
 			show_debug_message("Mopping Toggled");
 			with(objPlayer) {
 				isMopping = !isMopping;
+			}
+		break;
+		
+		case "Notebook":
+			if(objInventory.showInventory) {
+				objInventory.showInventory = false;
+			}
+			with (objGame) {
+				message[0] = "This is the last employee's notebook.";
+				
+				message[1] = ["Introduction", "Gown Gal", "Tall Creature", "Next page.", "Leave."];
+				
+				message[2] = "Hello! I'm writing this for you so that you can survive. The night, this place is made on cursed grounds and terrible entities haunt the woods around you."
+				message[3] = "Avoid her at all costs! She will follow you if you get close. Hide in the the janitor's closet if she's following you.";
+				message[4] = "A creature of the night loves the fusebox. Keep it locked if you can! If you don't then it will break the fusebox.";
+				
+				message[5] = ["Previous page.", "Little Girl and The Doll.", "The Hounds", "Next page.", "Leave."];
+				
+				message[6] = "Give her a candy bar to appease her. If you don't she will mess up the store and steal items.";
+				message[7] = "Staying outside too long will draw hounds to your location. Avoid being out for extended durations";
+				
+				
+				scripts = -1;
+				speakers = [objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer];
+				portraitNums = [0, 0, 1, 2, 1, 0, 0, 0];
+				nextLine = [1, [2, 3, 4, 5, -1], 1, 1, 1, [1, 6, 7, -1/*Change to next page*/, -1], 5, 5];
+				if (!instance_exists(objDialogBoxes)) {
+					var vBox = CreateDialogbox(message, speakers, nextLine, scripts, portraitNums);
+					with(objPlayer) {
+						activeTextbox = vBox;
+						canMove = false;
+					}
+				}
 			}
 		break;
 	}

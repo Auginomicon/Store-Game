@@ -46,6 +46,7 @@ if (showInventory) {
 						case "Key": slotNum = 7; break;
 						case "Garbage": slotNum = 8; break;
 						case "Lock": slotNum = 9; break;
+						case "Notebook": slotNum = 10; break;
 					}
 					if (i == objPlayer.equipped[1] && (string(objPlayer.inventory[i]) != "Empty") && objPlayer.equipped[0] != -1) {
 						sSlotColor = c_gray;
@@ -85,17 +86,28 @@ if (showInventory) {
 			
 		break;
 		
-		case 5: //Web Search App
+		case 5: // Settings
 			draw_set_font(fntInventory);
 			draw_set_halign(fa_center);
 			draw_set_color(c_black);
-			var gameTextX = invUIX + (inventoryWidth * 0.5);
-			var gameTextY = invUIY + (inventoryHeight * 0.35);
-			draw_text(gameTextX, gameTextY, "No connection");
+			var gameTextX = invUIX + (inventoryWidth * 0.275);
+			var gameTextY = invUIY + (inventoryHeight * 0.465);
+			var c = c_red;
+			if (global.silent = true) {
+				c = c_green;
+			}
+			draw_circle_color(gameTextX, gameTextY, 8, c, c, false);
 		break;
 		
-		case 6: //Text Messages
-			//TODO: Show some messages here.
+		case 6: // Job App
+			draw_set_font(fntInventory);
+			draw_set_halign(fa_center);
+			draw_set_color(c_black);
+			var gameTextX = invUIX + (inventoryWidth * 0.15);
+			var gameTextY = invUIY + (inventoryHeight * 0.5);
+			draw_sprite_ext(sprJobProgressBar, 1, gameTextX, gameTextY, 1, 1, 0, c_white, 1);
+			draw_sprite_ext(sprJobProgressBar, 0, gameTextX, gameTextY, objPlayer.jobProgression / objPlayer.maxJobProgression, 1, 0, c_white, 1);
+			
 		break;
 	}
 }

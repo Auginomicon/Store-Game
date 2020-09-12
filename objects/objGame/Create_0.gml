@@ -6,6 +6,7 @@ global.gamePaused = false;
 global.textSpeed = 0.75;
 global.ResolutionW = 750;
 global.ResolutionH = 420;
+global.silent = false;
 
 surface_resize(application_surface, global.ResolutionW, global.ResolutionH);
 room_goto_next();
