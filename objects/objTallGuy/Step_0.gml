@@ -31,6 +31,7 @@ switch (state) {
 			else {
 				if (collision_circle(x, y, 400, objPlayer, false, true)) {
 					 //Chase the player
+					 path_clear_points(path);
 					 state = enemyState.Chase;
 				}
 				else {
@@ -80,7 +81,7 @@ switch (state) {
 		
 		if (collision_circle(x, y, 245, objPlayer, false, true) and objFusebox.image_index != 2) {
 			// If the player is close then become feared
-			state = enemyState.Feared;
+			//state = enemyState.Feared;
 		}
 		
 		// only gain courage when the fusebox is not broken
@@ -93,13 +94,61 @@ switch (state) {
 	break;
 	
 	case enemyState.Chase: // Once power is out, he will attack the player
+		// Checks if the player is inside the store or bathrooms
 		
+		spd = runSpd;
+		
+		// Get the player's location on the grid.
+		var cx = (objPlayer.x / 32) * 32;
+		var cy = (objPlayer.y / 32) * 32;
+			
+		// Path towards the player
+		if (mp_grid_path(global.grid, path, x, y, cx, cy, 1)) {
+			path_start(path, spd, path_action_stop, false);
+			if(currentLocation != objGame.location) {
+				if (objGame.location = 3 and currentLocation == 2) {
+					// Pathing to the back area. Checks which one is closer.
+					if (point_distance(4933, 827, x, y) < point_distance(3989, 827, x, y)) {
+						mp_grid_path(global.grid, path, x, y, 4933, 827, 1);
+					}
+					else {
+						mp_grid_path(global.grid, path, x, y, 3989, 827, 1);
+					}
+				}
+				else if (objGame.location == 1 or objGame.location == 4){
+					path_clear_points(path);
+					state = enemyState.Free;
+				}
+				else {
+					// Will head to the second closest transition from the initial transition
+					mp_grid_path(global.grid, path, x, y, secondClosestTransition.x, secondClosestTransition.y, 1);	
+				}
+			}
+			
+			
+			// Get the correct sprite for movement
+			if(direction >= 306 or direction <= 45) {
+				sprite_index = sprTallGuyWalkRight; //right
+				idleNum = 2;
+			}
+			if (direction >= 46 and direction <= 135) {
+				sprite_index = sprTallGuyWalkUp; //up
+				idleNum = 3;
+			}
+			if (direction >= 136 and direction <=225) {
+				sprite_index = sprTallGuyWalkLeft; //left
+				idleNum = 1;
+			}
+			if (direction >= 226 and direction <= 305) {
+				sprite_index = sprTallGuyWalkDown; //down
+				idleNum = 0;
+			}
+		}
 	break;
 	
 	case enemyState.Feared: // Go into a dormate state
 		// Set the sprite
-		sprite_index = sprTallGuy;
-		image_index = idleNum;
+		sprite_index = sprTallGuySpooked;
 		
 		// Stop the pathing.
 		path_speed = 0;
@@ -120,7 +169,7 @@ switch (state) {
 		else {
 			// Start ticking the alarm when the player is away
 			if (alarm[0] == -1) {
-				alarm[0] = 1//= (objPlayer.sanity div 4) * room_speed;
+				alarm[0] = (objPlayer.sanity div 3) * room_speed;
 			}
 		}
 	break;
@@ -130,7 +179,7 @@ if (courage >= 100) {
 	spd = runSpd;
 }
 
-if (sprite_index != sprTallGuy) {
+if (sprite_index != sprTallGuy or sprite_index != sprTallGuySpooked) {
 	// Checks if we are in the same room
 	if (currentLocation == objGame.location) {
 		if (floor(image_index) == 2 or floor(image_index) == 5) {

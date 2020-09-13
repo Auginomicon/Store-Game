@@ -13,8 +13,8 @@
   "soundFile": "sndVoice2.wav",
   "duration": 0.271893,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "Voices",
+    "path": "folders/Sounds/Dialog/Voices.yy",
   },
   "resourceVersion": "1.0",
   "name": "sndVoice2",

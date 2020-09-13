@@ -4,6 +4,7 @@ var rng = irandom(9) +1;
 switch(rng) {
 	case 1:
 		// Spawn the gown gal
+		show_debug_message("Gown Gal");
 		if(!instance_exists(objGownGal)) { 
 			var spawn = GetSpawnLocations();
 			var inst = instance_create_layer(spawn[0], spawn[1], "Instances", objGownGal);
@@ -13,6 +14,7 @@ switch(rng) {
 	
 	case 2:
 		// Spawn the tall guy
+		show_debug_message("Tall Guy");
 		if(!instance_exists(objTallGuy)) { 
 			var spawnX = choose(5799, 3061, 4458);
 			var spawnY = 2372;

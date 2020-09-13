@@ -126,20 +126,21 @@ function UseItemHelper() {
 				
 				message[1] = ["Introduction", "Gown Gal", "Tall Creature", "Next page.", "Leave."];
 				
-				message[2] = "Hello! I'm writing this for you so that you can survive. The night, this place is made on cursed grounds and terrible entities haunt the woods around you."
-				message[3] = "Avoid her at all costs! She will follow you if you get close. Hide in the the janitor's closet if she's following you.";
-				message[4] = "A creature of the night loves the fusebox. Keep it locked if you can! If you don't then it will break the fusebox.";
+				message[2] = "I'm writing this for you so that you can survive. The night, this place is made on cursed grounds and terrible entities haunt the woods around you."
+				message[3] = "Avoid her at all costs! She will follow you if you get too close. Hide in the the janitor's closet if she's following you. Pray that she didn't notice you get inside";
+				message[4] = "Despite his large size, he is a big, shy, scaredy-cat. If you get close to him he will hunch up into a ball and wait til you're gone. If he gets to the fusebox, he will not fear you anymore. At this point, just don't go out front.";
 				
 				message[5] = ["Previous page.", "Little Girl and The Doll.", "The Hounds", "Next page.", "Leave."];
 				
 				message[6] = "Give her a candy bar to appease her. If you don't she will mess up the store and steal items.";
 				message[7] = "Staying outside too long will draw hounds to your location. Avoid being out for extended durations";
+				message[8] = ""
 				
 				
 				scripts = -1;
-				speakers = [objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer];
-				portraitNums = [0, 0, 1, 2, 1, 0, 0, 0];
-				nextLine = [1, [2, 3, 4, 5, -1], 1, 1, 1, [1, 6, 7, -1/*Change to next page*/, -1], 5, 5];
+				speakers = [objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer];
+				portraitNums = [0, 0, 1, 2, 1, 0, 0, 0, 0];
+				nextLine = [1, [2, 3, 4, 5, -1], 1, 1, 1, [1, 6, 7, -1/*Change to next page*/, -1], 5, 5, -1];
 				if (!instance_exists(objDialogBoxes)) {
 					var vBox = CreateDialogbox(message, speakers, nextLine, scripts, portraitNums);
 					with(objPlayer) {

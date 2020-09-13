@@ -33,19 +33,5 @@ if (choiceDialog) {
 	//Cycle through the choices
 	if (choice > msgArrayLength - 1) choice = 0;
 	if (choice < 0) choice = msgArrayLength - 1;
-	
-	//TODO: Fix the small rectangle problem in the mouse selection 
-	//var i = 0;
-	//var yAdd = 0;
-	//repeat(msgArrayLength) {
-	//	if (point_in_rectangle(mouseX, mouseY, textX - (boxWidth * .3), textY + yAdd + i, textX + (boxWidth), textY + string_height_ext(msgArray[i], textHeight, textMaxWidth) + yAdd + i)) {
-	//		choice = i;
-	//		if (mouse_check_button_pressed(mb_left)) {
-	//			selected = true;
-	//		}
-	//	}
-		
-	//	yAdd = string_height_ext(msgArray[i], textHeight, textMaxWidth);
-	//	i++
-	//}
+	if (keyboard_check_pressed(ord("S")) or  keyboard_check_pressed(ord("W"))) audio_play_sound(sndSelector, 1, false);
 }
