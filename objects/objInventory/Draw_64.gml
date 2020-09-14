@@ -47,6 +47,7 @@ if (showInventory) {
 						case "Garbage": slotNum = 8; break;
 						case "Lock": slotNum = 9; break;
 						case "Notebook": slotNum = 10; break;
+						case "Doll": slotNum = 11; break;
 					}
 					if (i == objPlayer.equipped[1] && (string(objPlayer.inventory[i]) != "Empty") && objPlayer.equipped[0] != -1) {
 						sSlotColor = c_gray;

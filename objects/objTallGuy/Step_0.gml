@@ -65,23 +65,23 @@ switch (state) {
 		else if (currentLocation == 3) {
 			// If he is outback he will head to the fusebox
 			path_start(path, spd, path_action_stop, false);
-			mp_grid_path(global.grid, path, x, y, 3900, 3960, true);
+			mp_grid_path(global.grid, path, x, y, 3939, 3998, true);
 			
 			// Once he gets to the fusebox activate the count down for alarm and go into idle
-			if (floor(x) == 3900 and floor(y) == 3960) {
+			if (floor(x) == 3939 and floor(y) == 3998) {
 				if (alarm[1] == -1) {
 					alarm[1] = 5 * room_speed;
 				}
 				
 				// Change sprite to the 
-				sprite_index = sprTallGuy;
-				image_index = idleNum;
+				sprite_index = sprTallGuySlash;
+				
 			}
 		}
 		
 		if (collision_circle(x, y, 245, objPlayer, false, true) and objFusebox.image_index != 2) {
 			// If the player is close then become feared
-			//state = enemyState.Feared;
+			state = enemyState.Feared;
 		}
 		
 		// only gain courage when the fusebox is not broken
@@ -179,7 +179,7 @@ if (courage >= 100) {
 	spd = runSpd;
 }
 
-if (sprite_index != sprTallGuy or sprite_index != sprTallGuySpooked) {
+if (sprite_index != sprTallGuy or sprite_index != sprTallGuySlash or sprite_index != sprTallGuySpooked) {
 	// Checks if we are in the same room
 	if (currentLocation == objGame.location) {
 		if (floor(image_index) == 2 or floor(image_index) == 5) {

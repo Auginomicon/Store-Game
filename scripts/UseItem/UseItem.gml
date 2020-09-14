@@ -81,12 +81,17 @@ function UseItem() {
 				case "Notebook":
 					dItem = sprNotebook;
 				break;
+				
+				case "Doll":
+					dItem = sprDoll;
+				break;
 			}
 			
 			//Drops the item at your feet
 			var inst = instance_create_layer(objPlayer.x, objPlayer.y, "Instances", objItem);
 			inst.name = item;
 			inst.sprite_index = dItem;
+			inst.currentLocation = objGame.location;
 		}
 	}
 }

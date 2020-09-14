@@ -4,3 +4,4 @@ event_inherited();
 name = -1;
 isItem = true;
 collideable = false;
+currentLocation = -1;
