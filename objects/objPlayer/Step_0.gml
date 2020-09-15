@@ -59,7 +59,7 @@ switch(state) {
 		//Collide with objects
 		var inst = instance_place(x, y, objTransition);
 		//Finds a collision id
-		if (inst != noone && facing == inst.playerFacingBefore) {
+		if (inst != noone) {
 			//Passes the collided object's id to the objGame to properly transition rooms.
 			with(objGame) {
 				if (!doTransition) {

@@ -1,4 +1,4 @@
 /// @description Doll comes alive
-instance_create_layer(x, y, "Instances", objDoll);
-
+var inst = instance_create_layer(x, y, "Instances", objDoll);
+inst.currentLocation = currentLocation;
 instance_destroy();

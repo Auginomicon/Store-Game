@@ -9,6 +9,10 @@ if (room == rmStore and !global.cameraSystem) {
 if (doTransition) {
 	objPlayer.state = pStates.Paused;
 	objPlayer.facing = -1;
+	if (instance_exists(ParEnemy)) { 
+		ParEnemy.spd = 0;
+		ParEnemy.path_speed = 0;
+	}
 	if (location != newLocation) {
 		blackAlpha += 0.05;
 		if (blackAlpha >= 1) {
@@ -21,7 +25,10 @@ if (doTransition) {
 			doTransition = false;
 			objPlayer.state = pStates.Free;
 			location = newLocation;
-			if (instance_exists(ParEnemy)) { ParEnemy.spd = ParEnemy.walkspd; }
+			if (instance_exists(ParEnemy)) { 
+				ParEnemy.spd = ParEnemy.walkspd;
+				ParEnemy.path_speed = ParEnemy.spd;
+			}
 		}
 	}
 	
