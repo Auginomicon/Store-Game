@@ -20,7 +20,7 @@ enum pStates {
 }
 
 //Inventory
-inventory[0] = "Empty";
+inventory[0] = "Doll";
 inventory[1] = "Empty";
 inventory[2] = "Empty";
 inventory[3] = "Empty";

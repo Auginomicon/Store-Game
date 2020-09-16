@@ -1,6 +1,14 @@
 /// @description
-if (global.gamePaused) { exit; }
-if (objGame.doTransition) { spd = 0; }
+if (global.gamePaused) { 
+	spd = 0;
+	path_speed = 0;
+	exit;
+}
+else {
+	spd = walkspd;
+	path_speed = spd;
+}
+
 switch (state) {
 	case enemyState.Free:
 		

@@ -32,9 +32,7 @@ if(keyboard_check_pressed(ord("V"))) {
 }
 
 if(keyboard_check_pressed(ord("L"))) { 
-	with(objManager) {
-		event_perform(ev_other, ev_user0);
-	}	
+	instance_create_layer(x, y, "Instances", objLittleGirlNPC)
 }
 
 if(keyboard_check_pressed(ord("H"))) { 

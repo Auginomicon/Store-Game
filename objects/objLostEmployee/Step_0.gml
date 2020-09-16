@@ -1,6 +1,14 @@
 /// @description
 
-if (global.gamePaused) { exit; }
+if (global.gamePaused) { 
+	spd = 0;
+	path_speed = 0;
+	exit;
+}
+else {
+	spd = 2;
+	path_speed = spd;
+}
 
 // Checks if the NPC is moving
 if (canMove) {

@@ -21,3 +21,6 @@ hideY = 0;
 idleNum = 0;
 secondClosestTransition = instance_nth_nearest(x, y, objTransition, 2);
 snatchedItems = 0;
+itemLocation[0] = -1;
+itemLocation[1] = -1;
+itemLocation[2] = -1;

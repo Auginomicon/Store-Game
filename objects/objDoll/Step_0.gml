@@ -1,4 +1,14 @@
 /// @description
+if (global.gamePaused) { 
+	spd = 0;
+	path_speed = 0;
+	exit;
+}
+else {
+	spd = walkspd;
+	path_speed = spd;
+}
+
 // Get the correct sprite for walking
 if (direction >= 5 and direction <= 175) {
 	sprite_index = sprDollWalkUp; // UP
@@ -21,8 +31,12 @@ switch(state) {
 			}
 			// Will go inside the store
 			else {
-				mp_grid_path(global.grid, path, x, y, 4446, 917, true);
-				path_start(path, spd, path_action_stop, false);
+				if(mp_grid_path(global.grid, path, x, y, 4446, 917, true)) {
+					path_start(path, spd, path_action_stop, false);
+				}
+				else {
+					alarm[1] = 1;
+				}
 			}
 			// Once inside
 			if (currentLocation == 1 and desiredItem != noone) {
