@@ -23,8 +23,20 @@ if (canMove) {
 				mp_grid_path(global.grid, path, x, y, 4456, 916, true);
 			}
 			if (currentLocation == 3) {
-				var ct = instance_nth_nearest(x, y, objTransition, 1);
-				mp_grid_path(global.grid, path, x, y, ct.x, ct.y, true);
+				if (objBackDoor.isOpen) {
+					mp_grid_path(global.grid, path, x, y, 3821, 3955, 1);
+					if (floor(x) == 3821 and floor(y) == 3955) {
+						with(objBackDoor) {
+							other.x = transportX;
+							other.y = transportY;
+							other.currentLocation = newLocation;
+						}
+					}
+				}
+				else {
+					var ct = instance_nth_nearest(x, y, objTransition, 1);
+					mp_grid_path(global.grid, path, x, y, ct.x, ct.y, true);
+				}
 			}
 		}
 		else {
@@ -37,10 +49,27 @@ if (canMove) {
 			// find the player
 			spd = 2;
 			if(currentLocation != objGame.location) {
-				if ((objGame.location == 2 and currentLocation == 1) or (objGame.location == 2 and currentLocation == 3)) {
+				if ((objGame.location == 2 and currentLocation == 1)) {
 					// Path to the closest transition. If the enemy is in the store and the player is out front.
 					var ct = instance_nearest(x, y, objTransition); 
 					mp_grid_path(global.grid, path, x, y, ct.x, ct.y, 1);
+				}
+				else if (objGame.location == 2 and currentLocation == 3) {
+					if (objBackDoor.isOpen) {
+						mp_grid_path(global.grid, path, x, y, 3821, 3955, 1);
+						path_start(path, spd, path_action_stop, false);
+						if (floor(x) == 3821 and floor(y) == 3955) {
+							with(objBackDoor) {
+								other.x = transportX;
+								other.y = transportY;
+								other.currentLocation = newLocation;
+							}
+						}
+					}
+					else {
+						var ct = instance_nearest(x, y, objTransition); 
+						mp_grid_path(global.grid, path, x, y, ct.x, ct.y, 1);
+					}
 				}
 				else if ((objGame.location == 1 and currentLocation == 2)) {
 					// Path to the front door if the player is inside the store and the enemy is out front

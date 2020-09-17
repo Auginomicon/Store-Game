@@ -150,5 +150,13 @@ function UseItemHelper() {
 				}
 			}
 		break;
+		
+		case "Key":
+			if (collision_circle(objPlayer.x, objPlayer.y, 42, objBackDoor, false, true)) {
+				with(objBackDoor) {
+					isOpen = !isOpen;
+				}
+			}
+		break;
 	}
 }

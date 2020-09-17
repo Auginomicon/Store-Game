@@ -37,6 +37,7 @@
     {"id":{"name":"sprPlayerM","path":"sprites/sprPlayerM/sprPlayerM.yy",},"order":5,},
     {"id":{"name":"sprKey","path":"sprites/sprKey/sprKey.yy",},"order":6,},
     {"id":{"name":"sprInventory","path":"sprites/sprInventory/sprInventory.yy",},"order":0,},
+    {"id":{"name":"objLittleGirl","path":"objects/objLittleGirl/objLittleGirl.yy",},"order":6,},
     {"id":{"name":"UseItemHelper","path":"scripts/UseItemHelper/UseItemHelper.yy",},"order":1,},
     {"id":{"name":"sprMalePlayerWalkDown","path":"sprites/sprMalePlayerWalkDown/sprMalePlayerWalkDown.yy",},"order":0,},
     {"id":{"name":"sprLock","path":"sprites/sprLock/sprLock.yy",},"order":8,},

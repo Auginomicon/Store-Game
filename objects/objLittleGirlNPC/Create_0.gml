@@ -1,7 +1,7 @@
 /// @description 
 event_inherited();
 
-walkspd = 8;
+walkspd = 2;
 spd = walkspd;
 
 voice = sndVoice4;
