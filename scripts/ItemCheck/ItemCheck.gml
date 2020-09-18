@@ -9,5 +9,4 @@ function ItemCheck(){
 			nextLine[argument[1]] = argument[2];
 		}
 	}
-
 }

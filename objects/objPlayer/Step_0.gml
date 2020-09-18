@@ -119,14 +119,37 @@ switch(state) {
 							}
 						}
 					}
+					// checks if it is a door
 					else if (inst.isDoor) {
-						with(objGame) {
-							if (!doTransition) {
-								transportX = inst.transportX;
-								transportY = inst.transportY;
-								newLocation = inst.newLocation;
-								playerFacingAfter = inst.playerFacingAfter;
-								doTransition = true;
+						if (inst.isOpen) {
+							with(objGame) {
+								if (!doTransition) {
+									transportX = inst.transportX;
+									transportY = inst.transportY;
+									newLocation = inst.newLocation;
+									playerFacingAfter = inst.playerFacingAfter;
+									doTransition = true;
+								}
+							}
+						}
+						// Checks if you have the key item
+						else {
+							// Loop through the inventory for the key item to bypass if it is locked already
+							var i = 0;
+							repeat(4) {
+								if (inventory[i] == "Key") {
+									with(objGame) {
+										if(!doTransition) {
+											transportX = inst.transportX;
+											transportY = inst.transportY;
+											newLocation = inst.newLocation;
+											playerFacingAfter = inst.playerFacingAfter;
+											doTransition = true;
+										}
+									}
+									break;
+								}
+								i++;
 							}
 						}
 					}

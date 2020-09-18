@@ -15,7 +15,7 @@
   "layers": [
     {"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[
         {"pathId":{"name":"pLESpawn","path":"paths/pLESpawn/pLESpawn.yy",},"colour":4278190335,"visible":false,"depth":100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"pLostEmployee","tags":[],"resourceType":"GMRPathLayer",},
-        {"pathId":{"name":"pLittleGirlSpawn","path":"paths/pLittleGirlSpawn/pLittleGirlSpawn.yy",},"colour":4284219241,"visible":true,"depth":200,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"pLittleGirlSpawn","tags":[],"resourceType":"GMRPathLayer",},
+        {"pathId":{"name":"pLittleGirlSpawn","path":"paths/pLittleGirlSpawn/pLittleGirlSpawn.yy",},"colour":4284219241,"visible":false,"depth":200,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"pLittleGirlSpawn","tags":[],"resourceType":"GMRPathLayer",},
       ],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Paths","tags":[],"resourceType":"GMRLayer",},
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"objLight","path":"objects/objLight/objLight.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1056.0,"y":2784.0,"resourceVersion":"1.0","name":"inst_3DB30FE8","tags":[],"resourceType":"GMRInstance",},
@@ -378,8 +378,7 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"objItem","path":"objects/objItem/objItem.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":4423.0,"y":3974.0,"resourceVersion":"1.0","name":"inst_2FE21823","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"objDumpster","path":"objects/objDumpster/objDumpster.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":4800.0,"y":864.0,"resourceVersion":"1.0","name":"inst_798FFFDE","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"objItem","path":"objects/objItem/objItem.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1582.0,"y":2926.0,"resourceVersion":"1.0","name":"inst_34CD3C30","tags":[],"resourceType":"GMRInstance",},
-        {"properties":[],"isDnd":false,"objectId":{"name":"objLittleGirl","path":"objects/objLittleGirl/objLittleGirl.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":3936.0,"y":960.0,"resourceVersion":"1.0","name":"inst_3216E5A9","tags":[],"resourceType":"GMRInstance",},
-        {"properties":[],"isDnd":false,"objectId":{"name":"objLostEmployee","path":"objects/objLostEmployee/objLostEmployee.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":3904.0,"y":4096.0,"resourceVersion":"1.0","name":"inst_1389C2C4","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"objGownGal","path":"objects/objGownGal/objGownGal.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1824.0,"y":1312.0,"resourceVersion":"1.0","name":"inst_1AEF7B4A","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":600,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
     {"assets":[
         {"spriteId":{"name":"sprTable","path":"sprites/sprTable/sprTable.yy",},"headPosition":0.0,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"animationSpeed":1.0,"colour":4294967295,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1184.0,"y":1248.0,"resourceVersion":"1.0","name":"graphic_306C5548","tags":[],"resourceType":"GMRSpriteGraphic",},
@@ -1740,8 +1739,7 @@
     {"name":"inst_59D2999F","path":"rooms/rmStore/rmStore.yy",},
     {"name":"inst_116BCB67","path":"rooms/rmStore/rmStore.yy",},
     {"name":"inst_260C0D85","path":"rooms/rmStore/rmStore.yy",},
-    {"name":"inst_3216E5A9","path":"rooms/rmStore/rmStore.yy",},
-    {"name":"inst_1389C2C4","path":"rooms/rmStore/rmStore.yy",},
+    {"name":"inst_1AEF7B4A","path":"rooms/rmStore/rmStore.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

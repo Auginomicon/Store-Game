@@ -17,7 +17,7 @@ drawDayLight = false;
 
 enum phase {
 	sunset = 0,
-	nightTime = 4.5,
+	nightTime = 3.5,
 }
 
 //Other variables

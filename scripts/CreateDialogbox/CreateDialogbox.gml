@@ -8,7 +8,7 @@ function CreateDialogbox() {
 
 	var textbox = instance_create_layer(0, 0, "Text", objDialogBoxes);
 
-	//Sets up all the dialog and speakers into arrays so that the player can go through all the queued up text.
+	// Sets up all the dialog and speakers into arrays so that the player can go through all the queued up text.
 	with (textbox) {
 		message = argument[0];
 		speakers = argument[1];

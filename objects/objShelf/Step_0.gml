@@ -21,6 +21,9 @@ if (point_in_rectangle(objPlayer.x, objPlayer.y, x - (sprite_width * 0.5), y, x 
 						//Remove item from Inventory
 						with(objPlayer) {
 							event_perform(ev_other, ev_user0);
+							if (global.bonusTask == 2) {
+								money += 1.25;
+							}
 						}
 					}
 				break;

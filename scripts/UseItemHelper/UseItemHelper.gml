@@ -92,6 +92,9 @@ function UseItemHelper() {
 				with(objPlayer) {
 					jobProgression += 7;
 					sanity -= 5;
+					if (global.bonusTask == 1) {
+						money += 1.25;
+					}
 				}
 			}
 		break;

@@ -14,7 +14,7 @@ message[3] = "Yaaay...";
 message[4] = "Thank you kind soul. I'll be leaving now.";
 message[5] = "You don't have one. It's not nice to lie...";
 message[6] = "Don't make me wait too long...";
-message[7] = "Let's play a game then...";
+message[7] = "Let's play a game then... \nFind my little doll!";
 message[8] = "";
 
 speakers = [id, id, objPlayer, id, id, id, id, id, id, objPlayer];

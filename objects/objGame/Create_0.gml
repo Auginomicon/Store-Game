@@ -20,7 +20,7 @@ global.guiHeight = display_get_gui_height();
 blackAlpha = 0;
 doTransition = false;
 
-//Variables for placing the player
+// Variables for placing the player
 location = 2;
 newLocation = -1;
 transportX = 0;
@@ -32,7 +32,8 @@ playerFacingAfter = -1;
 	1 - Inside the Store
 	2 - Outside in the front of the store
 	3 - Outside in the back of the store
-	4 - Bathrooms
+	4 - Male Bathroom
+	5 - Female Bathroom
 */
 
 //Other variables
@@ -40,7 +41,7 @@ global.isOn = false;
 global.cameraSystem = false;
 playerName = "Player";
 global.nightStarted = false;
-global.bonusTask = 1;
+global.bonusTask = irandom(3) + 1;
 
 /*
 	Bonus Tasks

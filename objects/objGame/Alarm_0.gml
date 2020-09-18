@@ -24,7 +24,12 @@ switch(rng) {
 	break;
 	
 	case 3:
-		
+		// Spawn the the little girl
+		show_debug_message("Little Girl and the Doll");
+		if(!instance_exists(objLittleGirlNPC)) { 
+			var inst = instance_create_layer(x, y, "Instances", objLittleGirlNPC);
+			inst.currentLocation = 2;
+		}
 	break;
 	
 	case 4:

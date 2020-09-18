@@ -22,7 +22,6 @@ if (surface_exists(surface)) {
 			}
 			else {
 				draw_circle_color(mouse_x - cx, mouse_y - cy, 42, c_white, c_white, false);
-				//draw_triangle_color(mouse_x - cx - 21, mouse_y - cy - 21, mouse_x - cx + 21, mouse_y - cy + 21, objPlayer.x - cx, objPlayer.y - cy, c_white, c_white, c_white, false);
 			}
 		}
 	

@@ -17,7 +17,8 @@ if (keyboard_check_pressed(ord("T"))) { timePaused = ! timePaused; }
 //Increment time when game is not paused
 if (global.gamePaused or timePaused) { exit; }
 
-seconds += timeIncrement
+
+seconds += timeIncrement;
 minutes = seconds/ 60;
 hours = minutes / 60;
 

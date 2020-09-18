@@ -27,6 +27,9 @@ if (objPlayer.input_interact and (image_index == 0 or image_index == 1)) {
 		}
 		instance_destroy();
 		objPlayer.sanity -= 5;
+		if (global.bonusTask == 4) {
+			objPlayer.money += 1.25;
+		}
 		if (global.nightStarted = true) {
 			objPlayer.jobProgression += 5;
 		}
@@ -38,6 +41,9 @@ else if (objPlayer.isMopping and objPlayer.sprite_index = objPlayer.sprite[5] an
 		with(objPlayer) {
 			if (global.nightStarted = true) {
 				objPlayer.jobProgression += 5;
+				if (global.bonusTask == 3) {
+					objPlayer.money += 1.25;
+				}
 			}
 		}
 		instance_destroy();

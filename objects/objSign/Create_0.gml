@@ -10,7 +10,25 @@ name = "Corkboard";
 
 message[0] = "Here's the corkboard.";
 message[1] = ["Bonus Jobs!","Contacts","Schedule", "Check-in (Start Night Shift)","Leave"];
-message[2] = "'Hey! The bonus job tonight is putting away trash bags in the back!' -Abby";
+#region // Get the correct bonus task dialog
+switch(global.bonusTask) {
+	case 1: // Throw out garbage
+		message[2] = "Hey! The bonus job tonight is putting away trash bags in the back! \n-Abby";
+	break;
+	
+	case 2: // Restock shelves
+		message[2] = "Hey! The bonus job tonight is restocking shelves! \n-Abby";
+	break;
+	
+	case 3: // Mopping
+		message[2] = "Hey! The bonus job tonight is mopping up spilled drinks! \n-Abby";
+	break;
+	
+	case 4: // Clean up trash
+		message[2] = "Hey! The bonus job tonight is cleaning up trash piles! \n-Abby";
+	break
+}
+#endregion
 message[3] = "Here's the " +objManager.name +"'s phone number.";
 message[4] = "Day Shift: Linda (7:15 AM - 1:30 PM) \nNoon Shift: Abby (1:45 - 6:30) \nNight Shift: " +objGame.playerName +" (6:45 PM - 7:00 AM)";
 message[5] = "Here goes nothing.";

@@ -7,22 +7,24 @@ if (showInventory) {
 	
 	draw_sprite(inventorySprite, index, invUIX, invUIY);
 	
-	draw_circle_color(invUIX + (inventoryWidth * 0.5), invUIY + (inventoryHeight * .92), 13,c_white, c_white, true);
-	
 	//Have a switch case to draw things from a specific tab
 	switch (index) {
-		case 0: //Draw squares for debugging
-			var i = 0;
-			repeat (3) {
-				draw_rectangle(invAppX + (i * buffer), invAppY, invAppX + appSize + (i * buffer), invAppY + appSize, true);
-				i++;
+		case 0: //Home screen
+			draw_set_font(fntTime);
+			draw_set_halign(fa_center);
+			var mins = objDayCycle.minutes;
+			while (mins >= 60) {
+				mins -= 60;
 			}
-			
-			var i = 0;
-			repeat (3) {
-				draw_rectangle(invAppX + (i * buffer), invAppY + buffer, invAppX + appSize + (i * buffer), invAppY + appSize + buffer, true);
-				i++;
+			var hrs = objDayCycle.hours + 6;
+			while (hrs >= 12) {
+				hrs -= 11;
 			}
+			var c = c_black;
+			draw_text_color(invUIX + (inventoryWidth * 0.46), invUIY + (inventoryHeight * .14), ":", c, c, c, c, 1);
+			draw_text_color(invUIX + (inventoryWidth * 0.3), invUIY + (inventoryHeight * .14), floor(hrs), c, c, c, c, 1);
+			draw_text_color(invUIX + (inventoryWidth * 0.65), invUIY + (inventoryHeight * .14), floor(mins), c, c, c, c, 1);
+			draw_set_halign(fa_left);
 		break;
 		
 		case 1: //Inventory

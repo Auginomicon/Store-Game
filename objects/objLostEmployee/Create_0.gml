@@ -4,6 +4,7 @@ event_inherited();
 
 //Start Path
 path_start(pLESpawn, spd, path_action_stop, true);
+secondClosestTransition = instance_nth_nearest(x, y, objTransition, 2);
 
 //Other Variables
 idleNum = 1;
