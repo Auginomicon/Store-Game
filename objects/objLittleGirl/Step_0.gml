@@ -58,3 +58,12 @@ switch(state) {
 		}
 	break;
 }
+
+var i = 0;
+repeat(4) {
+	if (objPlayer.inventory[i] == "Doll") {
+		instance_destroy();
+		break;
+	}
+	i++;
+}

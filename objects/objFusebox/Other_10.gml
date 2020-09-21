@@ -10,3 +10,5 @@ for (var i = 0; i < array_length(elements); i++) {
 objVendingMachine.state = MachineState.Off;
 objSodaMachine.state = MachineState.Off;
 objCameraSystem.state = MachineState.Off;
+
+audio_play_sound(sndPowerDown, 1, false);

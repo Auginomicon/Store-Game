@@ -10,7 +10,7 @@ switch (state) {
 		//Set up who is speaking with each text box here.
 		speakers = [objPlayer, objPlayer, objPlayer];
 		nextLine = [0, [-1, -1, -1], -1];
-		scripts = [-1, [[VendItem, item1, cost1], [VendItem, item2, cost2], -1], -1];
+		scripts = [-1, [[VendItem, item1, cost1, 1], [VendItem, item2, cost2, 1], -1], -1];
 		portraitNums = [0, 0, 0];
 		
 	break;

@@ -1,15 +1,15 @@
 /// @description Debug
-if(keyboard_check_pressed(ord("G"))) { room_restart(); }
-
 if (keyboard_check_pressed(vk_escape)) {
 	global.gamePaused = !global.gamePaused;
 	if (global.gamePaused) {
+		audio_pause_all();
 		with(objPlayer) {
 			canMove = false;
 			state = pStates.Paused;
 		}
 	}
 	else {
+		audio_resume_all();
 		with(objPlayer) {
 			canMove = true;
 			state = pStates.Free;
@@ -17,30 +17,27 @@ if (keyboard_check_pressed(vk_escape)) {
 	}
 }
 
-if(keyboard_check_pressed(ord("F"))) { 
-	with(objFusebox) {
-		image_index = 2;
-		event_perform(ev_other, ev_user0);
-	}	
+// Sound Management
+if (global.gamePaused) exit;
+// Outside the store
+if (location == 2 or location == 3) {
+	if (!audio_is_playing(sndCicada)) { audio_play_sound(sndCicada, 1, true); }
+}
+else {
+	if (audio_is_playing(sndCicada)) { audio_stop_sound(sndCicada); }
 }
 
-if(keyboard_check_pressed(ord("V"))) { 
-	with(objFusebox) {
-		image_index = 0;
-		event_perform(ev_other, ev_user1);
-	}	
+// Inside the store
+if (location == 1) {
+	if (!audio_is_playing(sndFlourescentBuzz)) { audio_play_sound(sndFlourescentBuzz, 1, true); }
+	if (!audio_is_playing(sndStoreMusic)) { 
+		audio_play_sound(sndStoreMusic, 1, true); 
+	}
+	else {
+		audio_resume_sound(sndStoreMusic);
+	}
 }
-
-if(keyboard_check_pressed(ord("L"))) { 
-	instance_create_layer(x, y, "Instances", objLittleGirlNPC)
-}
-
-if(keyboard_check_pressed(ord("H"))) { 
-	with(objPlayer) {
-		sanity -= 10;
-	}	
-}
-
-if(keyboard_check_pressed(ord("I"))) { 
-	event_perform(ev_alarm, 0)
+else {
+	if (audio_is_playing(sndFlourescentBuzz)) { audio_stop_sound(sndFlourescentBuzz); }
+	if (audio_is_playing(sndStoreMusic)) { audio_pause_sound(sndStoreMusic); }
 }

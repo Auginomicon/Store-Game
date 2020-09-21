@@ -58,8 +58,8 @@ if (canMove) {
 			image_index = idleNum;
 		}
 		// To start the alarm to get mad
-		if (alarm[2] == -1) {
-			alarm[2] = 30 * room_speed;
+		if (alarm[2] == -1 and !leaving) {
+			alarm[2] = 65 * room_speed;
 		}
 	}
 }

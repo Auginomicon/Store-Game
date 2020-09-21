@@ -1,6 +1,13 @@
 /// @description Spawn in angry version
 show_debug_message("Now I'm ang-wy");
 
+if (objPlayer.activeTextbox != noone) {
+	if (objDialogBoxes.message[0] == "Hmm, hmmm, la la la!") {
+		instance_destroy(objPlayer.activeTextbox);
+		objPlayer.activeTextbox = noone;
+	}
+}
+
 // Replace objLittleGirlNPC with mean mode
 var inst = instance_create_layer(x, y, "Instances", objLittleGirl);
 inst.currentLocation = currentLocation;

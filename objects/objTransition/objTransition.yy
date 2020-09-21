@@ -26,6 +26,7 @@
     {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"ParEnemy","path":"objects/ParEnemy/ParEnemy.yy",},"parent":{"name":"objTransition","path":"objects/objTransition/objTransition.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"objDoll","path":"objects/objDoll/objDoll.yy",},"parent":{"name":"objTransition","path":"objects/objTransition/objTransition.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"objLittleGirlNPC","path":"objects/objLittleGirlNPC/objLittleGirlNPC.yy",},"parent":{"name":"objTransition","path":"objects/objTransition/objTransition.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"objTallGuy","path":"objects/objTallGuy/objTallGuy.yy",},"parent":{"name":"objTransition","path":"objects/objTransition/objTransition.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],

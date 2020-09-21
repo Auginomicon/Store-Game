@@ -5,3 +5,4 @@ name = -1;
 isItem = true;
 collideable = false;
 currentLocation = -1;
+sound = -1;

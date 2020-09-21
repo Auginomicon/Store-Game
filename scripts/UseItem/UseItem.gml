@@ -41,49 +41,70 @@ function UseItem() {
 			show_debug_message(string(item) +" dropped.");
 			objPlayer.inventory[slot] = "Empty";
 			var dItem = -1;
+			var dSound = -1;
 			switch(item) {
 				case "Energy Bar":
 					dItem = sprEnergyBar;
+					dSound = sndFoodPickup;
+					audio_play_sound(sndFoodDrop, 1, false);
 				break;
 				
 				case "Storage Box":
 					dItem = sprBox;
+					dSound = sndCardboardBox;
+					audio_play_sound(sndCardboardBoxDrop, 1, false);
 				break;
 				
 				case "Candy Bar":
 					dItem = sprCandyBar;
+					dSound = sndFoodPickup;
+					audio_play_sound(sndFoodDrop, 1, false);
 				break;
 				
 				case "Flashlight":
 					dItem = sprFlashlight;
+					dSound = sndItemPickup;
+					audio_play_sound(sndItemPickup, 1, false);
 				break;
 				
 				case "Mop":
 					dItem = sprMop;
+					dSound = sndItemPickup;
 				break;
 				
 				case "Sanity Soda":
 					dItem = sprSanitySoda;
+					dSound = sndItemPickup;
 				break;
 				
 				case "Key":
 					dItem = sprKey;
+					dSound = sndItemPickup;
+					audio_play_sound(sndKey, 1, false);
 				break;
 				
 				case "Garbage":
 					dItem = sprGarbage;
+					dSound = sndGarbagePickup;
+					audio_play_sound(sndGarbagePickup, 1, false);
 				break;
 				
 				case "Lock":
 					dItem = sprLock;
+					dSound = sndItemPickup;
+					audio_play_sound(sndItemPickup, 1, false);
 				break;
 				
 				case "Notebook":
 					dItem = sprNotebook;
+					dSound = sndNotebookPickup;
+					audio_play_sound(sndNotebookPickup, 1, false);
 				break;
 				
 				case "Doll":
 					dItem = sprDoll;
+					dSound = sndSqueak;
+					audio_play_sound(sndSqueak, 1, false);
 				break;
 			}
 			
@@ -92,6 +113,7 @@ function UseItem() {
 			inst.name = item;
 			inst.sprite_index = dItem;
 			inst.currentLocation = objGame.location;
+			inst.sound = dSound;
 		}
 	}
 }

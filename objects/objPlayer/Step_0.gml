@@ -10,7 +10,7 @@ input_use_item = mouse_check_button_pressed(mb_left);
 
 switch(state) {
 	case pStates.Free:
-		if (global.gamePaused or isSafe or objInventory.showInventory or instance_exists(objTextBoxes)) {state = pStates.Paused; }
+		if (global.gamePaused or isSafe or objInventory.showInventory or instance_exists(objTextBoxes) or instance_exists(objDialogBoxes)) {state = pStates.Paused; exit; }
 	
 		// Reset the variables once there is no more input.
 		moveX = 0;
@@ -94,6 +94,7 @@ switch(state) {
 							moveY = 0;
 						}
 						activeTextbox = tbox;
+						facing = -1;
 					}
 					else if (inst.isItem) {
 						// Will execute if this item is able to be picked up.
@@ -110,7 +111,8 @@ switch(state) {
 							var i = 0;
 							repeat(4) {
 								if (inventory[i] == "Empty") {
-									inventory[i] = inst.name; 
+									inventory[i] = inst.name;
+									audio_play_sound(inst.sound, 1, false);
 									// Removes the item from the game world
 									instance_destroy(inst);
 									break;
@@ -122,6 +124,7 @@ switch(state) {
 					// checks if it is a door
 					else if (inst.isDoor) {
 						if (inst.isOpen) {
+							if (!audio_is_playing(sndDoor)) { audio_play_sound(sndDoor, 1, false); }
 							with(objGame) {
 								if (!doTransition) {
 									transportX = inst.transportX;
@@ -147,6 +150,7 @@ switch(state) {
 											doTransition = true;
 										}
 									}
+									if (!audio_is_playing(sndDoor)) { audio_play_sound(sndDoor, 1, false); }
 									break;
 								}
 								i++;
@@ -170,7 +174,7 @@ switch(state) {
 		x += moveX;
 		y += moveY;
 		
-		break;
+	break;
 		
 	case pStates.Paused:
 		// Setting these to 0 will stop the player from running in place.

@@ -3,7 +3,6 @@
 ///@arg cost
 
 function VendItem(argument0, argument1) {
-
 	var i = 0;
 	repeat(4) {
 		if (objPlayer.inventory[i] == "Empty") {
@@ -11,6 +10,9 @@ function VendItem(argument0, argument1) {
 				//TODO: Play sound effect here
 				objPlayer.inventory[i] = argument0;
 				objPlayer.money -= argument1;
+				if (argument_count > 2) {
+					audio_play_sound(sndVending, 1, false);
+				}
 				break;
 			}
 			else {

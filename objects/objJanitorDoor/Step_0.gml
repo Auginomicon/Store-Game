@@ -6,6 +6,7 @@ if (point_in_rectangle(objPlayer.x, objPlayer.y, x - (sprite_width / 2), y, x + 
 	if (objPlayer.input_interact) {
 		with(objPlayer) {
 			isSafe = !isSafe;
+			audio_play_sound(sndDoor, 1, false);
 			show_debug_message("Are you really safe?");
 			canMove = !canMove;
 		}

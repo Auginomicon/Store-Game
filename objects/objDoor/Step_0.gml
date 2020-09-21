@@ -1,6 +1,7 @@
 /// @description
 //Checks if the player is close by
 if (point_in_rectangle(objPlayer.x, objPlayer.y, x1, y1, x2, y2)) {
+	if (!audio_is_playing(sndDoorBell)) { audio_play_sound(sndDoorBell, 1, false); }
 	image_speed = 1;
 } 
 else {

@@ -8,6 +8,11 @@ function UseItemHelper() {
 	
 	switch(item) {
 		case "Energy Bar": // Restores energy
+			if (!audio_is_playing(sndMunch)) { audio_play_sound(sndMunch, 1, false); }
+			else { 
+				audio_stop_sound(sndMunch);
+				audio_play_sound(sndMunch, 1, false);
+			}
 			with(objPlayer) {
 				var tempEnergy = energy + 20;
 				if (tempEnergy > maxEnergy) {
@@ -28,6 +33,11 @@ function UseItemHelper() {
 		break;
 			
 		case "Sanity Soda": // Restores sanity
+			if (!audio_is_playing(sndSlurp)) { audio_play_sound(sndSlurp, 1, false); }
+			else { 
+				audio_stop_sound(sndSlurp);
+				audio_play_sound(sndSlurp, 1, false);
+			}
 			with(objPlayer) {
 				var tempSanity = sanity + 25;
 				if (tempSanity > maxSanity) {
@@ -48,6 +58,11 @@ function UseItemHelper() {
 		break;
 			
 		case "Candy Bar": //Restores lots of energy and some sanity
+			if (!audio_is_playing(sndMunch)) { audio_play_sound(sndMunch, 1, false); }
+			else { 
+				audio_stop_sound(sndMunch);
+				audio_play_sound(sndMunch, 1, false);
+			}
 			with(objPlayer) {
 				var tempSanity = sanity + 20;
 				if (tempSanity > maxSanity) {
@@ -77,6 +92,7 @@ function UseItemHelper() {
 		
 		case "Flashlight": // Toggles the flashlight
 			global.isOn = !global.isOn;
+			audio_play_sound(sndFlashlight, 1, false);
 		break;
 		
 		case "Garbage": // Trash
@@ -89,6 +105,8 @@ function UseItemHelper() {
 			
 				objPlayer.inventory[slot] = "Empty";
 				show_debug_message("Garbage thrown away");
+				audio_play_sound(sndGarbageThrow, 1, false);
+				
 				with(objPlayer) {
 					jobProgression += 7;
 					sanity -= 5;
@@ -111,6 +129,7 @@ function UseItemHelper() {
 			
 				objPlayer.inventory[slot] = "Empty";
 				}
+				audio_play_sound(sndLock, 1, false);
 		break;
 		
 		case "Mop": //Clean up liquid messes
@@ -158,8 +177,18 @@ function UseItemHelper() {
 			if (collision_circle(objPlayer.x, objPlayer.y, 42, objBackDoor, false, true)) {
 				with(objBackDoor) {
 					isOpen = !isOpen;
+					if (isOpen) {
+						audio_play_sound(sndDoorOpen, 1, false);
+					}
+					else {
+						audio_play_sound(sndDoorClose, 1, false);
+					}
 				}
 			}
+		break;
+		
+		case "Doll":
+			audio_play_sound(sndSqueak, 1, false);
 		break;
 	}
 }

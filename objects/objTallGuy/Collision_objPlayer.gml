@@ -1,4 +1,4 @@
 /// @description Collides with player
-collideable = false;
+objPlayer.sanity -= 45;
 
 instance_destroy();

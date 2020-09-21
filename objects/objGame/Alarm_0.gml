@@ -61,4 +61,4 @@ switch(rng) {
 	break;
 }
 
-alarm[0] = 15 * room_speed;
+alarm[0] = 30 * room_speed;

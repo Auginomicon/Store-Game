@@ -21,9 +21,13 @@ if (showInventory) {
 				hrs -= 11;
 			}
 			var c = c_black;
+			var zero = "";
+			if (mins < 10) {
+				zero = "0";
+			}
 			draw_text_color(invUIX + (inventoryWidth * 0.46), invUIY + (inventoryHeight * .14), ":", c, c, c, c, 1);
 			draw_text_color(invUIX + (inventoryWidth * 0.3), invUIY + (inventoryHeight * .14), floor(hrs), c, c, c, c, 1);
-			draw_text_color(invUIX + (inventoryWidth * 0.65), invUIY + (inventoryHeight * .14), floor(mins), c, c, c, c, 1);
+			draw_text_color(invUIX + (inventoryWidth * 0.65), invUIY + (inventoryHeight * .14), zero+string(floor(mins)), c, c, c, c, 1);
 			draw_set_halign(fa_left);
 		break;
 		

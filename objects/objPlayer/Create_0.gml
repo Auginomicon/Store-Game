@@ -20,12 +20,12 @@ enum pStates {
 }
 
 //Inventory
-inventory[0] = "Key";
+inventory[0] = "Empty";
 inventory[1] = "Empty";
 inventory[2] = "Empty";
 inventory[3] = "Empty";
 
-money = 50;
+money = 6.5;
 
 // Cell 1 - Item name
 // Cell 2 - Slot it came from

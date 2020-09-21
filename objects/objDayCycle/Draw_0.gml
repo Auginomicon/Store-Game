@@ -11,7 +11,7 @@ if (surface_exists(surface)) {
 	draw_set_alpha(darkness);
 	draw_rectangle(0, 0, global.guiWidth, global.guiHeight, false);
 	
-	if (hours >= 1.5) {
+	if (hours >= 1) {
 		gpu_set_blendmode(bm_subtract);
 		
 		with(objLight) {

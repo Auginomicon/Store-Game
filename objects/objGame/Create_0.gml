@@ -8,7 +8,6 @@ global.ResolutionW = 750;
 global.ResolutionH = 420;
 global.silent = false;
 
-surface_resize(application_surface, global.ResolutionW, global.ResolutionH);
 room_goto_next();
 window_mouse_set(window_get_width() / 2, window_get_height() / 2);
 
@@ -41,8 +40,8 @@ global.isOn = false;
 global.cameraSystem = false;
 playerName = "Player";
 global.nightStarted = false;
-global.bonusTask = irandom(3) + 1;
 
+global.bonusTask = irandom(3) + 1;
 /*
 	Bonus Tasks
 	1 - Throw out garbage
@@ -66,3 +65,8 @@ enum MachineState {
 	Off,
 	Broken
 }
+
+// For Menu
+global.viewWidth =	camera_get_view_width(view_camera[0]);
+global.viewHeight = camera_get_view_height(view_camera[0]);
+display_set_gui_size(global.viewWidth, global.viewHeight);
