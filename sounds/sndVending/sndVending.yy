@@ -7,14 +7,14 @@
   "type": 0,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "audiogroup_default",
-    "path": "audiogroups/audiogroup_default",
+    "name": "audiogroup_effects",
+    "path": "audiogroups/audiogroup_effects",
   },
   "soundFile": "sndVending.mp3",
   "duration": 2.068673,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "Misc",
+    "path": "folders/Sounds/Misc.yy",
   },
   "resourceVersion": "1.0",
   "name": "sndVending",

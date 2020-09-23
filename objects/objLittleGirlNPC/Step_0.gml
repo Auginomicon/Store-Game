@@ -38,11 +38,12 @@ if (canMove) {
 			path_start(path, spd, path_action_stop, false);
 		}
 		else {
-			mp_grid_path(global.grid, path, x, y, 4435, 2435, true);
-			path_start(path, spd, path_action_stop, true);
-			if (floor(x) == 4435 and floor(y) == 2435) {
-				instance_destroy();
-				show_debug_message("Gone")
+			if(mp_grid_path(global.grid, path, x, y, 4435, 2435, true)) {
+				path_start(path, spd, path_action_stop, true);
+				if (floor(x) == 4435 and floor(y) == 2435) {
+					instance_destroy();
+					show_debug_message("Gone")
+				}
 			}
 		}
 	}

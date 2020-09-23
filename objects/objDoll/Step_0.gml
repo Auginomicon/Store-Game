@@ -41,8 +41,7 @@ switch(state) {
 			// Once inside
 			if (currentLocation == 1 and desiredItem != noone) {
 				// Path to the desired item
-				mp_grid_path(global.grid, path, x, y, desiredItem.x, desiredItem.y, true);
-				path_start(path, spd, path_action_stop, false);
+				if (mp_grid_path(global.grid, path, x, y, desiredItem.x, desiredItem.y, true)) path_start(path, spd, path_action_stop, false);
 				// Once ontop of the item start to take the item.
 				if (floor(x) == desiredItem.x and floor(y) == desiredItem.y) {
 					sprite_index = sprDollIdle;

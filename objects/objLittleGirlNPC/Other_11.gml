@@ -13,6 +13,6 @@ repeat(4) {
 	i++;
 }
 leaving = true;
-alarm[2] = -1 
+alarm[2] = -1
 ClearDialog(1, objLittleGirlNPC, 3);
 path_clear_points(path);

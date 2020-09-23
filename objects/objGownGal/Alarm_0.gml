@@ -1,2 +1,3 @@
 /// @description Start running
-spd = runSpd;
+state = enemyState.Run;
+audio_play_sound(sndShriek04, 5, false);

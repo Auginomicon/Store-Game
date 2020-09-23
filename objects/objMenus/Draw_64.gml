@@ -10,7 +10,7 @@ var startX = global.viewWidth / 2;
 
 // Draw Background
 var c = c_black;
-draw_rectangle_color(0, 0, global.guiWidth, global.guiHeight, c, c, c, c, false);
+draw_rectangle_color(0, -5, global.guiWidth, global.guiHeight, c, c, c, c, false);
 
 // Draw Elements
 draw_set_valign(fa_middle);
@@ -48,10 +48,11 @@ repeat(dsHeight) {
 			var currentArr = dsGrid[# 4, yy];
 			c = c_white;
 			var leftShift = "<< ";
-			var rightShift = "  >>";
+			var rightShift = " >>";
 			
 			if (currentVal == 0) leftShift = "";
 			if (currentVal == array_length(dsGrid[# 4, yy]) - 1) rightShift = "";
+			if (inputting and yy == menuOptions[page]) c = c_lime; 
 			draw_text_color(rtx, rty, leftShift+currentArr[currentVal]+rightShift, c, c, c, c, 1);
 		break;
 		
@@ -63,6 +64,7 @@ repeat(dsHeight) {
 			c = c_white;
 			
 			draw_line_width_color(rtx, rty, rtx + len, rty, 2, c_white, c_white);
+			if (inputting and yy == menuOptions[page]) c = c_lime; 
 			draw_circle_color(rtx + (circlePos * len), rty, 4, c, c, false);
 			draw_text_color(rtx + (len * 1.2), rty, string(floor(circlePos * 100)) + "%", c, c, c, c, 1);
 		break;
@@ -71,6 +73,7 @@ repeat(dsHeight) {
 			var currentVal = dsGrid[# 3, yy];
 			var c1, c2;
 			c = c_white;
+			if (inputting and yy == menuOptions[page]) c = c_lime; 
 			if (currentVal == 0) { c1 = c; c2 = c_dkgray; }
 			else { c1 = c_dkgray; c2 = c; }
 			draw_text_color(rtx, rty, "ON", c1, c1, c1, c1, 1);

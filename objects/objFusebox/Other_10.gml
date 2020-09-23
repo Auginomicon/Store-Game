@@ -11,4 +11,4 @@ objVendingMachine.state = MachineState.Off;
 objSodaMachine.state = MachineState.Off;
 objCameraSystem.state = MachineState.Off;
 
-audio_play_sound(sndPowerDown, 1, false);
+audio_play_sound(sndPowerDown, 9, false);

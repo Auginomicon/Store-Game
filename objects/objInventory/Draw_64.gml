@@ -16,7 +16,7 @@ if (showInventory) {
 			while (mins >= 60) {
 				mins -= 60;
 			}
-			var hrs = objDayCycle.hours + 6;
+			var hrs = objDayCycle.hours + 7;
 			while (hrs >= 12) {
 				hrs -= 11;
 			}

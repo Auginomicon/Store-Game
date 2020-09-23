@@ -70,3 +70,7 @@ enum MachineState {
 global.viewWidth =	camera_get_view_width(view_camera[0]);
 global.viewHeight = camera_get_view_height(view_camera[0]);
 display_set_gui_size(global.viewWidth, global.viewHeight);
+
+// Load audio groups
+audio_group_load(audiogroup_effects);
+audio_group_load(audiogroup_music);

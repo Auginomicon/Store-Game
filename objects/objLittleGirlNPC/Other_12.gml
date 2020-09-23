@@ -2,9 +2,11 @@
 show_debug_message("Now I'm ang-wy");
 
 if (objPlayer.activeTextbox != noone) {
-	if (objDialogBoxes.message[0] == "Hmm, hmmm, la la la!") {
-		instance_destroy(objPlayer.activeTextbox);
-		objPlayer.activeTextbox = noone;
+	if (object_exists(objDialogBoxes)) {
+		if (objDialogBoxes.message[0] == "Hmm, hmmm, la la la!") {
+			instance_destroy(objPlayer.activeTextbox);
+			objPlayer.activeTextbox = noone;
+		}
 	}
 }
 

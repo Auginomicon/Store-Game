@@ -2,6 +2,7 @@
 var arr = GetSpawnLocations();
 
 sprite_index = choose(sprGownGalIdle1, sprGownGalIdle2);
+audio_play_sound(sndSpoop02, 2, false);
 
 if (sprite_index == sprGownGalIdle2) {
 	alarm[1] = choose(1, 1*room_speed);

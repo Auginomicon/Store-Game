@@ -7,8 +7,8 @@
   "type": 0,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "audiogroup_default",
-    "path": "audiogroups/audiogroup_default",
+    "name": "audiogroup_effects",
+    "path": "audiogroups/audiogroup_effects",
   },
   "soundFile": "sndCicada.mp3",
   "duration": 14.525,

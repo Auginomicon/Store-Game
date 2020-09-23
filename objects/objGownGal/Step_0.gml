@@ -31,16 +31,23 @@ switch (state) {
 		//Chase player if they are in range
 		if (distance_to_object(objPlayer) < range) {
 			state = enemyState.Chase;
+			var snd = choose(sndShriek01, sndShriek02, sndShriek03)
+			if (!audio_is_playing(snd)) audio_play_sound(snd, 5, false);
 		}
 	break;
 	
 	case enemyState.Run:
 		spd = runSpd;
+		if (audio_is_playing(sndSpoop01)) audio_stop_sound(sndSpoop01);
+		if (!audio_is_playing(sndViolins)) audio_play_sound(sndViolins, 5, true);
 	case enemyState.Chase:
 		 //Change to running speed if the player doesn't hide in the closet soon enough.
-		//if (alarm[0] == -1) {
-		//	alarm[0] = (room_speed * 12);
-		//}
+		if (alarm[0] == -1) {
+			alarm[0] = (room_speed * 12);
+		}
+		
+		// Play a drone when chasing
+		if (!audio_is_playing(sndSpoop01)) audio_play_sound(sndSpoop01, 5, true);
 		
 		//Stops the alarm from going off
 		alarm[2] = -1;

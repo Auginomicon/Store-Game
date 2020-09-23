@@ -1,6 +1,6 @@
 // Create the menu
 // For Menu
-
+depth = -15;
 enum menuPage {
 	main,
 	settings,
@@ -31,13 +31,15 @@ dsSettings = CreateMenuPage(
 
 dsAudio = CreateMenuPage(
 	["Master", menuElementType.slider, ChangeVolume, 1, [0,1]],
-	["Back", menuElementType.pageTransfer, menuPage.main]
+	["Music", menuElementType.slider, ChangeVolume, 1, [0,1]],
+	["Effects", menuElementType.slider, ChangeVolume, 1, [0,1]],
+	["Back", menuElementType.pageTransfer, menuPage.settings]
 );
 
 dsGraphics = CreateMenuPage(
-	["Resolution", menuElementType.shift, ChangeResolution, 0, ["384 x 216", "768 x 432", "1152 x 648", "1536 x 874", "1920 x 1080"]],
-	["Window Mode", menuElementType.toggle, 1, ["Fullscreen", "Windowed"]],
-	["Back", menuElementType.pageTransfer, menuPage.main]
+	["Resolution", menuElementType.shift, ChangeResolution, 3, ["384 x 216", "768 x 432", "1152 x 648", "1536 x 874", "1920 x 1080"]],
+	["Window Mode", menuElementType.toggle, ChangeWindowMode, 1, ["Fullscreen", "Windowed"]],
+	["Back", menuElementType.pageTransfer, menuPage.settings]
 );
 
 page = 0;
@@ -47,3 +49,5 @@ repeat(array_length(menuPages)) {
 	menuOptions[i] = 0;
 	i++;
 }
+
+inputting = false;

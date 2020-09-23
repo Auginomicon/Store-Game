@@ -4,15 +4,15 @@ if (!objPlayer.isSafe) exit;
 
 var animLength = 20;
 var animSpeed = 5;
-
 //Draw bg
 draw_rectangle_color(0, 0, global.guiWidth, global.guiHeight, c_black, c_black, c_black, c_black, false);
 
 if (instance_exists(objGownGal)) {
 	if (objGownGal.currentLocation == objGame.location) {
 		with(objJanitorDoor) {
-			if (xFrame + (animSpeed / 60) < animLength - 1) {
+			if (xFrame + (animSpeed / 60) < animLength - 1 and !animDone) {
 				xFrame += (animSpeed / 60);
+				if (xFrame + (animSpeed / 60) == animLength - 1) animDone = true;
 			}
 			else {
 				xFrame = 0;
@@ -20,13 +20,13 @@ if (instance_exists(objGownGal)) {
 			
 			draw_sprite(sprJanitorScene1, floor(xFrame), global.guiWidth * 0.05, 0);
 			
-			if (distance_to_point(objGownGal.x, objGownGal.y) < 300) {
+			if (distance_to_object(objGownGal) < 300) {
 				// Really close to the player
 			}
-			else if (distance_to_point(objGownGal.x, objGownGal.y) < 550) {
+			else if (distance_to_object(objGownGal) < 550) {
 				// Somewhat close to
 			}
-			else if (distance_to_point(objGownGal.x, objGownGal.y) < 800) {
+			else if (distance_to_object(objGownGal) < 800) {
 				// Not that close at all
 			}
 		}

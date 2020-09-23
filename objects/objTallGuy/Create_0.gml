@@ -22,3 +22,5 @@ idleNum = 0;
 // Courage
 courage = 0;
 maxCourage = 100;
+
+alarm[3] = 5 * room_speed;

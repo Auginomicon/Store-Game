@@ -13,6 +13,10 @@ else {
 
 switch (state) {
 	case enemyState.Free: // Go after fuse box
+		if (courage >= 100) {
+			spd = runSpd;
+		}
+
 		path_speed = spd;
 		
 		// Get the correct sprite for movement
@@ -45,6 +49,7 @@ switch (state) {
 					 //Chase the player
 					 path_clear_points(path);
 					 state = enemyState.Chase;
+					 if (!audio_is_playing(sndTGScream))audio_play_sound(sndTGScream, 1, false);
 				}
 				else {
 					// start pathing to the roam position
@@ -187,15 +192,19 @@ switch (state) {
 	break;
 }
 
-if (courage >= 100) {
-	spd = runSpd;
-}
-
 if (sprite_index != sprTallGuy or sprite_index != sprTallGuySlash or sprite_index != sprTallGuySpooked) {
 	// Checks if we are in the same room
 	if (currentLocation == objGame.location) {
 		if (floor(image_index) == 2 or floor(image_index) == 5) {
 			ScreenShake(irandom_range(1, 4), irandom_range(5, 15));
+			if (spd != runSpd) {
+				if (!audio_is_playing(sndTGStomp)) {
+					audio_play_sound(sndTGStomp, 1, false);
+				}
+			}
+			else {
+				audio_play_sound(sndTGStomp, 1, false);
+			}
 		}
 	}
 }

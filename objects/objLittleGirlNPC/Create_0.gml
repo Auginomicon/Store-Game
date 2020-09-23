@@ -20,7 +20,7 @@ message[8] = "";
 speakers = [id, id, objPlayer, id, id, id, id, id, id, objPlayer];
 nextLine = [1, 2, [3, 7, 6], 5, -1, -1, -1, -1];
 scripts = [-1, -1, [[ItemCheck, "Candy Bar", nextLine[2][0], 4],  -1, [EventTrigger, objLittleGirlNPC, 0]], -1, [EventTrigger, objLittleGirlNPC, 1], [EventTrigger, objLittleGirlNPC, 2], -1, [EventTrigger, objLittleGirlNPC, 2]];
-portraitNums = [0, 0, 0, 0, 0, 0, 0 ,0 ,0];
+portraitNums = [19, 19, 19, 20, 20, 21, 21, 20, 19];
 
 path_start(pLittleGirlSpawn, spd, path_action_stop, true);
 idleNum = 0;

@@ -23,6 +23,7 @@ if (objPlayer.input_interact and (image_index == 0 or image_index == 1)) {
 				var inst = instance_create_layer(objPlayer.x, objPlayer.y, "Instances", objItem);
 				inst.name = "Garbage";
 				inst.sprite_index = sprGarbage;
+				inst.sound = sndGarbagePickup;
 			}
 		}
 		instance_destroy();
