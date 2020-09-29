@@ -68,11 +68,11 @@ switch(state) {
 			// Reset alarm
 			alarm[0] = -1;
 		}
-		
 	break;
 	
 	case enemyState.Feared: // run to a different area
 		spd = runspd;
+		path = path_add();
 		if (objGame.location == currentLocation) {
 			mp_grid_path(global.grid, path, x, y, secondClosestTransition.x, secondClosestTransition.y, true);
 			path_start(path, spd, path_action_stop, false);

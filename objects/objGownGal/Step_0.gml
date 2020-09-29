@@ -10,10 +10,8 @@ else {
 	spd = walkspd;
 	path_speed = spd;
 }
-
 switch (state) {
 	case enemyState.Free:
-		
 		// When the player is lower than 50 sanity, the gown gal's head will twitch
 		if (objPlayer.sanity <= 55) {
 			sprite_index = sprGownGalIdle2;
@@ -43,7 +41,7 @@ switch (state) {
 		if (audio_is_playing(sndSpoop01)) audio_stop_sound(sndSpoop01);
 		if (!audio_is_playing(sndViolins)) audio_play_sound(sndViolins, 5, true);
 	case enemyState.Chase:
-		 //Change to running speed if the player doesn't hide in the closet soon enough.
+		//Change to running speed if the player doesn't hide in the closet soon enough.
 		if (alarm[0] == -1) {
 			alarm[0] = (room_speed * 12);
 		}
@@ -123,6 +121,7 @@ switch (state) {
 				else {
 					// Will head to the second closest transition from the initial transition
 					mp_grid_path(global.grid, path, x, y, secondClosestTransition.x, secondClosestTransition.y, 1);
+						
 				}
 			}
 			
@@ -149,10 +148,10 @@ switch (state) {
 				}
 			}
 		}
-		
 	break;
 	
 	case enemyState.Feared: // Not really feared but the player is hidding
+		path = path_add();
 		// Get the correct sprite for movement
 		if(direction >= 306 or direction <= 45) {
 			sprite_index = sprGownGalWalkRight; //right
@@ -220,6 +219,7 @@ switch (state) {
 	break;
 	
 	case enemyState.Leave: // Not chasing but leaving
+		path = path_add();
 		if (mp_grid_path(global.grid, path, x, y, 965, 1122, true)) {
 			path_start(path, spd, path_action_stop, false);
 			

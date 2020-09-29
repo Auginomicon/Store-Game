@@ -11,18 +11,19 @@ else {
 
 switch(state) {
 	case enemyState.Free:
-		if (mp_linear_path_object(path, roamX, roamY, spd, noone)) {
+		if (mp_grid_path(global.grid, path, x, y, roamX, roamY, true)) {
 			path_start(path, spd, path_action_stop, false);
-			image_speed = 1;
 			if (floor(x) == roamX and floor(y) == roamY) {
 				if (alarm[0] == -1) {
 					alarm[0] = 5 * room_speed//choose(1, 5, 10, 15, 20) * room_speed;
 				}
 				image_index = 0;
 			}
+		} 
+		else {
+			alarm[0] = 1;
 		}
 		
-		if ((objGame.location != currentLocation)) exit;
 		//if (distance_to_object(objPlayer) < 300 and !objPlayer.isSafe) {
 		//	state = enemyState.Chase;
 		//}
@@ -34,7 +35,7 @@ switch(state) {
 		var cx = (objPlayer.x / 32) * 32;
 		var cy = (objPlayer.y / 32) * 32;
 		
-		if (mp_linear_path_object(path, cx, cy, spd, noone)) {
+		if (mp_grid_path(global.grid, path, x, y, cx, cy, true)) {
 			path_start(path, spd, path_action_stop, false);
 		}
 		
