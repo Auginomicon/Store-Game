@@ -5,7 +5,7 @@ with(objDayCycle) {
 
 global.nightStarted = true;
 
-// Spawn in the lost employee of ot's the first night
+// Spawn in the lost employee only during the first night
 if (objDayCycle.day == 1) {
 	instance_create_layer(6070, 2318, "Instances", objLostEmployee);
 }
@@ -42,7 +42,7 @@ with(objSign) {
 	message[5] = tip;
 }
 
-// Begin spawn alarm for the gown gal
+// Begin random events for the game
 with(objGame) {
 	event_perform(ev_alarm, 0);
 }

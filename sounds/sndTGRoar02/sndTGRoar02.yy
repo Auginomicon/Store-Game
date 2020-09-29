@@ -1,5 +1,5 @@
 {
-  "compression": 0,
+  "compression": 1,
   "volume": 1.0,
   "preload": false,
   "bitRate": 128,
@@ -10,8 +10,8 @@
     "name": "audiogroup_effects",
     "path": "audiogroups/audiogroup_effects",
   },
-  "soundFile": "sndTGRoar02",
-  "duration": 0.0,
+  "soundFile": "sndTGRoar02.mp3",
+  "duration": 3.821,
   "parent": {
     "name": "Tall Guy",
     "path": "folders/Sounds/Tall Guy.yy",

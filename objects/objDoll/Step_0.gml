@@ -158,3 +158,10 @@ if (collision_circle(x, y, 32, objPlayer, false, true)) {
 		}
 	}
 }
+
+// Check if the item exists or not
+if (desiredItem != noone) {
+	if (!object_exists(desiredItem)) {
+		desiredItem = noone;
+	}
+}

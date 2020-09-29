@@ -1,4 +1,19 @@
 /// @description
+
+// Monitor current camera for NPC movement
+if (instance_exists(ParEnemy)) {
+	var inst = point_in_rectangle(ParEnemy.x, ParEnemy.y, x - (global.guiWidth / 2), y - (global.guiHeight / 2), x + (global.guiWidth / 2), y + (global.guiHeight / 2));
+	if (inst != noone) {
+		if (!soundPlayed) {
+			audio_play_sound(sndCameraBeep, 4, false);
+			soundPlayed = true;
+		}
+	}
+	else {
+		soundPlayed = false;
+	}
+}
+
 // Exits if the boolean is false
 if (!global.cameraSystem) exit;
 

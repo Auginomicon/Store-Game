@@ -14,3 +14,4 @@ secondClosestTransition = instance_nth_nearest(x, y, objTransition, 2);
 itemFound = false;
 desiredItem = noone;
 noMoreTrash = false;
+alarm[2] = 1;

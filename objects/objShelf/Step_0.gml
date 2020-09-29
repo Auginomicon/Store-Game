@@ -7,7 +7,10 @@ if (point_in_rectangle(objPlayer.x, objPlayer.y, x - (sprite_width * 0.5), y, x 
 	// Checks player input and that nothing else is active.
 	if (objPlayer.input_interact and objInventory.showInventory == false and objPlayer.activeTextbox == noone) {
 		if (!global.nightStarted) {
-			if (!instance_exists(objTextBoxes)) NewTextbox("I should clock in first", 1);
+			if (!instance_exists(objTextBoxes)) {
+				NewTextbox("I should clock in first.", 1);
+				objPlayer.facing = -1;
+			}
 		}
 		else {
 			switch (image_index) {
@@ -15,14 +18,15 @@ if (point_in_rectangle(objPlayer.x, objPlayer.y, x - (sprite_width * 0.5), y, x 
 					if (objPlayer.equipped[0] == "Storage Box") {
 						var i = irandom(1) + 1;
 						image_index = i;
-						objPlayer.jobProgression += 10;
+						objPlayer.jobProgression += 7;
+						objPlayer.energy -= 5;
 						show_debug_message("Shelf Restocked");
 			
 						//Remove item from Inventory
 						with(objPlayer) {
 							event_perform(ev_other, ev_user0);
 							if (global.bonusTask == 2) {
-								money += 1.25;
+								money += global.bonussMoney;
 							}
 						}
 					}
@@ -43,9 +47,11 @@ if (point_in_rectangle(objPlayer.x, objPlayer.y, x - (sprite_width * 0.5), y, x 
 							var inst = instance_create_layer(objPlayer.x, objPlayer.y, "Instances", objItem);
 							inst.name = "Garbage";
 							inst.sprite_index = sprGarbage;
+							inst.sound = sndTrashbag;
 						}
 					}
 					objPlayer.jobProgression += 5;
+					objPlayer.energy -= 3;
 					show_debug_message("Shelf cleaned");
 					audio_play_sound(sndTrashbag, 1, false);
 				

@@ -39,12 +39,12 @@ function UseItemHelper() {
 				audio_play_sound(sndSlurp, 1, false);
 			}
 			with(objPlayer) {
-				var tempSanity = sanity + 25;
+				var tempSanity = sanity + 20;
 				if (tempSanity > maxSanity) {
 					sanity = maxSanity;
 				}
 				else {
-					sanity += 25;
+					sanity += 20;
 				}
 			}
 			
@@ -64,7 +64,7 @@ function UseItemHelper() {
 				audio_play_sound(sndMunch, 1, false);
 			}
 			with(objPlayer) {
-				var tempSanity = sanity + 20;
+				var tempSanity = sanity + 25;
 				if (tempSanity > maxSanity) {
 					sanity = maxSanity;
 				}
@@ -108,10 +108,11 @@ function UseItemHelper() {
 				audio_play_sound(sndGarbageThrow, 1, false);
 				
 				with(objPlayer) {
-					jobProgression += 7;
+					jobProgression += 5;
 					sanity -= 5;
+					energy -= 4;
 					if (global.bonusTask == 1) {
-						money += 1.25;
+						money += global.bonussMoney;
 					}
 				}
 			}
@@ -128,8 +129,8 @@ function UseItemHelper() {
 				}
 			
 				objPlayer.inventory[slot] = "Empty";
-				}
 				audio_play_sound(sndLock, 1, false);
+			}
 		break;
 		
 		case "Mop": //Clean up liquid messes
@@ -150,13 +151,13 @@ function UseItemHelper() {
 				
 				message[2] = "I'm writing this for you so that you can survive. The night, this place is made on cursed grounds and terrible entities haunt the woods around you."
 				message[3] = "Avoid her at all costs! She will follow you if you get too close. Hide in the the janitor's closet if she's following you. Pray that she didn't notice you get inside";
-				message[4] = "Despite his large size, he is a big, shy, scaredy-cat. If you get close to him he will hunch up into a ball and wait til you're gone. If he gets to the fusebox, he will not fear you anymore. At this point, just don't go out front.";
+				message[4] = "Despite his large size, he is a big, shy, scaredy-cat. If you get close to him he will hunch up into a ball and wait til you're gone. If he breaks to the fusebox, he will not fear you anymore. So keep it locked tight.";
 				
-				message[5] = ["Previous page.", "Little Girl and The Doll.", "The Hounds", "Next page.", "Leave."];
+				message[5] = ["Previous page.", "Little Girl and The Doll.", "Shadow Figures", "Next page.", "Leave."];
 				
-				message[6] = "Give her a candy bar to appease her. If you don't she will mess up the store and steal items.";
+				message[6] = "Give her a candy bar to appease her. If you don't she will open up all your trash bags in the back and leave her doll behind. Catch the doll to make her stop. After that you can either throw the doll in the dumpster or keep the doll to ward her off.";
 				message[7] = "Staying outside too long will draw hounds to your location. Avoid being out for extended durations";
-				message[8] = ""
+				message[8] = "";
 				
 				
 				scripts = -1;
@@ -189,6 +190,15 @@ function UseItemHelper() {
 		
 		case "Doll":
 			audio_play_sound(sndSqueak, 1, false);
+			if (collision_circle(objPlayer.x, objPlayer.y, objPlayer.radius, objDumpster, false, true)) {
+				//Checks if the equipped was used. If it has been then resets the equipped array
+				if (objPlayer.inventory[slot] == objPlayer.equipped[0] and objPlayer.equipped[1] != -1) {
+					objPlayer.equipped[0] = -1;
+					objPlayer.equipped[1] = -1;
+				}
+			
+				objPlayer.inventory[slot] = "Empty";
+			}
 		break;
 	}
 }

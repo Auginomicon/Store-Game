@@ -1,7 +1,24 @@
 /// @description Spawn in enemies
-var rng = irandom(10) +1;
+var rng = irandom(13);
 
 switch(rng) {
+	case 0:
+		// Knock down a shelf
+		var shelfNum = instance_number(objShelf);
+		var randomShelf = (irandom(shelfNum - 1)) + 1;
+		var i = 1;
+		repeat(shelfNum) {
+			var shelfInst = instance_nth_nearest(x, y, objShelf, i);
+			if (randomShelf == i) {
+				with(shelfInst.id) {
+					event_perform(ev_other, ev_user0);
+				}
+				break;
+			}
+			i++;
+		}
+	break;
+	
 	case 1:
 		// Spawn the gown gal
 		show_debug_message("Gown Gal");
@@ -10,7 +27,7 @@ switch(rng) {
 			var inst = instance_create_layer(spawn[0], spawn[1], "Instances", objGownGal);
 			inst.currentLocation = spawn[2];
 			var piano = choose(sndPiano02, sndPiano01);
-			if (!audio_is_playing(piano)) audio_play_sound(piano, 5, false);
+			audio_play_sound(piano, 7, false);
 		}
 	break;
 	
@@ -23,16 +40,18 @@ switch(rng) {
 			var inst = instance_create_layer(spawnX, spawnY, "Instances", objTallGuy);
 			inst.currentLocation = 2;
 			var roar = choose(sndTGRoar01, sndTGRoar02)
-			if (!audio_is_playing(roar)) audio_play_sound(roar, 5, false);
+			audio_play_sound(roar, 7, false);
 		}
 	break;
 	
 	case 3:
 		// Spawn the the little girl
 		show_debug_message("Little Girl and the Doll");
-		if(!instance_exists(objLittleGirlNPC)) { 
+		if(!instance_exists(objLittleGirlNPC) or !instance_exists(objLittleGirl)) { 
 			var inst = instance_create_layer(x, y, "Instances", objLittleGirlNPC);
 			inst.currentLocation = 2;
+			var snd = choose(sndGiggle01,sndGiggle02, sndGiggle03, sndGiggle04);
+			audio_play_sound(snd, 7, false);
 		}
 	break;
 	
@@ -56,19 +75,24 @@ switch(rng) {
 	
 	case 7:
 		// Spooky Sound
-		show_debug_message("Drone");
-		if (!audio_is_playing(sndDrone01)) audio_play_sound(sndDrone01, 5, false);
+		show_debug_message("Footsteps");
+		if (location == 1 or location == 4 or location == 5) {
+			if (!audio_is_playing(sndRunningFootstepsTile)) audio_play_sound(sndRunningFootstepsTile, 5, false);
+		}
+		else {
+			if (!audio_is_playing(sndRunningFootstepsGrass)) audio_play_sound(sndRunningFootstepsGrass, 5, false);
+		}
 	break;
 	
 	case 8:
 		// Spooky Sound
-		show_debug_message("Hum");
-		if (!audio_is_playing(sndHumwHorns)) audio_play_sound(sndHumwHorns, 5, false);
+		show_debug_message("Croak");
+		if (!audio_is_playing(sndCroak)) audio_play_sound(sndCroak, 5, false);
 	break;
 	
 	case 9:
 		// Turn on soda fountain
-		
+		objSodaFountain.isOn = true;
 	break;
 	
 	case 10:
@@ -79,7 +103,7 @@ switch(rng) {
 			var inst = instance_create_layer(spawn[0], spawn[1], "Instances", objGownGal);
 			inst.currentLocation = spawn[2];
 			var piano = choose(sndPiano02, sndPiano01);
-			if (!audio_is_playing(piano)) audio_play_sound(piano, 5, false);
+			audio_play_sound(piano, 7, false);
 		}
 	break;
 	
@@ -91,9 +115,50 @@ switch(rng) {
 			var inst = instance_create_layer(spawn[0], spawn[1], "Instances", objGownGal);
 			inst.currentLocation = spawn[2];
 			var piano = choose(sndPiano02, sndPiano01);
-			if (!audio_is_playing(piano)) audio_play_sound(piano, 5, false);
+			audio_play_sound(piano, 7, false);
 		}
+	break;
+	
+	case 12:
+		// Spooky Sound
+		show_debug_message("Knocking");
+		if (!audio_is_playing(sndKnocking)) audio_play_sound(sndKnocking, 5, false);
+	break;
+	
+	case 13:
+		// Spooky Sound
+		show_debug_message("Crash");
+		if (!audio_is_playing(sndCrash)) audio_play_sound(sndCrash, 5, false);
+	break;
+	
+	case 14: // Spawn a shadow figure
+		// Spawn a shadow Figure
+		var loc = choose(1, 2, 3);
+		show_debug_message("Spawned Shadow Figure at " + string(loc));
+	
+		// Get their spawn location
+		var spawnX, spawnY;
+		switch(loc) {
+			case 1: // Inside the store
+				spawnX = irandom_range(1002, 2272);
+				spawnY = irandom_range(965, 1815);
+			break;
+	
+			case 2: // Out front
+				spawnX = irandom_range(3302, 5548);
+				spawnY = irandom_range(1013, 2418);
+			break;
+	
+			case 3: // Out back
+				spawnX = irandom_range(3250, 4936);
+				spawnY = irandom_range(3785, 4476);
+			break;
+		}
+		var sf = instance_create_layer(spawnX, spawnY, "Instances", objShadowFigures);
+		sf.currentLocation = loc;
+		sf.roamX = spawnX;
+		sf.roamY = spawnY;
 	break;
 }
 
-alarm[0] = 35 * room_speed;
+alarm[0] = (objPlayer.sanity div 3.5) * room_speed;

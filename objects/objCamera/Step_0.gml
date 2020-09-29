@@ -4,8 +4,6 @@ if (!global.cameraSystem) {
 	following = objPlayer;
 	viewWidthHalf = camera_get_view_width(cam) * 0.5;
 	viewHeightHalf = camera_get_view_height(cam) * 0.5;
-	
-	if(keyboard_check(ord("U"))) { if(instance_exists(objLittleGirl)) { following = objLittleGirl }} //TODO: Remove this later
 }
 else {
 	with(objPlayer) {

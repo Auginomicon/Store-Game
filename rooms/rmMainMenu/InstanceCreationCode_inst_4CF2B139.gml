@@ -1,0 +1,2 @@
+text = "Quit"
+scr = QuitGame;

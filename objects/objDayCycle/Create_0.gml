@@ -6,7 +6,7 @@ hours = 0;
 day = 1;
 
 //Seconds per step
-timeIncrement = 2;
+timeIncrement = 1;
 timePaused = false;
 
 //Color Variables

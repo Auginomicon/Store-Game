@@ -6,8 +6,9 @@ with(objPlayer) {
 if (objPlayer.input_interact and (image_index == 0 or image_index == 1)) {
 	if (!global.nightStarted) {
 		if(!instance_exists(objTextBoxes)) {
-			NewTextbox("Hmm maybe I should clock in first", 1);
+			NewTextbox("Hmm maybe I should clock in first.", 1);
 			objPlayer.canMove = false;
+			objPlayer.facing = -1;
 		}
 	}
 	else {
@@ -29,11 +30,12 @@ if (objPlayer.input_interact and (image_index == 0 or image_index == 1)) {
 		instance_destroy();
 		audio_play_sound(sndTrashbag, 1, false);
 		objPlayer.sanity -= 5;
+		objPlayer.energy -= 3;
 		if (global.bonusTask == 4) {
-			objPlayer.money += 1.25;
+			objPlayer.money += global.bonussMoney;
 		}
 		if (global.nightStarted = true) {
-			objPlayer.jobProgression += 5;
+			objPlayer.jobProgression += 3;
 		}
 	}
 }
@@ -42,9 +44,9 @@ else if (objPlayer.isMopping and objPlayer.sprite_index = objPlayer.sprite[5] an
 	if (image_alpha <= 0) {
 		with(objPlayer) {
 			if (global.nightStarted = true) {
-				objPlayer.jobProgression += 5;
+				objPlayer.jobProgression += 2;
 				if (global.bonusTask == 3) {
-					objPlayer.money += 1.25;
+					objPlayer.money += global.bonussMoney;
 				}
 			}
 		}

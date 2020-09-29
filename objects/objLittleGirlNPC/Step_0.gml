@@ -2,6 +2,8 @@
 if (global.gamePaused) { 
 	spd = 0;
 	path_speed = 0;
+	if (alarm[2] != -1) alarm[2]++;
+	if (alarm[3] != -1) alarm[3]++;
 	exit;
 }
 else {

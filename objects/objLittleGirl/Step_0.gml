@@ -2,6 +2,7 @@
 if (global.gamePaused) { 
 	spd = 0;
 	path_speed = 0;
+	if (alarm[2] != -1) alarm[2]++;
 	exit;
 }
 else {
@@ -11,6 +12,23 @@ else {
 
 switch(state) {
 	case enemyState.Free:
+		// To get the correct sprite
+		if(direction >= 306 or direction <= 45) {
+			sprite_index = sprLittleGirlAngwyWalkRight; //right
+			idleNum = 1;
+		}
+		if (direction >= 46 and direction <= 135) {
+			sprite_index = sprLittleGirlAngwyWalkUp; //up
+			idleNum = 2;
+		}
+		if (direction >= 136 and direction <=225) {
+			sprite_index = sprLittleGirlAngwyWalkLeft; //left
+			idleNum = 0;
+		}
+		if (direction >= 226 and direction <= 305) {
+			sprite_index = sprLittleGirlAngwyWalkDown; //down
+			idleNum = 3;
+		}
 		// checks if she is in the store
 		if (currentLocation == 1) {
 			if(mp_grid_path(global.grid, path, x, y, 2352, 1392, true)) {
@@ -38,6 +56,8 @@ switch(state) {
 				if (floor(x) == desiredItem.x and floor(y) == desiredItem.y) {
 					// Begind to cut the bag
 					if (alarm[1] == -1) alarm[1] = 3 * room_speed;
+					sprite_index = sprLittleGirlAngwyIdle;
+					image_index = idleNum;
 				}
 			}
 			// Will find a new target or if there is no more trash left

@@ -1,0 +1,2 @@
+text = "Controls"
+scr = ShowControls

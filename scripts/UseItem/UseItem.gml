@@ -69,12 +69,14 @@ function UseItem() {
 				
 				case "Mop":
 					dItem = sprMop;
-					dSound = sndItemPickup;
+					dSound = sndMopPickup;
+					audio_play_sound(sndMopDrop, 1, false);
 				break;
 				
 				case "Sanity Soda":
 					dItem = sprSanitySoda;
-					dSound = sndItemPickup;
+					dSound = sndSodaPickup;
+					audio_play_sound(sndItemPickup, 1, false);
 				break;
 				
 				case "Key":

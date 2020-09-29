@@ -1,5 +1,8 @@
 /// @description
-if (global.gamePaused) { exit; }
+if (global.gamePaused) {
+	path_speed = 0;
+	exit; 
+}
 
 if (canMove) {
 	if (startPathing) {

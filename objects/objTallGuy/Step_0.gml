@@ -3,6 +3,8 @@
 if (global.gamePaused) { 
 	spd = 0;
 	path_speed = 0;
+	if (alarm[2] != -1) alarm[2]++;
+	if (alarm[3] != -1) alarm[3]++;
 	exit;
 }
 else {
@@ -186,7 +188,7 @@ switch (state) {
 		else {
 			// Start ticking the alarm when the player is away
 			if (alarm[0] == -1) {
-				alarm[0] = (objPlayer.sanity div 3) * room_speed;
+				alarm[0] = (objPlayer.sanity div 2) * room_speed;
 			}
 		}
 	break;

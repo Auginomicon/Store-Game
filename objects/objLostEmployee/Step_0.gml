@@ -15,8 +15,22 @@ if (canMove) {
 	path_speed = spd;
 	
 	path = path_add();
-	
-	if (spokeWithPlayer) {
+	if (leaving) {
+		if (currentLocation != 2) {
+			if (mp_grid_path(global.grid, path, x, y, secondClosestTransition.x, secondClosestTransition.y, true)) {
+				path_start(path, spd, path_action_stop, false);
+			}
+		}
+		else {
+			if (mp_grid_path(global.grid, path, x, y, 4822, 2452, true)) {
+				path_start(path, spd, path_action_stop, false);
+				if (floor(x) == 4822 and floor(y) == 2452) {
+					instance_destroy()
+				}
+			}
+		}
+	}
+	else if (spokeWithPlayer) {
 		// go to cash register
 		if (currentLocation != 1) {
 			if (currentLocation == 2) {
@@ -37,6 +51,10 @@ if (canMove) {
 					var ct = instance_nth_nearest(x, y, objTransition, 1);
 					mp_grid_path(global.grid, path, x, y, ct.x, ct.y, true);
 				}
+			}
+			if (currentLocation == 4 or currentLocation == 5) {
+				var t = instance_nearest(x, y, objTransition)
+				mp_grid_path(global.grid, path, x, y, t.x, t.y, true);
 			}
 		}
 		else {
@@ -72,7 +90,7 @@ if (canMove) {
 					}
 				}
 				// Checks for the bathroom
-				else if (objGame.location >= 4 and currentLocation == 3) {
+				else if ((objGame.location >= 4 and currentLocation == 3) or objGame.location >= 5 and currentLocation == 3) {
 					// Go to the male bathroom
 					if (objGame.location == 4) {
 						mp_grid_path(global.grid, path, x, y, 4203, 3948, 1);
@@ -84,7 +102,7 @@ if (canMove) {
 							secondClosestTransition = instance_nth_nearest(x, y, objTransition, 2);
 						}
 					}
-					else {
+					else if (objGame.location == 5){
 						mp_grid_path(global.grid, path, x, y, 4299, 3948, 1);
 						if (floor(x) == 4299 and floor(y) == 3948) {
 							x = 1198;

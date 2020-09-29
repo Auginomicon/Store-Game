@@ -2,7 +2,7 @@
 //Make it so you can't open the inventory while you are paused or in a dialog/text box
 if (instance_exists(objTextBoxes) or instance_exists(objDialogBoxes) or global.gamePaused or global.cameraSystem) { exit; }
 
-if (objPlayer.input_open_inv) {
+if (objPlayer.input_open_inv and !objPlayer.isSafe) {
 	showInventory = !showInventory
 	if (global.isOn) { global.isOn = false; }
 }

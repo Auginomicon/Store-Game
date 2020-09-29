@@ -20,7 +20,7 @@ enum menuElementType {
 dsMenuMain = CreateMenuPage(
 	["Resume", menuElementType.scriptRunner, ResumeGame],
 	["Settings", menuElementType.pageTransfer, menuPage.settings],
-	["Quit", menuElementType.scriptRunner, ExitGame]
+	["Leave", menuElementType.scriptRunner, GoToMainMenu]
 );
 
 dsSettings = CreateMenuPage(
@@ -37,8 +37,8 @@ dsAudio = CreateMenuPage(
 );
 
 dsGraphics = CreateMenuPage(
-	["Resolution", menuElementType.shift, ChangeResolution, 3, ["384 x 216", "768 x 432", "1152 x 648", "1536 x 874", "1920 x 1080"]],
-	["Window Mode", menuElementType.toggle, ChangeWindowMode, 1, ["Fullscreen", "Windowed"]],
+	["Resolution", menuElementType.shift, ChangeResolution, 4, ["384 x 216", "768 x 432", "1152 x 648", "1536 x 874", "1920 x 1080"]],
+	["Window Mode", menuElementType.toggle, ChangeWindowMode, 0, ["Fullscreen", "Windowed"]],
 	["Back", menuElementType.pageTransfer, menuPage.settings]
 );
 

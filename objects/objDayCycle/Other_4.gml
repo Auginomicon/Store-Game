@@ -1,10 +1,8 @@
 /// @description Check if we are inside or not
 switch(room) {
-	//List all outside rooms here
+	case rmMainMenu: drawDayLight = false; break;
 	case rmStore:
-	case rmBack: drawDayLight = true; break;
-	
-	default: drawDayLight = false;
+	default: drawDayLight = true;
 }
 
 //Reset the depth of this persistent object

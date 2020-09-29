@@ -9,7 +9,7 @@ name = "Manager";
 message[0] = "Ah! You must be the new recruit! It's a pleasure to meet you...";
 message[1] = "Err... sorry, I forgot your name, heh. What was it again?"
 
-message[2] = ["It's fine, my name is " + objGame.playerName +"!", "Does it even matter?", "Didn't you just read my job application? How did you forget already?"];
+message[2] = ["It's fine, my name is " + global.playerName +"!", "Does it even matter?", "Didn't you just read my job application? How did you forget already?"];
 
 message[3] = "Oh! Yeah, how could I forget that!~ "
 message[4] = "Of course it matters, silly! You're a new employee of HappyMart!~ We care for all of our employees, like it's a biiig family!";
@@ -29,7 +29,7 @@ message[15] = "Sorry. I got sidetracked. Other tasks you're legible to do are th
 message[16] = "Pick up trash and throw it out, clean up any spills, and clean up and restock the shelves.";
 message[17] = "Do enough tasks to fill your progress bar all the way to 100%. I'll download the HappyMart app on your phone now. Also, the PC beside me is the CCTV cameras! Use 'em to check for pests.";
 message[18] = "Things can get kinda boring so take this soda to keep your wits about ya! Free of charge!~";
-message[19] = "On the corkboard, there will be an important task! If you get them done by during your shift, I'll reward you with some under the table cash via the piggy bank app! That is also where you will check in for your shift!"
+message[19] = "On the corkboard, there will be an important task! If you get them done during your shift, I'll reward you with some under the table cash via the piggy bank app! The corkboard is also where you will check in for your shift!"
 message[20] = "I think that's everything. If you have any questions, please ask 'em now!";
 
 message[21] = ["What happens if I don't complete all the tasks?", "Why is this job paying so much if it's so easy?", "What's your name? And how do I contact you?", "That's it!"];

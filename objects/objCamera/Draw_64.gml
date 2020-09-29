@@ -1,5 +1,18 @@
-/// @description Draw hiding in janitor closet when isSafe
+/// @description
+// Draws the progress bar on the screen when it needs to be repaired
+if (objFusebox.image_index != 2) exit;
+if (!objInventory.showInventory) {
+	if (collision_circle(objFusebox.x, objFusebox.y, 52, objPlayer, false, true)) {
+		draw_set_color(c_white);
+		draw_set_font(fntFont);
+		draw_text(global.guiWidth * 0.215, global.guiHeight * 0.435, "Repair Progress");
+		draw_sprite_ext(sprRepairBar, 0, global.guiWidth * 0.23, global.guiHeight * 0.48, 1, 1, 0, c_white, 1);
+		draw_sprite_ext(sprRepairBar, 1, global.guiWidth * 0.23, global.guiHeight * 0.48, objFusebox.progress / objFusebox.maxProgress, 1, 0, c_white, 1);
+	}
+}
 
+#region Old Janitor Closet Code
+/*
 if (!objPlayer.isSafe) exit;
 
 var animLength = 20;
@@ -44,3 +57,5 @@ else {
 draw_set_alpha(0.71);
 draw_rectangle_color(0, 0, global.guiWidth, global.guiHeight, c_black, c_black, c_black, c_black, false);
 draw_set_alpha(1);
+*/ 
+#endregion

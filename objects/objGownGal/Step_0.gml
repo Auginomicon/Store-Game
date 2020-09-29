@@ -2,6 +2,8 @@
 if (global.gamePaused) { 
 	spd = 0;
 	path_speed = 0;
+	if (alarm[2] > 0) alarm[2]++;
+	if (alarm[0] > 0) alarm[0]++;
 	exit;
 }
 else {
@@ -56,7 +58,7 @@ switch (state) {
 		var cx = (objPlayer.x / 32) * 32;
 		var cy = (objPlayer.y / 32) * 32;
 
-		// Path towards the player
+		// Path towards the player while they are not in the janitor's closet
 		if (mp_grid_path(global.grid, path, x, y, cx, cy, 1)) {
 			path_start(path, spd, path_action_stop, false);
 			if(currentLocation != objGame.location) {
@@ -138,10 +140,112 @@ switch (state) {
 				sprite_index = sprGownGalWalkDown; //down
 			}
 			
-			// When the player is safe in the janitors
-			if (objPlayer.isSafe) {
-				path_speed = 0
+			// Go to the janitor's closet
+			if (objPlayer.isSafe and currentLocation == 1) {
+				alarm[0] = -1;
+				state = enemyState.Feared;
+				if (distance_to_object(objPlayer) <= 225) {
+					sawPlayerHide = true;
+				}
 			}
+		}
+		
+	break;
+	
+	case enemyState.Feared: // Not really feared but the player is hidding
+		// Get the correct sprite for movement
+		if(direction >= 306 or direction <= 45) {
+			sprite_index = sprGownGalWalkRight; //right
+		}
+		if (direction >= 46 and direction <= 135) {
+			sprite_index = sprGownGalWalkUp; //up
+		}
+		if (direction >= 136 and direction <=225) {
+			sprite_index = sprGownGalWalkLeft; //left
+		}
+		if (direction >= 226 and direction <= 305) {
+			sprite_index = sprGownGalWalkDown; //down
+		}
+		
+		// Path to the front of the door
+		if (mp_grid_path(global.grid, path, x, y, 1374, 1389, false)) {
+			path_start(path, spd, path_action_stop, false);
+			
+			// Once they are in front of the door
+			if ((floor(x) == 1374 and floor(y) == 1389)) {
+				// Checks if she saw him enter
+				if(sawPlayerHide) {
+					if (!audio_is_playing(sndDoor)) audio_play_sound(sndDoor, 5, false);
+					objPlayer.isSafe = false;
+					objPlayer.y += 24;
+					objPlayer.canMove = true;
+				}
+				
+				// Checks the sanity of the player to choose what to do
+				// Bangs on door but then leaves
+				if (objPlayer.sanity <= 30) {
+					sprite_index = sprGownGalWalkUp;
+					image_index = 0;
+					if (alarm[3] == -1) {
+						if (!audio_is_playing(sndBang)) audio_play_sound(sndBang, 8, false);
+						alarm[3] = 4 * room_speed;
+					}
+				}
+				// Looks at the screen then goes
+				else if (objPlayer.sanity <= 55) {
+					sprite_index = sprGownGalIdle1;
+					image_speed = 1;
+					if (alarm[3] == -1) {
+						alarm[3] = 5 * room_speed;
+					}
+				}
+				// stands around for a few seconds then leaves
+				else if (objPlayer.sanity <= 75) {
+					image_index = 0;
+					if (alarm[3] == -1) {
+						alarm[3] = 3 * room_speed;
+					}
+				}
+				// Simply leaves
+				else {
+					alarm[3] = 1;
+				}
+			}
+		}
+		
+		// Checks if the player left prematurely
+		if (!objPlayer.isSafe) {
+			state = enemyState.Chase;
+		}
+	break;
+	
+	case enemyState.Leave: // Not chasing but leaving
+		if (mp_grid_path(global.grid, path, x, y, 965, 1122, true)) {
+			path_start(path, spd, path_action_stop, false);
+			
+			if (floor(x) == 965 and floor(y) == 1122) {
+				if (!audio_is_playing(sndDoor)) audio_play_sound(sndDoor, 5, false);
+				instance_destroy();
+			}
+		}
+		
+		// Get the correct sprite for movement
+		if(direction >= 306 or direction <= 45) {
+			sprite_index = sprGownGalWalkRight; //right
+		}
+		if (direction >= 46 and direction <= 135) {
+			sprite_index = sprGownGalWalkUp; //up
+		}
+		if (direction >= 136 and direction <=225) {
+			sprite_index = sprGownGalWalkLeft; //left
+		}
+		if (direction >= 226 and direction <= 305) {
+			sprite_index = sprGownGalWalkDown; //down
+		}
+		
+		// Checks if the player left prematurely
+		if (!objPlayer.isSafe) {
+			state = enemyState.Chase;
 		}
 	break;
 }

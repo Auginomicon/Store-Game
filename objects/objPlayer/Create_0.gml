@@ -8,7 +8,7 @@ energy = 100;
 maxEnergy = 100;
 
 walkSpeed = 3;
-name = objGame.playerName;
+name = global.playerName;
 
 jobProgression = 0;
 maxJobProgression = 100;
@@ -25,7 +25,7 @@ inventory[1] = "Empty";
 inventory[2] = "Empty";
 inventory[3] = "Empty";
 
-money = 6.5;
+money = 10;
 
 // Cell 1 - Item name
 // Cell 2 - Slot it came from
@@ -39,6 +39,7 @@ lastState = state;
 idleNum = 1;
 isSafe = false;
 isMopping = false;
+sound = -1;
 
 //Variables for speach
 portraitIndex = 1;

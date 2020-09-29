@@ -1,5 +1,5 @@
 /// @description
-if (!global.gamePaused) exit;
+if (!global.gamePaused or objGame.playerDead or objGame.showWinScreen) exit;
 
 var dsGrid = menuPages[page];
 var dsHeight = ds_grid_height(dsGrid);

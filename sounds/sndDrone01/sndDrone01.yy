@@ -1,5 +1,5 @@
 {
-  "compression": 0,
+  "compression": 1,
   "volume": 0.35,
   "preload": false,
   "bitRate": 128,
@@ -13,8 +13,8 @@
   "soundFile": "sndDrone01.mp3",
   "duration": 135.136429,
   "parent": {
-    "name": "Random Spoops",
-    "path": "folders/Sounds/Random Spoops.yy",
+    "name": "Drones",
+    "path": "folders/Sounds/Misc/Drones.yy",
   },
   "resourceVersion": "1.0",
   "name": "sndDrone01",

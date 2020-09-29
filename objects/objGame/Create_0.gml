@@ -9,13 +9,13 @@ global.ResolutionH = 420;
 global.silent = false;
 
 room_goto_next();
-window_mouse_set(window_get_width() / 2, window_get_height() / 2);
 
 debug = false;
 
 //Variables for room transition fade
-global.guiWidth = display_get_gui_width();
-global.guiHeight = display_get_gui_height();
+global.guiWidth = 1500
+global.guiHeight = 840
+surface_resize(application_surface, 1500, 840);
 blackAlpha = 0;
 doTransition = false;
 
@@ -38,8 +38,12 @@ playerFacingAfter = -1;
 //Other variables
 global.isOn = false;
 global.cameraSystem = false;
-playerName = "Player";
+global.playerName = "Player";
 global.nightStarted = false;
+global.bonussMoney = .35;
+playerDead = false;
+needToClockOut = false;
+showWinScreen = false;
 
 global.bonusTask = irandom(3) + 1;
 /*

@@ -10,6 +10,7 @@ secondClosestTransition = instance_nth_nearest(x, y, objTransition, 2);
 idleNum = 1;
 spokeWithPlayer = false;
 currentLocation = 2;
+leaving = false;
 
 //Variables for speach
 portraitIndex = 0;
@@ -19,7 +20,7 @@ name = "Larry";
 message[0] = "Hiya, stranger!";
 message[1] = "I'm your co-worker for the night! You can call me Larry!";
 
-message[2] = ["Nice to meet you! My name is " +objGame.playerName +".", "The manager didn't say anything about this."];
+message[2] = ["Nice to meet you! My name is " +global.playerName +".", "The manager didn't say anything about this."];
 
 message[3] = "Oh, I know who you are. You're the freshmeat; that's what we call all the new recruits here.";
 message[4] = "I was originally not scheduled at this time, but Abby-dearest called me last minute so I can properly show you the ropes!";

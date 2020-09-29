@@ -102,8 +102,9 @@ switch(state) {
 						// Can't pick stuff up until the night starts
 						if (!global.nightStarted) {
 							if (!instance_exists(objTextBoxes)) {
-								NewTextbox("I should clock in first", 1);
+								NewTextbox("I should clock in first.", 1);
 								canMove = false;
+								facing = -1;
 							}
 						}
 						else {
@@ -169,7 +170,26 @@ switch(state) {
 				}
 			}
 		}
-
+		
+		// Sanity sounds
+		if (sanity <= 25) {
+			if (audio_is_playing(sndHeartbeat01)) audio_stop_sound(sndHeartbeat01);
+			if (!audio_is_playing(sndHeartbeat02)) audio_play_sound(sndHeartbeat02, 2, true);
+			if (alarm[0] == -1) {
+				alarm[0] = (sanity div 2) * room_speed;
+			}
+		}
+		else if (sanity <= 50) {
+			if (audio_is_playing(sndHeartbeat02)) audio_stop_sound(sndHeartbeat02);
+			if (!audio_is_playing(sndHeartbeat01)) audio_play_sound(sndHeartbeat01, 2, true);
+			if (alarm[0] == -1) {
+				alarm[0] = (sanity div 3) * room_speed;
+			}
+		}
+		else {
+			if (audio_is_playing(sndHeartbeat02)) audio_stop_sound(sndHeartbeat02);
+		}
+		
 		//Move the actual player
 		x += moveX;
 		y += moveY;
@@ -181,15 +201,27 @@ switch(state) {
 		moveX = 0;
 		moveY = 0;
 		
+		// Pause the alarm
+		if (alarm[0] != -1) alarm[0]++;
+		
 		// Checks when the pause is stopped to resume play.
 		if(!global.gamePaused or !isSafe) { state = pStates.Free; }
 	break;
 }
 
+// Regain energy while not moving
 if (energy <= maxEnergy) {
 	energy += 0.03;
 }
 
+// Job progress check
 if (jobProgression >= maxJobProgression) {
 	jobProgression = maxJobProgression;
+}
+
+// Sound reset
+if (sound != -1) {
+	if (!audio_is_playing(sound)) {
+		sound = -1;
+	}
 }

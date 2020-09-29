@@ -16,3 +16,4 @@ state = enemyState.Free;
 //Other Variables
 range = 250;
 currentLocation = 1;
+sawPlayerHide = false;

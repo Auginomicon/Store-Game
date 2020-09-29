@@ -1,4 +1,5 @@
 /// @description
+if (isSafe) exit;
 //Check if the flashlight is equipped
 if (equipped[0] == "Flashlight") {
 	sprite = [sprMalePlayerWalkRightFlashlight, sprMalePlayerWalkLeftFlashlight, sprMalePlayerWalkUpFlashlight, sprMalePlayerWalkDownFlashlight, sprMalePlayerIdleFlashlight, sprMalePlayerMopping];
@@ -74,6 +75,7 @@ switch(facing) {
 		else if (isMopping) {
 			sprite_index = sprite[5];
 			sanity -= 0.01;
+			energy -= 0.01;
 			draw_self();
 		}
 		else {

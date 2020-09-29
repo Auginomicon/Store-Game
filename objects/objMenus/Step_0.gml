@@ -1,5 +1,5 @@
 /// @description
-if (!global.gamePaused) exit;
+if (!global.gamePaused or objGame.playerDead or objGame.showWinScreen) exit;
 
 inputUp =		keyboard_check_pressed(ord("W"));
 inputDown =		keyboard_check_pressed(ord("S"));
