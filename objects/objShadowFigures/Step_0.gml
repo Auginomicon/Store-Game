@@ -24,9 +24,9 @@ switch(state) {
 			alarm[0] = 1;
 		}
 		
-		//if (distance_to_object(objPlayer) < 300 and !objPlayer.isSafe) {
-		//	state = enemyState.Chase;
-		//}
+		if (distance_to_object(objPlayer) < 300 and !objPlayer.isSafe) {
+			state = enemyState.Chase;
+		}
 		
 	break;
 	

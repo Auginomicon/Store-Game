@@ -1,4 +1,27 @@
 /// @description
+if (jumpscare) {
+	var c = c_black;
+	draw_set_alpha(.8);
+	draw_rectangle_color(0, 0, global.guiWidth, global.guiHeight, c, c, c, c, false);
+	draw_set_alpha(1);
+	switch (creature) {
+		case 0: var monster = sprGownGalJumpScare; break;
+		case 1: var monster = sprTallGuyJumpScare; break;
+	}
+	repeat(3) {
+		if (flash <= 1) {
+			draw_sprite_ext(monster, 0, global.guiWidth * 0.25, global.guiHeight * 0.5, 6, 6, 0, c_white, flash)
+			flash += 0.08;
+		}
+		else {
+			flash = 0;
+		}
+	}
+	if (alarm[1] == -1) {
+		alarm[1] = .5 * room_speed;
+	}
+}
+
 if (showWinScreen) {
 	draw_set_font(fntTime);
 	draw_set_alpha(1);
@@ -12,7 +35,6 @@ if (showWinScreen) {
 	draw_set_font(fntFont);
 	draw_set_halign(fa_center);
 	draw_text(global.guiWidth * 0.25, global.guiHeight * 0.3, "Thank you for playing the demo. \nPlease tell me what to improve, add, and tweak!");
-	
 	exit;
 }
 
@@ -38,6 +60,7 @@ if (room == rmStore and !global.cameraSystem) {
 	if (needToClockOut) {
 		draw_set_font(fntTime);
 		draw_set_color(c_white);
+		draw_set_halign(fa_left)
 		draw_text(global.guiWidth * 0.04, global.guiHeight * 0.4, "Shift Over! Clock out at corkboard.");
 		draw_set_alpha(1);
 	}

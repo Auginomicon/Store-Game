@@ -10,8 +10,8 @@
     "name": "audiogroup_effects",
     "path": "audiogroups/audiogroup_effects",
   },
-  "soundFile": "sndJumpScare02.wav",
-  "duration": 5.14822,
+  "soundFile": "sndJumpScare02.mp3",
+  "duration": 4.315204,
   "parent": {
     "name": "Tall Guy",
     "path": "folders/Sounds/Tall Guy.yy",

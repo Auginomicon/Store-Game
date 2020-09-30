@@ -44,6 +44,9 @@ global.bonussMoney = .35;
 playerDead = false;
 needToClockOut = false;
 showWinScreen = false;
+jumpscare = false;
+creature = 0;
+flash = 0;
 
 global.bonusTask = irandom(3) + 1;
 /*

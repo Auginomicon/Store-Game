@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_effects",
   },
   "soundFile": "sndJumpScare01.mp3",
-  "duration": 3.374796,
+  "duration": 3.427041,
   "parent": {
     "name": "GownGal",
     "path": "folders/Sounds/GownGal.yy",
