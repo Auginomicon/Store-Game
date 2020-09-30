@@ -10,8 +10,6 @@ global.silent = false;
 
 room_goto_next();
 
-debug = false;
-
 //Variables for room transition fade
 global.guiWidth = 1500
 global.guiHeight = 840

@@ -7,4 +7,5 @@ function ResumeGame(){
 		canMove = true;
 		state = pStates.Free;
 	}
+	instance_activate_all();
 }

@@ -51,6 +51,7 @@ if (playerDead) {
 	exit;
 }
 
+if (global.gamePaused) exit;
 if (room == rmStore and !global.cameraSystem) {
 	draw_sprite(sprPlayerUI, 0, global.guiWidth * 0.02, global.guiHeight * 0.02);
 	draw_sprite_ext(sprPlayerUI, 2, global.guiWidth * 0.02, global.guiHeight * 0.02, objPlayer.energy / objPlayer.maxEnergy, 1, 0, c_white, 1);

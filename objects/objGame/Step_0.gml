@@ -1,4 +1,26 @@
 /// @description
+if (keyboard_check_pressed(vk_escape)) {
+	global.gamePaused = !global.gamePaused;
+	if (global.gamePaused) {
+		audio_pause_all();
+		//if (alarm[0] >= 0) alarm[0]++;
+		//with(objPlayer) {
+		//	canMove = false;
+		//	state = pStates.Paused;
+		//}
+		instance_deactivate_all(true);
+		instance_activate_object(objMenus);
+	}
+	else {
+		audio_resume_all();
+		//with(objPlayer) {
+		//	canMove = true;
+		//	state = pStates.Free;
+		//}
+		instance_activate_all();
+	}
+}
+
 if (playerDead or showWinScreen) {
 	global.gamePaused = true;
 	
@@ -8,6 +30,8 @@ if (playerDead or showWinScreen) {
 	exit;
 }
 
+if (global.gamePaused) exit;
+
 if (objDayCycle.hours == 11) {
 	needToClockOut = true;
 	with (objSign) {
@@ -15,33 +39,11 @@ if (objDayCycle.hours == 11) {
 	}
 }
 
-if (keyboard_check_pressed(vk_escape)) {
-	global.gamePaused = !global.gamePaused;
-	if (global.gamePaused) {
-		audio_pause_all();
-		if (alarm[0] >= 0) alarm[0]++;
-		with(objPlayer) {
-			canMove = false;
-			state = pStates.Paused;
-		}
-	}
-	else {
-		audio_resume_all();
-		with(objPlayer) {
-			canMove = true;
-			state = pStates.Free;
-		}
-	}
-}
-
 // Checks for player Sanity
 if (objPlayer.sanity <= 0) {
 	playerDead = true;
 }
-
 // Sound Management
-if (global.gamePaused) exit;
-
 // Outside the store
 if (location == 2 or location == 3) {
 	if (!audio_is_playing(sndCicada)) { audio_play_sound(sndCicada, 1, true); }

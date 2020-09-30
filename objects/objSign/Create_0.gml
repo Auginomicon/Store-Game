@@ -30,7 +30,7 @@ switch(global.bonusTask) {
 }
 #endregion
 message[3] = "Here's the " +objManager.name +"'s phone number.";
-message[4] = "Day Shift: Linda (7:15 AM - 1:30 PM) \nNoon Shift: Abby (1:45 - 6:30) \nNight Shift: " +global.playerName +" (7:00 PM - 6:00 AM)";
+message[4] = "Day Shift: Linda (7:15 AM - 1:30 PM) \nNoon Shift: Abby (1:45 - 6:30) \nNight Shift: " +global.playerName +" (7:00 PM - 7:00 AM)";
 message[5] = "Here goes nothing.";
 message[6] = "I should talk to the manager first";
 message[7] = "Finally! I can go!";
