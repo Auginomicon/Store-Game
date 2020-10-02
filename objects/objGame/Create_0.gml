@@ -36,7 +36,7 @@ playerFacingAfter = -1;
 //Other variables
 global.isOn = false;
 global.cameraSystem = false;
-global.playerName = "Player";
+global.playerName = "Sammuel";
 global.nightStarted = false;
 global.bonussMoney = .35;
 playerDead = false;

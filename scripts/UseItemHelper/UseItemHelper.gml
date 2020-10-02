@@ -39,12 +39,12 @@ function UseItemHelper() {
 				audio_play_sound(sndSlurp, 1, false);
 			}
 			with(objPlayer) {
-				var tempSanity = sanity + 20;
+				var tempSanity = sanity + 35;
 				if (tempSanity > maxSanity) {
 					sanity = maxSanity;
 				}
 				else {
-					sanity += 20;
+					sanity += 35;
 				}
 			}
 			
@@ -109,7 +109,7 @@ function UseItemHelper() {
 				
 				with(objPlayer) {
 					jobProgression += 5;
-					sanity -= 5;
+					sanity -= 3;
 					energy -= 4;
 					if (global.bonusTask == 1) {
 						money += global.bonussMoney;
@@ -156,7 +156,7 @@ function UseItemHelper() {
 				message[5] = ["Previous page.", "Little Girl and The Doll.", "Shadow Figures", "Next page.", "Leave."];
 				
 				message[6] = "Give her a candy bar to appease her. If you don't she will open up all your trash bags in the back and leave her doll behind. Catch the doll to make her stop. After that you can either throw the doll in the dumpster or keep the doll to ward her off.";
-				message[7] = "Staying outside too long will draw hounds to your location. Avoid being out for extended durations";
+				message[7] = "These figures roam around the property. They will try to catch you, if they do you will feel sluggish. The lower your sanity, the more there will be.";
 				message[8] = "";
 				
 				
@@ -196,8 +196,35 @@ function UseItemHelper() {
 					objPlayer.equipped[0] = -1;
 					objPlayer.equipped[1] = -1;
 				}
-			
 				objPlayer.inventory[slot] = "Empty";
+			}
+		break;
+		
+		case "Storage Box":
+			var shelf = collision_circle(objPlayer.x, objPlayer.y, objPlayer.radius, objShelf, false, true);
+			if (shelf.inRange) {
+				with(shelf) {
+					var i = irandom(1) + 1;
+					image_index = i;
+					objPlayer.jobProgression += 7;
+					objPlayer.energy -= 5;
+					objPlayer.sanity -= 2;
+					show_debug_message("Shelf Restocked");
+			
+					//Remove item from Inventory
+					with(objPlayer) {
+						if (global.bonusTask == 2) {
+							money += global.bonussMoney;
+						}
+					}
+			
+					//Checks if the equipped was used. If it has been then resets the equipped array
+					if (objPlayer.inventory[slot] == objPlayer.equipped[0] and objPlayer.equipped[1] != -1) {
+						objPlayer.equipped[0] = -1;
+						objPlayer.equipped[1] = -1;
+					}
+					objPlayer.inventory[slot] = "Empty";
+				}
 			}
 		break;
 	}

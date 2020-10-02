@@ -55,7 +55,10 @@ switch (state) {
 		// Get the player's location on the grid.
 		var cx = (objPlayer.x / 32) * 32;
 		var cy = (objPlayer.y / 32) * 32;
-
+		
+		// Reset path variable
+		path = path_add();
+		
 		// Path towards the player while they are not in the janitor's closet
 		if (mp_grid_path(global.grid, path, x, y, cx, cy, 1)) {
 			path_start(path, spd, path_action_stop, false);

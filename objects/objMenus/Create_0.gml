@@ -37,8 +37,7 @@ dsAudio = CreateMenuPage(
 );
 
 dsGraphics = CreateMenuPage(
-	["Resolution", menuElementType.shift, ChangeResolution, 4, ["384 x 216", "768 x 432", "1152 x 648", "1536 x 874", "1920 x 1080"]],
-	["Window Mode", menuElementType.toggle, ChangeWindowMode, 0, ["Fullscreen", "Windowed"]],
+	["Window Mode", menuElementType.toggle, ChangeWindowMode, 1, ["Fullscreen", "Windowed"]],
 	["Back", menuElementType.pageTransfer, menuPage.settings]
 );
 

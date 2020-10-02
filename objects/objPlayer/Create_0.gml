@@ -2,7 +2,7 @@
 event_inherited();
 
 //Player Stats
-sanity = 100;
+sanity = 35;
 maxSanity = 100;
 energy = 100;
 maxEnergy = 100;

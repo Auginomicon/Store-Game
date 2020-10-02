@@ -132,7 +132,7 @@ switch(rng) {
 	break;
 	
 	case 14: // Spawn a shadow figure
-		if (instance_number(objShadowFigures <= 10)) {
+		if (instance_number(objShadowFigures <= 15)) {
 			// Spawn a shadow Figure
 			var loc = choose(1, 2, 3);
 			show_debug_message("Spawned Shadow Figure at " + string(loc));
@@ -163,4 +163,4 @@ switch(rng) {
 	break;
 }
 
-alarm[0] = (objPlayer.sanity div 3.5) * room_speed;
+alarm[0] = (objPlayer.sanity div 2.5) * room_speed;

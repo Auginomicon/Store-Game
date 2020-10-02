@@ -64,6 +64,9 @@ if (room == rmStore and !global.cameraSystem) {
 		draw_set_halign(fa_left)
 		draw_text(global.guiWidth * 0.04, global.guiHeight * 0.4, "Shift Over! Clock out at corkboard.");
 		draw_set_alpha(1);
+		if (alarm[2] == -1) {
+			
+		}
 	}
 }
 

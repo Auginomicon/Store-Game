@@ -1,4 +1,2 @@
 /// @description
-
-
 draw_self();

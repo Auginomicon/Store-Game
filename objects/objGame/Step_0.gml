@@ -3,20 +3,12 @@ if (keyboard_check_pressed(vk_escape)) {
 	global.gamePaused = !global.gamePaused;
 	if (global.gamePaused) {
 		audio_pause_all();
-		//if (alarm[0] >= 0) alarm[0]++;
-		//with(objPlayer) {
-		//	canMove = false;
-		//	state = pStates.Paused;
-		//}
 		instance_deactivate_all(true);
 		instance_activate_object(objMenus);
+		if (alarm[0] >= 0) alarm[0]++;
 	}
 	else {
 		audio_resume_all();
-		//with(objPlayer) {
-		//	canMove = true;
-		//	state = pStates.Free;
-		//}
 		instance_activate_all();
 	}
 }
@@ -36,6 +28,9 @@ if (objDayCycle.hours == 11) {
 	needToClockOut = true;
 	with (objSign) {
 		event_perform(ev_other, ev_user0);
+	}
+	if (alarm[2] == -1) {
+		alarm[2] = 5 * room_speed;
 	}
 }
 

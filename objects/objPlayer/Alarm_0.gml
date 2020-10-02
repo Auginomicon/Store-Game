@@ -5,7 +5,9 @@ if (sound == -1) {
 	// Play the choosen ones
 	audio_play_sound(sound, 4, false);
 }
-if (instance_number(objShadowFigures) <= 10) {
+
+// Spawn a shadow figure
+if (instance_number(objShadowFigures) <= 15) {
 	var rep = 1;
 	if (sanity <= 35) {
 		rep = irandom(1) + 1;
@@ -39,3 +41,25 @@ if (instance_number(objShadowFigures) <= 10) {
 		sf.roamY = spawnY;
 	}
 }
+
+// Spawn spoop object
+var loc = choose(1, 2, 3);
+var spawnX, spawnY;
+switch (loc) {
+	case 1:
+		spawnX = irandom_range(1643, 2283);
+		spawnY = irandom_range(3942, 4429);
+	break;
+	
+	case 2:
+		spawnX = irandom_range(3281, 5519);
+		spawnY = irandom_range(984, 2442);
+	break;
+	
+	case 3:
+		spawnX = irandom_range(3287, 4883);
+		spawnY = irandom_range(3942, 4429);
+	break;
+}
+
+instance_create_layer(spawnX, spawnY, "Instances", objSpoops);

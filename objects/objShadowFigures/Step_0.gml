@@ -15,7 +15,7 @@ switch(state) {
 			path_start(path, spd, path_action_stop, false);
 			if (floor(x) == roamX and floor(y) == roamY) {
 				if (alarm[0] == -1) {
-					alarm[0] = 5 * room_speed//choose(1, 5, 10, 15, 20) * room_speed;
+					alarm[0] = choose(1, 5, 10, 15, 20) * room_speed;
 				}
 				image_index = 0;
 			}
