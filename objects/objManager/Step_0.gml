@@ -28,3 +28,6 @@ if (canMove) {
 else {
 	path_speed = 0;
 }
+
+hitbox.x = x;
+hitbox.y = y;

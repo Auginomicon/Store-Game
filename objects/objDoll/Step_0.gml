@@ -165,3 +165,6 @@ if (desiredItem != noone) {
 		desiredItem = noone;
 	}
 }
+
+hitbox.x = x;
+hitbox.y = y;

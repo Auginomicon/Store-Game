@@ -19,3 +19,4 @@ if (holding != "Empty") {
 					
 	inst.sprite_index = spr;
 }
+instance_destroy(hitbox);

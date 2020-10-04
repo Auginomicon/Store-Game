@@ -210,3 +210,6 @@ if (sprite_index != sprTallGuy or sprite_index != sprTallGuySlash or sprite_inde
 		}
 	}
 }
+
+hitbox.x = x;
+hitbox.y = y;

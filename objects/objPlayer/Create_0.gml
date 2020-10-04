@@ -2,7 +2,7 @@
 event_inherited();
 
 //Player Stats
-sanity = 35;
+sanity = 100;
 maxSanity = 100;
 energy = 100;
 maxEnergy = 100;
@@ -39,7 +39,7 @@ lastState = state;
 idleNum = 1;
 isSafe = false;
 isMopping = false;
-sound = -1;
+sound = -1;;
 
 //Variables for speach
 portraitIndex = 1;

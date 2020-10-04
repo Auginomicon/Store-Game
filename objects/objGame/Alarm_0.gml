@@ -63,18 +63,6 @@ switch(rng) {
 	
 	case 5:
 		// Spooky Sound
-		show_debug_message("Aaaaah");
-		if (!audio_is_playing(sndExhale)) audio_play_sound(sndExhale, 5, false);
-	break;
-	
-	case 6:
-		// Spooky Sound
-		show_debug_message("Aaaaah");
-		if (!audio_is_playing(sndExhale)) audio_play_sound(sndExhale, 5, false);
-	break;
-	
-	case 7:
-		// Spooky Sound
 		show_debug_message("Footsteps");
 		if (location == 1 or location == 4 or location == 5) {
 			if (!audio_is_playing(sndRunningFootstepsTile)) audio_play_sound(sndRunningFootstepsTile, 5, false);
@@ -84,54 +72,54 @@ switch(rng) {
 		}
 	break;
 	
-	case 8:
+	case 6:
 		// Spooky Sound
 		show_debug_message("Croak");
 		if (!audio_is_playing(sndCroak)) audio_play_sound(sndCroak, 5, false);
 	break;
 	
-	case 9:
+	case 7:
 		// Turn on soda fountain
 		objSodaFountain.isOn = true;
 	break;
 	
+	case 8:
+		// Spawn the gown gal
+		show_debug_message("Gown Gal");
+		if(!instance_exists(objGownGal)) { 
+			var spawn = GetSpawnLocations();
+			var inst = instance_create_layer(spawn[0], spawn[1], "Instances", objGownGal);
+			inst.currentLocation = spawn[2];
+			var piano = choose(sndPiano02, sndPiano01);
+			audio_play_sound(piano, 7, false);
+		}
+	break;
+	
+	case 9:
+		// Spawn the gown gal
+		show_debug_message("Gown Gal");
+		if(!instance_exists(objGownGal)) { 
+			var spawn = GetSpawnLocations();
+			var inst = instance_create_layer(spawn[0], spawn[1], "Instances", objGownGal);
+			inst.currentLocation = spawn[2];
+			var piano = choose(sndPiano02, sndPiano01);
+			audio_play_sound(piano, 7, false);
+		}
+	break;
+	
 	case 10:
-		// Spawn the gown gal
-		show_debug_message("Gown Gal");
-		if(!instance_exists(objGownGal)) { 
-			var spawn = GetSpawnLocations();
-			var inst = instance_create_layer(spawn[0], spawn[1], "Instances", objGownGal);
-			inst.currentLocation = spawn[2];
-			var piano = choose(sndPiano02, sndPiano01);
-			audio_play_sound(piano, 7, false);
-		}
-	break;
-	
-	case 11:
-		// Spawn the gown gal
-		show_debug_message("Gown Gal");
-		if(!instance_exists(objGownGal)) { 
-			var spawn = GetSpawnLocations();
-			var inst = instance_create_layer(spawn[0], spawn[1], "Instances", objGownGal);
-			inst.currentLocation = spawn[2];
-			var piano = choose(sndPiano02, sndPiano01);
-			audio_play_sound(piano, 7, false);
-		}
-	break;
-	
-	case 12:
 		// Spooky Sound
 		show_debug_message("Knocking");
 		if (!audio_is_playing(sndKnocking)) audio_play_sound(sndKnocking, 5, false);
 	break;
 	
-	case 13:
+	case 11:
 		// Spooky Sound
 		show_debug_message("Crash");
 		if (!audio_is_playing(sndCrash)) audio_play_sound(sndCrash, 5, false);
 	break;
 	
-	case 14: // Spawn a shadow figure
+	case 12: // Spawn a shadow figure
 		if (instance_number(objShadowFigures <= 15)) {
 			// Spawn a shadow Figure
 			var loc = choose(1, 2, 3);
@@ -161,6 +149,30 @@ switch(rng) {
 			sf.roamY = spawnY;
 		}
 	break;
+	
+	case 13:
+		// Spawn spoop object
+		var loc = choose(1, 2, 3);
+		var spawnX, spawnY;
+		switch (loc) {
+			case 1:
+				spawnX = irandom_range(1643, 2283);
+				spawnY = irandom_range(3942, 4429);
+			break;
+	
+			case 2:
+				spawnX = irandom_range(3281, 5519);
+				spawnY = irandom_range(984, 2442);
+			break;
+	
+			case 3:
+				spawnX = irandom_range(3287, 4883);
+				spawnY = irandom_range(3942, 4429);
+			break;
+		}
+
+		instance_create_layer(spawnX, spawnY, "Instances", objSpoops);
+	break;
 }
 
-alarm[0] = (objPlayer.sanity div 2.5) * room_speed;
+alarm[0] = (objPlayer.sanity div 3.5) * room_speed;

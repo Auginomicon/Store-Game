@@ -3,7 +3,7 @@ event_inherited();
 
 walkspd = 2;
 spd = walkspd
-
+hitbox.sprite_index = sprLittleGirlBoundBox;
 state = enemyState.Free;
 
 //Path variables

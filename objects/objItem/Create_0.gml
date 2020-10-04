@@ -1,8 +1,8 @@
 /// @description Initialize variables
 event_inherited();
-
 name = -1;
 isItem = true;
-collideable = false;
+isDoor = false;
+isNPC = false;
 currentLocation = -1;
 sound = -1;

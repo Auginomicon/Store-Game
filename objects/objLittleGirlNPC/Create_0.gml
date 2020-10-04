@@ -3,6 +3,7 @@ event_inherited();
 
 walkspd = 2;
 spd = walkspd;
+hitbox.sprite_index = sprLittleGirlBoundBox;
 
 voice = sndVoice4;
 name = "Little Girl"

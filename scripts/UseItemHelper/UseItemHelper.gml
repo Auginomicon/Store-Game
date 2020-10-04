@@ -109,7 +109,7 @@ function UseItemHelper() {
 				
 				with(objPlayer) {
 					jobProgression += 5;
-					sanity -= 3;
+					sanity -= 4;
 					energy -= 4;
 					if (global.bonusTask == 1) {
 						money += global.bonussMoney;
@@ -206,9 +206,9 @@ function UseItemHelper() {
 				with(shelf) {
 					var i = irandom(1) + 1;
 					image_index = i;
-					objPlayer.jobProgression += 7;
+					objPlayer.jobProgression += 8;
 					objPlayer.energy -= 5;
-					objPlayer.sanity -= 2;
+					objPlayer.sanity -= 5;
 					show_debug_message("Shelf Restocked");
 			
 					//Remove item from Inventory

@@ -33,6 +33,7 @@ if (point_in_rectangle(objPlayer.x, objPlayer.y, x - (sprite_width * 0.5), y, x 
 				}
 				objPlayer.jobProgression += 5;
 				objPlayer.energy -= 3;
+				objPlayer.sanity -= 4;
 				show_debug_message("Shelf cleaned");
 				audio_play_sound(sndTrashbag, 1, false);
 			}

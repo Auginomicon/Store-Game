@@ -24,3 +24,4 @@ snatchedItems = 0;
 itemLocation[0] = -1;
 itemLocation[1] = -1;
 itemLocation[2] = -1;
+hitbox.sprite_index = sprDollBoundBox;

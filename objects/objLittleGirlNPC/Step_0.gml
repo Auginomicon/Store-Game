@@ -72,3 +72,6 @@ else {
 	sprite_index = sprLittleGirlIdle;
 	image_index = idleNum;
 }
+
+hitbox.x = x;
+hitbox.y = y;

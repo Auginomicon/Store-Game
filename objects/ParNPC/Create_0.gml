@@ -14,6 +14,8 @@ canMove = true;
 isNPC = true;
 currentLocation = 1;
 path = path_add();
+hitbox = instance_create_layer(x, y, "Instances", objHitbox);
+hitbox.sprite_index = sprite_index;
 
 //Variables for speach
 portraitIndex = 0;

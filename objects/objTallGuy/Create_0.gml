@@ -5,6 +5,7 @@ event_inherited();
 walkspd = 1;
 runSpd = 6;
 spd = walkspd;
+hitbox.sprite_index = sprTallGuyBoundingBox;
 
 //Path variables
 path = path_add();

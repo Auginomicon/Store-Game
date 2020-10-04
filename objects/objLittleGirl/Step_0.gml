@@ -87,3 +87,6 @@ repeat(4) {
 	}
 	i++;
 }
+
+hitbox.x = x;
+hitbox.y = y;

@@ -29,7 +29,7 @@ if (objPlayer.input_interact and (image_index == 0 or image_index == 1)) {
 		}
 		instance_destroy();
 		audio_play_sound(sndTrashbag, 1, false);
-		objPlayer.sanity -= 2;
+		objPlayer.sanity -= 3;
 		objPlayer.energy -= 3;
 		if (global.bonusTask == 4) {
 			objPlayer.money += global.bonussMoney;
@@ -49,6 +49,7 @@ else if (objPlayer.isMopping and objPlayer.sprite_index = objPlayer.sprite[5] an
 					objPlayer.money += global.bonussMoney;
 				}
 			}
+			sanity -= 3;
 		}
 		instance_destroy();
 	}

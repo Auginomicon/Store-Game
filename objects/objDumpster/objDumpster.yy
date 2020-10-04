@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "ParEntity",
-    "path": "objects/ParEntity/ParEntity.yy",
+    "name": "objCollision",
+    "path": "objects/objCollision/objCollision.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

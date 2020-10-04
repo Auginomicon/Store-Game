@@ -11,6 +11,7 @@ idleNum = 1;
 spokeWithPlayer = false;
 currentLocation = 2;
 leaving = false;
+hitbox.sprite_index = sprBoundingBox;
 
 //Variables for speach
 portraitIndex = 0;

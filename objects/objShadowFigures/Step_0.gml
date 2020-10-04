@@ -44,3 +44,5 @@ switch(state) {
 		}
 	break;
 }
+hitbox.x = x;
+hitbox.y = y;

@@ -52,9 +52,6 @@ switch(state) {
 		else {
 			facing = -1;
 		}
-		
-		//Apply Collision before moving
-		Collisions();
 
 		//Collide with objects
 		var inst = instance_place(x, y, objTransition);
@@ -82,7 +79,7 @@ switch(state) {
 		//Dialog Boxes for NPCs
 		if (input_interact) {
 			if (activeTextbox == noone) {
-				var inst = collision_rectangle(x - radius, y - radius, x + radius, y + radius, ParEntity, false, false);
+				var inst = collision_rectangle(x - radius, y - radius, x + radius, y + radius, ParInteractable, false, false);
 				//Checks if it is an npc you interacted with.
 				if(inst != noone) {
 					if (inst.isNPC) {
@@ -190,9 +187,11 @@ switch(state) {
 			if (audio_is_playing(sndHeartbeat02)) audio_stop_sound(sndHeartbeat02);
 		}
 		
-		//Move the actual player
-		x += moveX;
-		y += moveY;
+		//Apply Collision before moving
+		Collisions();
+		
+		x += moveX
+		y += moveY
 		
 	break;
 		

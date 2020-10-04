@@ -10,5 +10,6 @@ if (!objPlayer.isSafe) {
 			energy -= 35;
 		}
 	}
+	if (!audio_is_playing(sndExhale)) audio_play_sound(sndExhale, 5, false);
 	instance_destroy();
 }

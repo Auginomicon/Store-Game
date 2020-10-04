@@ -8,8 +8,8 @@
   },
   "persistent": false,
   "parentObjectId": {
-    "name": "ParEntity",
-    "path": "objects/ParEntity/ParEntity.yy",
+    "name": "ParInteractable",
+    "path": "objects/ParInteractable/ParInteractable.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

@@ -2,7 +2,7 @@ function Collisions() {
 	//Will continously check if there is an empty space between the object and the collision horizontally.
 	if (moveX != 0) {
 		var collisionH = instance_place(x + moveX, y, objCollision)
-		if(collisionH != noone and collisionH.collideable)
+		if((collisionH != noone and collisionH.collideable))
 		{
 			repeat(abs(moveX))
 			{
@@ -22,7 +22,7 @@ function Collisions() {
 	//Will continously check if there is an empty space between the object and the collision vertically.
 	if (moveY != 0) {
 		var collisionV = instance_place(x, y + moveY, objCollision);
-		if (collisionV != noone and collisionV.collideable) {
+		if ((collisionV != noone and collisionV.collideable)) {
 			repeat(abs(moveY)) {
 				if (!place_meeting(x, y + sign(moveY), objCollision)) {
 					y += sign(moveY);
@@ -34,6 +34,4 @@ function Collisions() {
 			moveY = 0;
 		}
 	}
-
-
 }
