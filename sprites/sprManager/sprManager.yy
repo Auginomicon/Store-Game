@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"efc9dae3-bbbe-463e-9597-2b7595271a32","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "NPCs",
-    "path": "folders/Sprites/NPCs.yy",
+    "name": "Manager",
+    "path": "folders/Sprites/NPCs/Manager.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprManager",

@@ -23,9 +23,22 @@ if (canMove) {
 				instance_destroy();
 			}
 		}
+		if(direction >= 306 or direction <= 45) {
+			sprite_index = sprManagerWalkRight; //right
+		}
+		if (direction >= 46 and direction <= 135) {
+			sprite_index = sprManager; //up
+		}
+		if (direction >= 136 and direction <=225) {
+			sprite_index = sprManagerWalkLeft; //left
+		}
+		if (direction >= 226 and direction <= 305) {
+			sprite_index = sprManagerWalkDown; //down
+		}
 	}
 }
 else {
+	sprite_index = sprManager;
 	path_speed = 0;
 }
 

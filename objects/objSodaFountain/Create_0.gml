@@ -1,5 +1,5 @@
 /// @description 
 event_inherited();
 
-isOn = true;
+isOn = false;
 puddle = -1;
