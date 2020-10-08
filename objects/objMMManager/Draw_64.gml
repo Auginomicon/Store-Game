@@ -19,7 +19,7 @@ else if (showCredits) {
 	
 	draw_set_font(fntMainMenu);
 	draw_set_halign(fa_center);
-	draw_text(display_get_gui_width() * 0.5, display_get_gui_height() * 0.3, "Programming - Auginomicon \nSound Management - Auginomicon \n Art - Auginomicon \n\nMade on GameMaker Studio 2 \nOriginal sound files from FreeSFX, SoundBible, FreeSound, and ZapSpalt \nScript used from GMLscripts.com (instance_nth_nearest) \nMain Menu Music by Cupp (On YouTube) \n\nPress any button to continue");
+	draw_text(display_get_gui_width() * 0.5, display_get_gui_height() * 0.3, "Programming - Auginomicon \nSound Management - Auginomicon \n Art - Auginomicon \n\nMade on GameMaker Studio 2 \nOriginal sound files from FreeSFX, SoundBible, FreeSound, and ZapSpalt \nScript used from GMLscripts.com (instance_nth_nearest) \nMain Menu and Store Music by Cupp \n\nPress any button to continue");
 }
 else {
 	draw_set_alpha(.3);
