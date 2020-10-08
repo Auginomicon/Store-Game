@@ -1,6 +1,6 @@
 {
   "compression": 1,
-  "volume": 1.0,
+  "volume": 0.1,
   "preload": false,
   "bitRate": 128,
   "sampleRate": 44100,
@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_music",
   },
   "soundFile": "sndStoreMusic.mp3",
-  "duration": 253.94133,
+  "duration": 48.2009163,
   "parent": {
     "name": "Music",
     "path": "folders/Sounds/Music.yy",

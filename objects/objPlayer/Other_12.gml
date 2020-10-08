@@ -45,4 +45,5 @@ with(objSign) {
 // Begin random events for the game
 with(objGame) {
 	alarm[0] = 45 * room_speed;
+	alarm[3] = 50 * room_speed;
 }

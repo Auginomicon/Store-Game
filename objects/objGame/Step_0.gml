@@ -5,12 +5,17 @@ if (keyboard_check_pressed(vk_escape)) {
 		audio_pause_all();
 		instance_deactivate_all(true);
 		instance_activate_object(objMenus);
-		if (alarm[0] >= 0) alarm[0]++;
 	}
 	else {
 		audio_resume_all();
 		instance_activate_all();
 	}
+}
+
+// add time to the alarm so it doesn't activate
+if (global.gamePaused) {
+	if (alarm[0] != -1) alarm[0]++;
+	if (alarm[3] != -1) alarm[3]++;
 }
 
 if (playerDead or showWinScreen) {

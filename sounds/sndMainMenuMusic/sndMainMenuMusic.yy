@@ -1,6 +1,6 @@
 {
-  "compression": 0,
-  "volume": 0.85,
+  "compression": 1,
+  "volume": 0.2,
   "preload": false,
   "bitRate": 128,
   "sampleRate": 44100,
@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sndMainMenuMusic.mp3",
-  "duration": 65.72904,
+  "duration": 67.89725,
   "parent": {
     "name": "MainMenu",
     "path": "folders/Sounds/MainMenu.yy",

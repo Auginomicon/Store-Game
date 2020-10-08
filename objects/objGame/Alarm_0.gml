@@ -1,5 +1,5 @@
 /// @description Spawn in enemies
-var rng = irandom(13);
+var rng = irandom(10);
 
 switch(rng) {
 	case 0:
@@ -56,34 +56,24 @@ switch(rng) {
 	break;
 	
 	case 4:
-		// Spooky Sound
-		show_debug_message("Chim Chimes");
-		if (!audio_is_playing(sndChimes)) audio_play_sound(sndChimes, 5, false);
+		// Turn on soda fountain
+		show_debug_message("Turn on soda fountain");
+		objSodaFountain.isOn = true;
 	break;
 	
 	case 5:
-		// Spooky Sound
-		show_debug_message("Footsteps");
-		if (location == 1 or location == 4 or location == 5) {
-			if (!audio_is_playing(sndRunningFootstepsTile)) audio_play_sound(sndRunningFootstepsTile, 5, false);
-		}
-		else {
-			if (!audio_is_playing(sndRunningFootstepsGrass)) audio_play_sound(sndRunningFootstepsGrass, 5, false);
+		// Spawn the gown gal
+		show_debug_message("Gown Gal");
+		if(!instance_exists(objGownGal)) { 
+			var spawn = GetSpawnLocations();
+			var inst = instance_create_layer(spawn[0], spawn[1], "Instances", objGownGal);
+			inst.currentLocation = spawn[2];
+			var piano = choose(sndPiano02, sndPiano01);
+			audio_play_sound(piano, 7, false);
 		}
 	break;
 	
 	case 6:
-		// Spooky Sound
-		show_debug_message("Croak");
-		if (!audio_is_playing(sndCroak)) audio_play_sound(sndCroak, 5, false);
-	break;
-	
-	case 7:
-		// Turn on soda fountain
-		objSodaFountain.isOn = true;
-	break;
-	
-	case 8:
 		// Spawn the gown gal
 		show_debug_message("Gown Gal");
 		if(!instance_exists(objGownGal)) { 
@@ -95,31 +85,7 @@ switch(rng) {
 		}
 	break;
 	
-	case 9:
-		// Spawn the gown gal
-		show_debug_message("Gown Gal");
-		if(!instance_exists(objGownGal)) { 
-			var spawn = GetSpawnLocations();
-			var inst = instance_create_layer(spawn[0], spawn[1], "Instances", objGownGal);
-			inst.currentLocation = spawn[2];
-			var piano = choose(sndPiano02, sndPiano01);
-			audio_play_sound(piano, 7, false);
-		}
-	break;
-	
-	case 10:
-		// Spooky Sound
-		show_debug_message("Knocking");
-		if (!audio_is_playing(sndKnocking)) audio_play_sound(sndKnocking, 5, false);
-	break;
-	
-	case 11:
-		// Spooky Sound
-		show_debug_message("Crash");
-		if (!audio_is_playing(sndCrash)) audio_play_sound(sndCrash, 5, false);
-	break;
-	
-	case 12: // Spawn a shadow figure
+	case 7: // Spawn a shadow figure
 		if (instance_number(objShadowFigures <= 15)) {
 			// Spawn a shadow Figure
 			var loc = choose(1, 2, 3);
@@ -150,8 +116,9 @@ switch(rng) {
 		}
 	break;
 	
-	case 13:
+	case 8:
 		// Spawn spoop object
+		show_debug_message("Spoopy Eye");
 		var loc = choose(1, 2, 3);
 		var spawnX, spawnY;
 		switch (loc) {
@@ -172,6 +139,11 @@ switch(rng) {
 		}
 
 		instance_create_layer(spawnX, spawnY, "Instances", objSpoops);
+	break;
+	
+	case 9:
+	case 10:
+		show_debug_message("Do Nothing");
 	break;
 }
 
