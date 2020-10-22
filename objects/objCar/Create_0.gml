@@ -6,3 +6,6 @@ isNPC = true;
 portraitIndex = -1;
 voice = sndVoice;
 name = "Car";
+
+hitbox = instance_create_layer(x, y, "Instances", objHitbox);
+hitbox.sprite_index = sprite_index;

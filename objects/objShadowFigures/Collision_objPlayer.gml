@@ -1,15 +1,22 @@
 /// @description
-if (!objPlayer.isSafe) {
-	with(other) {
-		sanity -= 1;
-		var tempEnergy = energy - 35;
-		if (tempEnergy <= 0) {
-			energy = 0;
+if (!bathroomEvent) {
+	if (!objPlayer.isSafe) {
+		with(other) {
+			sanity -= 1;
+			var tempEnergy = energy - 35;
+			if (tempEnergy <= 0) {
+				energy = 0;
+			}
+			else {
+				energy -= 35;
+			}
+			sfCollidedWith++;
 		}
-		else {
-			energy -= 35;
-		}
+		if (!audio_is_playing(sndExhale)) audio_play_sound(sndExhale, 5, false);
+		instance_destroy();
 	}
-	if (!audio_is_playing(sndExhale)) audio_play_sound(sndExhale, 5, false);
+}
+else {
+	DeathScreen("Shadow figures surround you \nand take you away.");
 	instance_destroy();
 }

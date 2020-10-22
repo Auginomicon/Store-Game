@@ -16,6 +16,13 @@ enum menuElementType {
 	shift,
 	toggle
 }
+if (file_exists("Game.sav")) {
+	ini_open("Game.sav");
+	
+	var fs = ini_read_real("Options", "Fullscrren", 0);
+	
+	ini_close();
+}
 
 dsMenuMain = CreateMenuPage(
 	["Resume", menuElementType.scriptRunner, ResumeGame],
@@ -30,14 +37,14 @@ dsSettings = CreateMenuPage(
 );
 
 dsAudio = CreateMenuPage(
-	["Master", menuElementType.slider, ChangeVolume, 1, [0,1]],
-	["Music", menuElementType.slider, ChangeVolume, 1, [0,1]],
-	["Effects", menuElementType.slider, ChangeVolume, 1, [0,1]],
+	["Master", menuElementType.slider, ChangeVolume, global.masterVolume, [0,1]],
+	["Music", menuElementType.slider, ChangeVolume, global.musicVolume, [0,1]],
+	["Effects", menuElementType.slider, ChangeVolume, global.effectVolume, [0,1]],
 	["Back", menuElementType.pageTransfer, menuPage.settings]
 );
 
 dsGraphics = CreateMenuPage(
-	["Window Mode", menuElementType.toggle, ChangeWindowMode, 1, ["Fullscreen", "Windowed"]],
+	["Window Mode", menuElementType.toggle, ChangeWindowMode, fs, ["Fullscreen", "Windowed"]],
 	["Back", menuElementType.pageTransfer, menuPage.settings]
 );
 

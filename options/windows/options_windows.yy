@@ -1,7 +1,7 @@
 {
-  "option_windows_display_name": "Odd Jobs",
-  "option_windows_executable_name": "${OddJobs}",
-  "option_windows_version": "1.0.0.1",
+  "option_windows_display_name": "Night Shift: HappyMart",
+  "option_windows_executable_name": "Night-Shift-HappyMart",
+  "option_windows_version": "1.0.0.2",
   "option_windows_company_info": "YoYo Games Ltd",
   "option_windows_product_info": "Made in GameMaker Studio 2",
   "option_windows_copyright_info": "(c) 2018 CompanyName",

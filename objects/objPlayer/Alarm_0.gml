@@ -6,6 +6,7 @@ if (sound == -1) {
 	audio_play_sound(sound, 4, false);
 }
 
+/*
 // Spawn a shadow figure
 if (instance_number(objShadowFigures) <= 15) {
 	var rep = 1;
@@ -63,3 +64,4 @@ switch (loc) {
 }
 
 instance_create_layer(spawnX, spawnY, "Instances", objSpoops);
+*/

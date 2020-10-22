@@ -29,3 +29,7 @@ invSlotPosY = invUIY + (inventoryHeight * 0.31);
 invSlotWidth = 133;
 invSlotHeight = 30;
 invSlotBuffer = invSlotHeight + 2;
+
+// Other Variables
+hrs = 0;
+mins = 0;

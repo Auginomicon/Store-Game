@@ -224,3 +224,8 @@ if (sound != -1) {
 		sound = -1;
 	}
 }
+
+// Collisions with shadow figures
+if (sfCollidedWith >= 4) {
+	DeathScreen("Your body is too heavy to continue.");
+}

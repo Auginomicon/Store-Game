@@ -21,8 +21,7 @@ if (jumpscare) {
 		alarm[1] = .5 * room_speed;
 	}
 }
-
-if (showWinScreen) {
+else if (showWinScreen) {
 	draw_set_font(fntTime);
 	draw_set_alpha(1);
 	draw_set_halign(fa_left);
@@ -37,8 +36,7 @@ if (showWinScreen) {
 	draw_text(global.guiWidth * 0.25, global.guiHeight * 0.3, "Thank you for playing the demo. \nPlease tell me what to improve, add, and tweak!");
 	exit;
 }
-
-if (playerDead) {
+else if (playerDead) {
 	var c = c_red;
 	draw_set_alpha(.45);
 	draw_rectangle_color(0, 0, global.guiWidth, global.guiHeight, c, c, c, c, false);
@@ -46,8 +44,13 @@ if (playerDead) {
 	draw_set_color(c_white);
 	draw_set_alpha(1);
 	draw_set_halign(fa_left)
-	draw_text(global.guiWidth * 0.2, global.guiHeight * 0.05, "Game Over");
-	draw_text(global.guiWidth * 0.075, global.guiHeight * 0.175, "Press any button to continue");
+	draw_text(global.guiWidth * 0.175, global.guiHeight * 0.05, "Game Over");
+	draw_set_font(fntFont);
+	draw_set_halign(fa_center);
+	draw_text(global.guiWidth * 0.25, global.guiHeight * 0.2, deathMsg);
+	draw_set_font(fntTime);
+	draw_set_halign(fa_left)
+	draw_text(global.guiWidth * 0.075, global.guiHeight * 0.4, "Press any button to continue");
 	exit;
 }
 

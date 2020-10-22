@@ -6,3 +6,4 @@ radius = 96;
 worldLight = true;
 subimg = 0;
 shake = 0;
+repeater = 10;

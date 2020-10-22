@@ -11,3 +11,7 @@ nextLine = [1, [2, 3], -1, 4, -1, -1, -1, -1];
 scripts = [-1, [-1, [ItemCheck, "Notebook", nextLine[1][1], 6]], -1, -1, -1, -1, [ClearDialog, 1, objLostEmployee, 1], -1];
 speakers = [id, objPlayer, id, id, id, id, id, id, id, id];
 portraitNums = [11, 0, 18, 14, 12, 16, 11, 0];
+
+with(objGame) {
+	event_perform(ev_other, ev_user1);
+}

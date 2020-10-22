@@ -1,4 +1,4 @@
-/// @description
+/// @description RNG Sounds
 var rng = irandom(5);
 switch (rng) {
 	case 0:

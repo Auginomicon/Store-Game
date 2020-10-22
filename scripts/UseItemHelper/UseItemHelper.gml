@@ -147,23 +147,29 @@ function UseItemHelper() {
 			with (objGame) {
 				message[0] = "This is the last employee's notebook.";
 				
-				message[1] = ["Introduction", "Gown Gal", "Tall Creature", "Next page.", "Leave."];
+				message[1] = ["Introduction", "1:00 AM", "2:00 AM", "Next page.", "Leave."];
 				
-				message[2] = "I'm writing this for you so that you can survive. The night, this place is made on cursed grounds and terrible entities haunt the woods around you."
-				message[3] = "Avoid her at all costs! She will follow you if you get too close. Hide in the the janitor's closet if she's following you. Pray that she didn't notice you get inside";
-				message[4] = "Despite his large size, he is a big, shy, scaredy-cat. If you get close to him he will hunch up into a ball and wait til you're gone. If he breaks to the fusebox, he will not fear you anymore. So keep it locked tight.";
+				message[2] = "If you're reading this that means I died. I wrote down what I figured out during my shift here, hopefully my notes will help you survive better than I did. Things happen hourly here so be sure to keep up with everything."
+				message[3] = "-Avoid going into the bathrooms between 1 and 2. \n-Restock the shelves in the front of the store for the little girl. She comes to the store at 2.";
+				message[4] = "-A woman in a gown will appear around the establishment. Avoid her at all costs! Hide in the closet if she finds you. \n-Clean up the front of the store and the forest around it before 3! \n-Restock the shelves in the store to appease the little girl.";
 				
-				message[5] = ["Previous page.", "Little Girl and The Doll.", "Shadow Figures", "Next page.", "Leave."];
+				message[5] = ["Previous page.", "3:00 AM", "4:00 AM", "Next page.", "Leave."];
 				
-				message[6] = "Give her a candy bar to appease her. If you don't she will open up all your trash bags in the back and leave her doll behind. Catch the doll to make her stop. After that you can either throw the doll in the dumpster or keep the doll to ward her off.";
-				message[7] = "These figures roam around the property. They will try to catch you, if they do you will feel sluggish. The lower your sanity, the more there will be.";
-				message[8] = "";
+				message[6] = "-If the giant monster is out front, keep him from getting the the fusebox out back. It will leave at 4. \n-If the lights begin to flicker leave the store and stay outside for like 20 minutes or so. The gowned woman is inside the store. Hiding will not work.";
+				message[7] = "-Shadowy figures will begin to manifest outside, be sure to not let them touch you. With every touch you will feel slower until you pass away from exhaustion.";
 				
+				message[8] = ["Previous page.", "5:00 AM", "6:00 AM", "Notes", "Leave."];
+				
+				message[9] = "-All three entites will come at this time, follow the previous rules to handle them.";
+				message[10] = "-Clock out as soon as possible, disregard the progression app. They truly don't care about that.";
+				message[11] = "-Between 3 and 5 you can do a special ritual. To do this, you need to turn off the soda fountain, keep both bathroom sinks on, have your phone on slient, and have only the doll on your person. Go to the middle telephone pole and place the doll nearby. You will be rewarded with the goods the little girl stole.";
+				message[12] = "-To get rid of the gowned woman, turn on the soda fountain, turn on the both bathroom sinks and flush the female's toilet 3 times. It will only work between 4 and 5.";
+				message[13] = "";
 				
 				scripts = -1;
-				speakers = [objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer];
-				portraitNums = [0, 0, 1, 2, 1, 0, 0, 0, 0];
-				nextLine = [1, [2, 3, 4, 5, -1], 1, 1, 1, [1, 6, 7, -1/*Change to next page*/, -1], 5, 5, -1];
+				speakers = [objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer, objPlayer];
+				portraitNums = [0, 0, 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+				nextLine = [1, [2, 3, 4, 5, -1], 1, 1, 12, [1, 6, 7, 8, -1], 5, 5, [5, 9, 10, 11, -1], 8, 8, 8, 1, -1];
 				if (!instance_exists(objDialogBoxes)) {
 					var vBox = CreateDialogbox(message, speakers, nextLine, scripts, portraitNums);
 					with(objPlayer) {
@@ -202,28 +208,30 @@ function UseItemHelper() {
 		
 		case "Storage Box":
 			var shelf = collision_circle(objPlayer.x, objPlayer.y, objPlayer.radius, objShelf, false, true);
-			if (shelf.inRange) {
-				with(shelf) {
-					var i = irandom(1) + 1;
-					image_index = i;
-					objPlayer.jobProgression += 8;
-					objPlayer.energy -= 5;
-					objPlayer.sanity -= 5;
-					show_debug_message("Shelf Restocked");
+			if (shelf != noone) {
+				if (shelf.inRange) {
+					with(shelf) {
+						var i = irandom(1) + 1;
+						image_index = i;
+						objPlayer.jobProgression += 8;
+						objPlayer.energy -= 5;
+						objPlayer.sanity -= 5;
+						show_debug_message("Shelf Restocked");
 			
-					//Remove item from Inventory
-					with(objPlayer) {
-						if (global.bonusTask == 2) {
-							money += global.bonussMoney;
+						//Remove item from Inventory
+						with(objPlayer) {
+							if (global.bonusTask == 2) {
+								money += global.bonussMoney;
+							}
 						}
-					}
 			
-					//Checks if the equipped was used. If it has been then resets the equipped array
-					if (objPlayer.inventory[slot] == objPlayer.equipped[0] and objPlayer.equipped[1] != -1) {
-						objPlayer.equipped[0] = -1;
-						objPlayer.equipped[1] = -1;
+						//Checks if the equipped was used. If it has been then resets the equipped array
+						if (objPlayer.inventory[slot] == objPlayer.equipped[0] and objPlayer.equipped[1] != -1) {
+							objPlayer.equipped[0] = -1;
+							objPlayer.equipped[1] = -1;
+						}
+						objPlayer.inventory[slot] = "Empty";
 					}
-					objPlayer.inventory[slot] = "Empty";
 				}
 			}
 		break;

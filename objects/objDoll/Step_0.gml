@@ -66,7 +66,7 @@ switch(state) {
 		if (collision_circle(x, y, 120, objPlayer, false, true)) {
 			state = enemyState.Feared;
 			// Reset alarm
-			alarm[0] = -1;
+			if (alarm[0] >= 0) alarm[0] = -1;
 		}
 	break;
 	

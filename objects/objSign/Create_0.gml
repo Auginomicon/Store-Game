@@ -42,6 +42,6 @@ nextLine = [0, [2, 3, 4, 5, -1], 1, 1, 1, 1, -1, -1, -1, -1];
 portraitNums = [0, 0, 0, 3, 0, 0, 0, 1, 2, 0];
 scripts = [-1, [-1, -1, -1, -1, -1], -1, [AddContact, "Abby"], [EventTrigger, objPlayer, 1], [EventTrigger, objPlayer, 2], -1, [EventTrigger, objGame, 0], -1, -1];
 
-if (objDayCycle.day == 1) {
+if (global.day == 1) {
 	nextLine[1][3] = 6;
 }

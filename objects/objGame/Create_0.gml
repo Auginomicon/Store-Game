@@ -6,9 +6,9 @@ global.gamePaused = false;
 global.textSpeed = 0.75;
 global.ResolutionW = 750;
 global.ResolutionH = 420;
-global.silent = false;
 
 room_goto_next();
+LoadFile();
 
 //Variables for room transition fade
 global.guiWidth = 1500
@@ -39,12 +39,31 @@ global.cameraSystem = false;
 global.playerName = "Sammuel";
 global.nightStarted = false;
 global.bonussMoney = .35;
+global.silent = false;
+global.bathroomRitual = false;
+global.roadRitual = false;
+
+// Sound
+if (file_exists("Game.sav")) {
+	ini_open("Game.sav");
+	global.masterVolume = ini_read_real("Options", "MasterVolume", 1);
+	global.musicVolume = ini_read_real("Options", "MusicVolume", 1);
+	global.effectVolume =ini_read_real("Options", "EffectsVolume", 1);
+	ini_close();
+}
+else {
+	global.masterVolume = 1;
+	global.effectVolume = 1;
+	global.musicVolume = 1;
+}
+
 playerDead = false;
 needToClockOut = false;
 showWinScreen = false;
 jumpscare = false;
 creature = 0;
 flash = 0;
+deathMsg = "";
 
 global.bonusTask = irandom(3) + 1;
 /*
@@ -54,6 +73,15 @@ global.bonusTask = irandom(3) + 1;
 	3 - Mopping
 	4 - Clean up trash on the ground
 */
+
+// Event triggers
+eventTrigger1 = false;
+eventTrigger2 = false;
+eventTrigger3 = false;
+eventTrigger4 = false;
+eventTrigger5 = false;
+
+eventHelper = false;
 
 //Enum for direction
 enum dir {

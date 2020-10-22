@@ -12,13 +12,13 @@ if (showInventory) {
 		case 0: //Home screen
 			draw_set_font(fntTime);
 			draw_set_halign(fa_center);
-			var mins = objDayCycle.minutes;
+			mins = objDayCycle.minutes;
 			while (mins >= 60) {
 				mins -= 60;
 			}
-			var hrs = objDayCycle.hours + 7;
-			while (hrs >= 12) {
-				hrs -= 11;
+			hrs = objDayCycle.hours + 7;
+			while (hrs > 13) {
+				hrs -= 12;
 			}
 			var c = c_black;
 			var zero = "";

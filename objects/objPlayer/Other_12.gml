@@ -6,7 +6,7 @@ with(objDayCycle) {
 global.nightStarted = true;
 
 // Spawn in the lost employee only during the first night
-if (objDayCycle.day == 1) {
+if (global.day == 1) {
 	instance_create_layer(6070, 2318, "Instances", objLostEmployee);
 }
 
@@ -43,7 +43,7 @@ with(objSign) {
 }
 
 // Begin random events for the game
-with(objGame) {
-	alarm[0] = 45 * room_speed;
-	alarm[3] = 50 * room_speed;
-}
+//with(objGame) {
+//	alarm[0] = 45 * room_speed;
+//	alarm[3] = 50 * room_speed;
+//}

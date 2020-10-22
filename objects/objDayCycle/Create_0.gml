@@ -1,12 +1,10 @@
 /// @description
-seconds = 0;
+seconds = 17000;
 minutes = 0;
 hours = 0;
 
-day = 1;
-
 //Seconds per step
-timeIncrement = 2;
+timeIncrement = 1;
 timePaused = false;
 
 //Color Variables

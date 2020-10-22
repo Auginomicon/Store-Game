@@ -17,4 +17,10 @@ state = enemyState.Free;
 range = 250;
 currentLocation = 3;
 sawPlayerHide = false;
+freeRoam = true;
 hitbox.sprite_index = sprBoundingBox;
+
+firstEvent = false;
+fourthEvent = false;
+roamX = 0;
+roamY = 0;

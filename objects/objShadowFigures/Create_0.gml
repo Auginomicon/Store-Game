@@ -7,4 +7,5 @@ currentLocation = 1;
 state = enemyState.Free;
 roamX = 0;
 roamY = 0;
+bathroomEvent = false;
 alarm[0] = 1;

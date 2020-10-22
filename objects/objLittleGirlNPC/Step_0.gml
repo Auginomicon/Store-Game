@@ -62,7 +62,7 @@ if (canMove) {
 		}
 		// To start the alarm to get mad
 		if (alarm[2] == -1 and !leaving) {
-			alarm[2] = 65 * room_speed;
+			alarm[2] = 40 * room_speed;
 		}
 	}
 }

@@ -40,6 +40,7 @@ idleNum = 1;
 isSafe = false;
 isMopping = false;
 sound = -1;;
+sfCollidedWith = 0;
 
 //Variables for speach
 portraitIndex = 1;
